@@ -1,0 +1,23 @@
+#img_preview {
+	float: left;
+	width: 114px;
+	height: 152px;
+	border: 1px solid #92B1D1;
+}
+
+#img_cancel {
+	float: left;
+	width: 25px;
+	height: 25px;
+	margin-left: 6px;
+	margin-top: 127px;	
+	visibility: hidden;
+	/*border: 1px solid #92B1D1;*/
+}
+#cancel {
+	cursor: pointer;
+	border: none;
+	width: 24px;
+	height: 24px;
+}
+

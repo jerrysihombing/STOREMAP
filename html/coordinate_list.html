@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	
+	<?php include_once ("header.inc.php"); ?>
+    
+	<link href="../css/themes/cupertino/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="../css/demo_table_jui.css" rel="stylesheet" type="text/css" />	      
+	<link href="../css/coordinate_list.css" rel="stylesheet" type="text/css" />
+	<!-- Add fancyBox CSS files -->
+	<link rel="stylesheet" type="text/css" href="../css/jquery.fancybox.css?v=2.1.5" media="screen" />
+	
+    <script type="text/javascript" src="../script/jquery/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../script/jquery/jquery-ui-1.10.2.custom.min.js"></script>
+	<script type="text/javascript" src="../script/jquery/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../script/jquery/dataTables.fnFilterOnReturn.js"></script>  
+	<script type="text/javascript" src="../script/coordinate_list.js"></script>
+	<!-- Add fancyBox main JS -->
+	<script defer src="../script/jquery/jquery.fancybox.js?v=2.1.5"></script>
+		
+  </head>
+  
+  <body data-spy="scroll" data-target=".subnav" data-offset="50" screen_capture_injected="true">
+  
+    <?php include_once ("top.inc.php"); ?>
+
+    <div class="container">      	  
+	  
+	  <ol class="breadcrumb">
+		  <li><a href="/index.html">Home</a></li>
+		  <li class="active">Section</li>
+	  </ol>
+
+	  <div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">
+			Section
+			<?php if ($createAllowable) { ?>
+			<a href="/section/add.html" class="navbar-link" style="float: right">Create Section</a>
+			<?php } ?>
+		  </div>
+	
+		  <div class="panel-body">
+			
+			<div id="adv_search">    	        
+        
+			  <div id="adv_main">        
+				  Advance Search (Click to toggle the form)     
+			  </div>
+			  
+			  <div style="clear:both;"></div>
+			  
+			  <div id="search_container">
+			  
+				  <table id="rounded-corner" border="0">
+					  <tbody>
+						  <tr>
+							  <td width="36%">Code</td>
+							  <td width="4%">:</td>
+							  <td>
+								  <input type="text" id="s_code" name="s_code" value="" />
+							  </td>
+						  </tr>
+						  <tr>
+							  <td>Name</td>
+							  <td>:</td>
+							  <td>
+								  <input type="text" id="s_name" name="s_name" value="" />
+							  </td>
+						  </tr>
+						  <tr>
+							  <td>Description</td>
+							  <td>:</td>
+							  <td>
+								  <input type="text" id="s_description" name="s_description" value="" />
+							  </td>
+						  </tr>
+						  <tr>
+							  <td>Brand Name</td>
+							  <td>:</td>
+							  <td>
+								  <select id="s_brand_name" name="s_brand_name">
+									  <option value="">Select brand name</option>
+									  <?php echo $optBrand; ?>
+								  </select>
+							  </td>
+						  </tr>
+						  <tr>
+							  <td>Map Code</td>
+							  <td>:</td>
+							  <td>
+								  <input type="text" id="s_map_code" name="s_map_code" value="" />
+							  </td>
+						  </tr>
+						  <tr>
+							  <td>Shape</td>
+							  <td>:</td>
+							  <td>
+								  <select id="s_shape" name="s_shape">
+									<option value="">Select shape</option>
+									<option value="Rectangular">Rectangular</option>
+									<option value="Circle">Circle</option>
+									<option value="Polygon">Polygon</option>
+								  </select>
+							  </td>
+						  </tr>
+						  <tr>
+							  <td>Store Initial</td>
+							  <td>:</td>
+							  <td>
+								  <input type="text" id="s_store_init" name="s_store_init" value="" />
+								  <input type="hidden" id="s_adv" name="s_adv" value="" />
+							  </td>
+						  </tr>
+					  </tbody>
+					  <tfoot>
+						  <tr>
+							  <td class="rounded-foot-left" style="border-bottom:none;">&nbsp;</td>
+							  <td style="border-bottom:none;">&nbsp;</td>
+							  <td class="rounded-foot-right" style="border-bottom:none;">
+								  <a class="ovalbutton" onclick="goSearch()"><span>&nbsp;Search&nbsp;</span></a>
+								  <a class="ovalbutton ml-6" onclick="goReset()"><span>&nbsp; Reset &nbsp;</span></a>
+							  </td>
+					  </tr>
+					  </tfoot>
+				  </table> 
+				  
+			  </div>                              
+				  
+		  </div>
+				  
+			<!-- Table -->
+			<table id="listTable" class="table">
+			  <thead>
+				  <tr>                
+					  <th>Code</th>
+					  <th>Name</th>
+					  <th>Description</th>
+					  <th>Brand Name</th>
+					  <th>Map Code</th>
+					  <th>Shape</th>
+					  <th>Store Initial</th>
+					  <th width="6%">Info</th>
+					  <th width="6%">Edit</th>
+					  <th width="6%">Delete</th>
+				  </tr>
+			  </thead>        
+			  <tbody>
+				  <tr>
+					  <td colspan="10" class="dataTables_empty">&nbsp;</td>
+				  </tr>
+			  </tbody>
+			  <!--
+			  <tfoot>
+				  <tr>					  
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
+				  </tr>
+			  </tfoot>
+			  -->
+		  </table>
+		  
+		</div>
+		  
+		<!-- /panel-body -->  
+		  
+	  </div>
+	  <!-- /panel -->
+	  
+	  <?php include_once ("footer.inc.php"); ?>
+	
+	</div> 
+    <!-- /container -->
+	
+	<input type="hidden" id="id" value="">
+	
+	<div id="delete-alert" title="Confirmation">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin: 0 7px 50px 0;"></span>
+            Data with code: <span id="delete-id">&nbsp;</span> will be deleted.
+            <br />
+			Continue?
+			<br />
+        </p>        
+    </div>
+	
+	<div id="delete-success" title="Notification">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-info" style="float:left; margin: 0 7px 50px 0;"></span>
+            <span>Data was deleted successfully.</span>
+			<br />			
+        </p>        
+    </div>
+	
+	<div id="delete-error" title="Alert">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin: 0 7px 50px 0;"></span>
+            <span>Failed to delete.</span>
+			<br />
+			<span id="error-message">&nbsp;</span>
+            <br />            
+        </p>        
+    </div>	
+
+	<script type="text/javascript">
+		$(window).load(function(){
+			$(".fancybox").fancybox();
+		});
+	</script>
+	
+  </body>
+</html>

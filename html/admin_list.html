@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  
+    <?php include_once ("header.inc.php"); ?> 
+
+	<link href="../css/themes/cupertino/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="../css/demo_table_jui.css" rel="stylesheet" type="text/css" />
+	<link href="../css/admin.css" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" src="../script/jquery/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../script/jquery/jquery-ui-1.10.2.custom.min.js"></script>
+	<script type="text/javascript" src="../script/jquery/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="../script/jquery/jquery.selectboxes.min.js"></script>	
+	<script type="text/javascript" src="../script/admin.js"></script>    
+
+ </head>
+  
+  <body data-spy="scroll" data-target=".subnav" data-offset="50" screen_capture_injected="true">
+  
+    <?php include_once ("top.inc.php"); ?>
+	
+	<div class="container">      	
+			
+		<ol class="breadcrumb">
+			<li><a href="/index.html">Home</a></li>
+			<li class="active">System Administration</li>
+		</ol>
+			
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+			  System Administration
+			</div>
+			
+			<div class="panel-body">
+				
+				<div id="tabs">
+					<ul>
+						<li><a href="#tabs-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User</a></li>
+						<li><a href="#tabs-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Role</a></li>                        
+						<li><a href="#tabs-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assign Role</a></li>
+					</ul>   
+					
+					<!-- user content -->                
+					<div id="tabs-1">
+									
+					<div class="buttonwrapper">
+						<a class="ovalbutton ml-btn-add" onclick="goAddUser()"><span>&nbsp;&nbsp; Add &nbsp;&nbsp;</span></a> 
+					</div>
+							
+					<!-- put data table here -->					
+															
+					<table cellpadding="0" cellspacing="0" border="0" id="tbl_user">
+						<thead>
+							<tr>
+								<th>User ID</th>
+								<th>User Name</th>
+								<th>Email</th>
+								<th>Departement</th>
+								<th>Store Initial</th>
+								<th>Role</th>
+								<th>Active</th>
+								<th width="4%">&nbsp;</th>
+								<th width="4%">&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="9" class="dataTables_empty">&nbsp;</td>
+							</tr>
+						</tbody>
+						<!--
+						<tfoot>
+							<tr>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+							</tr>
+						</tfoot>
+						-->
+					</table>
+								
+					<!-- eo data table -->
+						
+					</div>
+					<!-- eo user -->
+				
+					<!-- role content -->
+					<div id="tabs-2">
+						
+					<div class="buttonwrapper">
+						<a class="ovalbutton ml-btn-add" onclick="goAddRole()"><span>&nbsp;&nbsp; Add &nbsp;&nbsp;</span></a> 
+					</div>
+					
+					<!-- put data table here -->					
+													
+					<table cellpadding="0" cellspacing="0" border="0" id="tbl_role">
+						<thead>
+							<tr>
+								<th>Role Name</th>
+								<th>Description</th>
+								<th width="4%">&nbsp;</th>
+								<th width="4%">&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="4" class="dataTables_empty">&nbsp;</td>
+							</tr>
+						</tbody>
+						<!--
+						<tfoot>
+							<tr>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+							</tr>
+						</tfoot>
+						-->
+					</table>
+							
+					<!-- eo data table -->
+						
+					</div>
+					<!-- eo role -->
+					
+					<!-- assign role content -->
+					<div id="tabs-3">
+					
+					<div id="validate-tips-6" class="validate_init" style="margin-left: 20px !important;" >        
+						<div style="position:relative; top: 12px; left: 30px;" id="text-tips-5">&nbsp;</div>
+					</div>
+					
+					<!-- put data table here -->					
+													
+					<table border="0" cellpadding="0" cellspacing="0" id="tbl_assign_role">
+						
+						<tbody>	
+							<tr>								
+								<td style="border-bottom:none;" width="20%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; User</td>
+								<td style="border-bottom:none;" width="4%">:</td>
+								<td style="border-bottom:none;">
+									<select id="assign_role_user_id" name="assign_role_user_id">
+										<option value=""> --- Select user --- </option>
+										<?php
+											if (!empty($user_roleless_data)) {
+												while(list($k, $v) = each($user_roleless_data)) {
+										?>
+													<option value="<?php echo $v["id"]; ?>"><?php echo $v["user_id"]; ?></option>
+										<?php
+												}
+											}
+										?>									
+									</select>
+								</td>									
+							</tr>
+							<tr>								
+								<td style="border-bottom:none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Role to assign</td>
+								<td style="border-bottom:none;">:</td>
+								<td style="border-bottom:none;">
+									<select id="assign_role_role_name" name="assign_role_role_name">
+										<option value=""> --- Select role --- </option>
+										<?php
+											if (!empty($role_data)) {
+												while(list($k, $v) = each($role_data)) {
+										?>
+													<option value="<?php echo $v["role_name"]; ?>"><?php echo $v["role_name"]; ?></option>
+										<?php
+												}
+											}
+										?>											
+									</select>
+								</td>									
+							</tr>
+							<tr>
+								<td style="border-bottom:none;" colspan="2">&nbsp;</td>
+								<td style="border-bottom:none;">
+									<div class="buttonwrapper">
+										<a class="ovalbutton ml-210" onclick="goAssignRole()"><span>&nbsp; Assign &nbsp;</span></a> 
+									</div>
+								</td>									
+							</tr>
+						
+						</tbody>								
+					</table>
+								
+					<!-- eo data table -->
+						
+					</div>
+					<!-- eo assign role  -->
+					
+				</div>        
+				<!-- tabs end -->
+				
+				<!-- CRUD functions are below -->    
+				
+				<!-- role add form -->
+				<div id="role_add" title="Add Role">
+							
+					<div id="validate-tips-4" class="validate_init" style="margin-left: 20px !important;" >        
+						<div style="position:relative; top: 12px; left: 30px;" id="text-tips-3">&nbsp;</div>
+					</div>
+					
+					<!-- left table -->
+					<table border="0" cellpadding="0" cellspacing="0" id="tbl_add_role" >							
+						<tr>
+							<td width="18%">Role Name</td>
+							<td width="4%">:</td>
+							<td>
+								<input type="text" id="role_name" name="role_name" class="reg_input" maxlength="20" /> &nbsp;<span class="red_star">*</span>
+							</td>
+						</tr>		
+						<tr>
+							<td>Description</td>
+							<td>:</td>
+							<td>
+								<input type="text" id="description" name="description" class="reg_input w-240" maxlength="100" /> 
+							</td>									
+						</tr>		
+						<tr>
+							<td>Menu List</td>
+							<td>:</td>
+							<td valign="top" align="left">
+								
+								<?php
+									$dataCount = sizeof($menu_data);
+									$cnt1 = ($dataCount > 14) ? 14 : $dataCount;
+									$cnt2 = ($dataCount > 14) ? $dataCount : 0;
+								?>
+				
+								<!-- put menu table here -->
+								<table id="tbl_menu" border="0" cellpadding="0" cellspacing="0" style="width:100%" >														
+									<tbody>
+										<tr>
+											<td><input type="checkbox" id="chkAll">&nbsp;<label style="text-decoration: underline; font-size: 13px;">All</label></td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td style="border-bottom:none;" align="left" valign="top">											
+												<?php
+													if ($cnt1 > 0) {
+														for ($i = 0; $i < $cnt1; $i++) {													
+												?>
+															<input class="menu_item" value="<?php echo $menu_data[$i]["id_menu"]; ?>" type="checkbox" name="menu-<?php echo $i+1; ?>" id="menu-<?php echo $i+1; ?>" />&nbsp;<label for="menu-<?php echo $i+1; ?>"><?php echo $menu_data[$i]["title"]; ?></label>
+															<br />
+												<?php
+														}
+													}
+												?>														
+											</td>								
+											<td style="border-bottom:none;" align="left" valign="top">
+												<?php
+													if ($cnt2 > 0) {
+														for ($i = $cnt1; $i < $cnt2; $i++) {													
+												?>
+															<input class="menu_item" value="<?php echo $menu_data[$i]["id_menu"]; ?>" type="checkbox" name="menu-<?php echo $i+1; ?>" id="menu-<?php echo $i+1; ?>" />&nbsp;<label for="menu-<?php echo $i+1; ?>"><?php echo $menu_data[$i]["title"]; ?></label>
+															<br />
+												<?php
+														}
+													}
+													else {
+												?>
+														&nbsp;
+												<?php
+													}
+												?>													
+											</td>								
+										</tr>																																	
+									</tbody>
+								</table>
+								<!-- eo menu table -->
+								
+							</td>									
+						</tr>		
+					</table>
+					<!-- eo left table -->			       
+				
+				</div>
+				<!-- eo role add -->
+				
+				<!-- role edit form -->
+				<div id="role_edit" title="Edit Role">
+							
+					<div id="validate-tips-5" class="validate_init" style="margin-left: 20px !important;" >        
+						<div style="position:relative; top: 12px; left: 30px;" id="text-tips-4">&nbsp;</div>
+					</div>
+					
+					<!-- left table -->
+					<table border="0" cellpadding="0" cellspacing="0" style="width:100%" id="tbl_edit_role" >							
+						<tr>
+							<td width="18%">Role Name</td>
+							<td width="4%">:</td>
+							<td>
+								<input type="text" id="role_name_e" name="role_name_e" class="reg_input input_ro" readonly="readonly" maxlength="20" /> &nbsp;<span class="red_star">*</span>
+							</td>
+						</tr>	
+						<tr>
+							<td>Description</td>
+							<td>:</td>
+							<td>
+								<input type="text" id="description_e" name="description_e" class="reg_input w-240" maxlength="100" /> 
+							</td>									
+						</tr>		
+						<tr>
+							<td>Menu List</td>
+							<td>:</td>
+							<td valign="top" align="left">
+								
+								<!-- put menu table here -->
+								<table id="tbl_menu_e" border="0" cellpadding="0" cellspacing="0" style=" width:100%" >														
+									<tbody>
+										<tr>
+											<td><input type="checkbox" id="chkAll_e">&nbsp;<label style="text-decoration: underline; font-size: 13px;">All</label></td>
+											<td>&nbsp;</td>
+										</tr>																																	
+									</tbody>
+								</table>
+								<!-- eo menu table -->
+								
+							</td>									
+						</tr>	
+					</table>
+					<!-- eo left table -->		       
+				
+				</div>
+				<!-- eo role edit -->
+				
+				<!-- role delete form -->
+				<div id="role_delete" title="Delete Role">
+					<br />
+					<p>
+						<span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
+						Role <span id="role_to_delete">&nbsp;</span> will be deleted. 
+						<br />
+						Are you sure?            
+					</p>
+				</div>
+				<!-- eo role delete -->
+				
+				<!-- user add form -->
+				<div id="user_add" title="Add User">
+						
+					<div id="validate-tips-2" class="validate_init" style="margin-left: 20px !important;" >        
+						<div style="position:relative; top: 12px; left: 30px;" id="text-tips">&nbsp;</div>
+					</div>
+					
+					<!-- left table -->
+					<table border="0" cellpadding="0" cellspacing="0" id="tbl_add_user" >							
+						<tr>
+							<td width="40%">User ID</td>
+							<td width="4%">:</td>
+							<td>
+								<input type="text" id="user_id" name="user_id" class="reg_input" maxlength="20" /> &nbsp;<span class="red_star">*</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Password</td>
+							<td>:</td>
+							<td>
+								<input type="password" id="passwd" name="passwd" class="reg_input" maxlength="32" /> &nbsp;<span class="red_star">*</span>
+							</td>									
+						</tr>
+						<tr>
+							<td>Re-type Password</td>
+							<td>:</td>
+							<td>
+								<input type="password" id="passwd_confirm" name="passwd_confirm" class="reg_input" maxlength="32" /> &nbsp;<span class="red_star">*</span>
+							</td>									
+						</tr>
+						<tr>
+							<td>User Name</td>
+							<td>:</td>
+							<td><input type="text" id="user_name" name="user_name" class="reg_input" maxlength="40" /> &nbsp;<span class="red_star">*</span></td>									
+						</tr>
+						<tr>
+							<td>Store Initial</td>
+							<td>:</td>
+							<td>
+								<!--<input type="text" id="branch_code" name="branch_code" class="reg_input" maxlength="10" />-->
+								<select id="branch_code" name="branch_code">
+									<option value="">Select store </option>
+									<?php echo $optStore; ?>
+								</select>
+								&nbsp;<span class="red_star">*</span>
+							</td>	
+						</tr>
+						<!--
+						<tr>
+							<td>E-mail</td>
+							<td>:</td>
+							<td><input type="text" id="email" name="email" class="reg_input w-250" maxlength="100" /></td>
+						</tr>
+						<tr>
+							<td>Departement</td>
+							<td>:</td>
+							<td>
+								<select id="departement" name="departement" class="reg_input w-140" >
+									<option value=""> --- Select one --- </option>										
+								</select>				
+							</td>
+						</tr>
+						-->
+					</table>
+					<!-- eo left table -->				       
+				
+				</div>
+				<!-- eo user add -->
+				
+				<!-- user edit form -->
+				<div id="user_edit" title="Edit User">
+					
+					
+					<div id="validate-tips-3" class="validate_init" style="margin-left: 20px !important;" >        
+						<div style="position:relative; top: 12px; left: 30px;" id="text-tips-2">&nbsp;</div>
+					</div>
+					
+					<!-- left table -->
+					<table border="0" cellpadding="0" cellspacing="0" id="tbl_edit_user" >							
+						<tr>
+							<td width="26%">User ID</td>
+							<td width="4%">:</td>
+							<td>
+								<input type="text" id="user_id_e" name="user_id_e" class="reg_input input_ro" readonly="readonly" maxlength="20" /> &nbsp;<span class="red_star">*</span>
+							</td>
+						</tr>
+						<tr>
+							<td>Role</td>
+							<td>:</td>
+							<td>
+								<select id="user_role_name_e" name="user_role_name_e" >
+									<option value="N/A">N/A</option>
+									
+									<?php
+										if (!empty($role_data)) {
+											for ($i = 0; $i < sizeof($role_data); $i++) {
+									?>
+												<option value="<?php echo $role_data[$i]["role_name"]; ?>"><?php echo $role_data[$i]["role_name"]; ?></option>
+									<?php
+											}
+										}
+									?>										
+								</select>				
+							</td>									
+						</tr>
+						<tr>
+							<td>Active</td>
+							<td>:</td>
+							<td>
+								<select id="active_e" name="active_e" >
+									<option value="1">Y</option>
+									<option value="0">N</option>
+								</select>
+							</td>									
+						</tr>
+						<tr>
+							<td>User Name</td>
+							<td>:</td>
+							<td><input type="text" id="user_name_e" name="user_name_e" class="reg_input" maxlength="40" /></td>									
+						</tr>
+						<tr>
+							<td>Reset Password</td>
+							<td>:</td>
+							<td>
+								<input type="checkbox" id="isPasswdReset">
+								<input type="text" id="passwd_reset" name="passwd_reset" disabled="disabled" class="reg_input" maxlength="32" />
+							</td>									
+						</tr>
+						<tr>
+							<td>Store Initial</td>
+							<td>:</td>
+							<td>
+								<!--<input type="text" id="branch_code_e" name="branch_code_e" class="reg_input" maxlength="10" />-->
+								<select id="branch_code_e" name="branch_code_e">
+									<option value="">Select store </option>
+									<?php echo $optStore; ?>
+								</select>
+								&nbsp;<span class="red_star">*</span></td>	
+						</tr>
+						<!--
+						<tr>
+							<td>E-mail</td>
+							<td>:</td>
+							<td><input type="text" id="email_e" name="email_e" class="reg_input w-220" maxlength="100" /></td>
+						</tr>
+						<tr>
+							<td>Departement</td>
+							<td>:</td>
+							<td>
+								<select id="departement_e" name="departement_e" class="reg_input w-140" >
+									<option value=""> --- Select one --- </option>										
+								</select>				
+							</td>
+						</tr>
+						-->
+					</table>
+					<!-- eo left table -->				       
+				
+				</div>
+				<!-- eo user edit -->
+				
+				<!-- user delete form -->
+				<div id="user_delete" title="Delete User">
+					<br />
+					<p>
+						<span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
+						User <span id="user_to_delete">&nbsp;</span> will be deleted. 
+						<br />
+						Are you sure?            
+					</p>
+				</div>
+				<!-- eo user delete -->
+				
+				<!-- backup delete form -->
+				<div id="backup_delete" title="Delete Backup File">
+					<br />
+					<p>
+						<span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
+						File <span id="backup_to_delete">&nbsp;</span> will be deleted. 
+						<br />
+						Are you sure?            
+					</p>
+				</div>
+				<!-- eo backup delete -->    
+			
+				<input type="hidden" id="id_user" name="id_user" value="" />
+				<input type="hidden" id="id_role" name="id_role" value="" />
+				<input type="hidden" id="backup_name" name="backup_name" value="" />
+
+			</div>
+			  
+			<!-- /panel-body -->  
+		  
+		</div>
+		<!-- /panel -->
+	  
+	<?php include_once ("footer.inc.php"); ?>
+	
+	</div> 
+    <!-- /container -->
+	
+ </body>
+</html>

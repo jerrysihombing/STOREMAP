@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Store Map</title>
+    
+    <script type="text/javascript" src="script/jquery/jquery-1.10.2.min.js"></script>
+	
+    <script type="text/javascript">
+        $(function() {
+            
+            /*
+            $("#denahId").click(function(e) {
+                
+                var relX = e.pageX;
+                var relY = e.pageY;
+                
+                alert("x: " + relX.toFixed(0) + ", y: " + relY.toFixed(0));
+            });
+            */
+            
+            $("#denahId").click(function(e) {
+                
+                var parentOffset = $(this).parent().offset(); 
+                //or $(this).offset(); if you really just want the current element's offset
+                var relX = e.pageX - parentOffset.left;
+                var relY = e.pageY - parentOffset.top;
+                
+                alert("x: " + relX.toFixed(0) + ", y: " + relY.toFixed(0));
+            });
+            
+            
+            
+        });
+        
+    </script>
+        
+</head>
+
+<body>
+
+    <div>
+        <!--<a href="#">-->
+            <img id="denahId" src="map/LAYOUT_FIX_1742014-FASHION_CIWALK_LG.png" alt="map" border="0"> <!-- ISMAP -->
+        <!--</a>-->   
+    </div>
+
+</body>
+</html>

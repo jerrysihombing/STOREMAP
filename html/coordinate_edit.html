@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	
+	<?php include_once ("header2.inc.php"); ?>
+    
+	<link href="../../css/themes/cupertino/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" media="screen" />
+	<style>
+		/* A class used by the jQuery UI CSS framework for their dialogs. */
+		.ui-front {
+			z-index:1000000 !important; /* The default is 100. !important overrides the default. */
+		}
+		.ui-icon-closethick { margin-top: -8px !important; margin-left: -8px !important; }
+		.ui-dialog {font-size: 90%;}
+		.ui-widget-overlay { background: url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+		#change-image:hover {
+		    text-decoration: underline;
+		}
+        .input_ro {
+            background: none;
+            background-color: #FFFFDD !important;
+        }
+	</style>
+	<link href="../../css/coordinate.css" rel="stylesheet" type="text/css" media="screen" />
+	
+    <!--<script type="text/javascript" src="../script/jquery/jquery-1.7.2.min.js"></script>-->
+    <script type="text/javascript" src="../../script/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../script/jquery/jquery-ui-1.10.2.custom.min.js"></script>
+	<!--<script type="text/javascript" src="../../script/jquery/jquery.ajaxfileupload.js"></script>-->
+	<script type="text/javascript" src="../../script/jquery/spin.js"></script>
+	<script type="text/javascript" src="../../script/jquery/jquery.spin.js"></script>
+	<script type="text/javascript" src="../../script/coordinate.js"></script>
+		
+  </head>
+  
+  <body data-spy="scroll" data-target=".subnav" data-offset="50" screen_capture_injected="true">
+  
+    <?php include_once ("top.inc.php"); ?>
+
+    <div class="container">      	  
+	  
+      <ol class="breadcrumb">
+		  <li><a href="/index.html">Home</a></li>
+          <li><a href="/section/list.html">Section</a></li>
+		  <li class="active">Edit Section</li>
+	  </ol>
+      
+	  <div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">
+			  Edit Section
+		  </div>
+	
+		  <div class="panel-body">
+			<span class="red-star">*</span> <span class="red-star-text">mandatory field.</span>
+		  </div>
+	
+		  <!-- Table -->
+		  <table class="table">
+			  <tr>
+				  <td style="width: 26%">Code<span class="red-star"> *</span></td>
+				  <td style="width: 4%">:</td>
+				  <td>
+                        <div class="input-group">
+                            <span class="input-group-addon">&nbsp;</span>
+                            <input type="text" name="code" id="code" value="<?php echo $MDL->getCode(); ?>" class="form-control required input_ro" readonly="readonly" maxlength="12">
+                          </div>
+                  </td>
+			  </tr>
+			  <tr>
+				  <td>Name<span class="red-star"> *</span></td>
+				  <td>:</td>
+				  <td>
+					  <div class="input-group">
+						<span class="input-group-addon">&nbsp;</span>
+						<input type="text" name="name" id="name" value="<?php echo $MDL->getName(); ?>" class="form-control required" maxlength="100">
+					  </div>
+				  </td>
+			  </tr>
+              <tr>
+				  <td>Description</td>
+				  <td>:</td>
+				  <td>
+					  <div class="input-group">
+						<span class="input-group-addon">&nbsp;</span>
+						<input type="text" name="description" value="<?php echo $MDL->getDescription(); ?>" id="description" class="form-control required" maxlength="255">
+					  </div>
+				  </td>
+			  </tr>
+			  <tr>
+				  <td>Brand Name<span class="red-star"> *</span></td>
+				  <td>:</td>
+				  <td>
+					  <div class="input-group">
+						<span class="input-group-addon">&nbsp;</span>
+						<select id="brand_name" class="form-control required">
+                            <option value="">Select brand name</option>
+                            <?php echo $optBrand; ?>
+                        </select>
+					  </div>
+				  </td>
+			  </tr>
+              <tr>
+				  <td>Map<span class="red-star"> *</span></td>
+				  <td>:</td>
+				  <td>
+					  <div class="input-group">
+						<span class="input-group-addon">&nbsp;</span>
+						<select id="map_code" class="form-control required">
+                            <option value="">Select Map</option>
+                            <?php echo $optMapCode; ?>
+                        </select>
+					  </div>
+				  </td>
+			  </tr>
+		  </table>
+	  </div>
+	  <!-- /panel -->
+      
+      <div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">
+			  Shape
+		  </div>
+	
+		  <div class="panel-body">
+                Rectangular needs [Top-Left] and [Bottom-Right] coordinate. <br>
+                Circle needs [Radius] and [Center X, Center Y] coordinate. <br>
+                Polygon needs multiple [X, Y] coordinate.
+		  </div>
+	
+		  <!-- Table -->
+		  <table class="table">
+              <tr>
+				  <td style="width: 26%">Shape<span class="red-star"> *</span></td>
+				  <td style="width: 4%">:</td>
+				  <td>
+					  <div class="input-group">
+						<span class="input-group-addon">&nbsp;</span>
+                        <select id="shape" class="form-control required">
+                            <option value="rect" <?php if ($shape == "rect") { ?>selected="selected"<?php } ?>>Rectangular</option>
+                            <option value="circle" <?php if ($shape == "circle") { ?>selected="selected"<?php } ?>>Circle</option>
+                            <option value="poly" <?php if ($shape == "poly") { ?>selected="selected"<?php } ?>>Polygon</option>
+                        </select>
+					  </div>
+				  </td>
+			  </tr>
+              <tr>
+				  <td>Coordinate<span class="red-star"> *</span></td>
+				  <td>:</td>
+				  <td>
+					  <div id="coordinate_rect" class="input-group" <?php if ($shape == "rect") { ?>style="display: block;"<?php } else { ?>style="display: none;"<?php } ?>>
+                            Top-Left: <input type="text" name="top_left" id="top_left" value="<?php echo $MDL->getTopLeft(); ?>" class="required" maxlength="37" placeholder="X, Y" > &nbsp;
+                            Bottom-Right: <input type="text" name="bottom_right" id="bottom_right" value="<?php echo $MDL->getBottomRight(); ?>" class="required" maxlength="37" placeholder="X, Y" >
+					  </div>
+                      <div id="coordinate_circle" class="input-group" <?php if ($shape == "circle") { ?>style="display: block;"<?php } else { ?>style="display: none;"<?php } ?>>
+                            Radius: <input type="text" name="radius" id="radius" value="<?php echo $MDL->getRadius(); ?>" class="required" maxlength="18" placeholder="R" > &nbsp;
+                            Center: <input type="text" name="center" id="center" value="<?php echo $MDL->getCenter(); ?>" class="required" maxlength="37" placeholder="X, Y" >
+					  </div>
+                      <div id="coordinate_poly" class="input-group" <?php if ($shape == "poly") { ?>style="display: block;"<?php } else { ?>style="display: none;"<?php } ?>>
+                            Multiple X, Y: <input type="text" name="coordinate" id="coordinate" value="<?php echo $MDL->getCoordinate(); ?>" class="required" maxlength="255" placeholder="X, Y, X, Y, X, Y, X, Y, X, Y .." style="width: 666px;" > &nbsp;
+					  </div>
+				  </td>
+			  </tr>
+		  </table>
+	  </div>
+	  <!-- /panel -->
+	  
+	  <button type="button" class="btn btn-primary" id="btnUpdate">Save</button>&nbsp;
+	  <button type="button" class="btn btn-primary" id="btnBack">Back</button>
+	
+	  <?php include_once ("footer.inc.php"); ?>
+	
+	</div> 
+    <!-- /container -->
+	
+    <div id="processing" style="visibility: hidden;">
+        <p>
+            <div id="elx"></div> 
+        </p>        
+    </div>
+    
+	<input type="hidden" id="id" value="<?php echo $MDL->getId(); ?>">
+    <input type="hidden" id="obj" value="">
+    <input type="hidden" id="map" value="">
+	
+	<div id="input-alert" title="Alert">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin: 0 7px 50px 0;"></span>
+            <span id="alert-message">&nbsp;</span> 
+            <br />            
+        </p>        
+    </div>
+	
+	<div id="input-success" title="Notification">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-info" style="float:left; margin: 0 7px 50px 0;"></span>
+            <span>Data was updated successfully.</span>
+			<br />            
+        </p>        
+    </div>
+	
+	<div id="input-error" title="Error">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin: 0 7px 50px 0;"></span>
+            <span>Failed to update.</span>
+			<br />
+			<span id="error-message">&nbsp;</span>
+            <br />            
+        </p>        
+    </div>
+    
+    <div id="view-alert" title="Notification">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-info" style="float:left; margin: 0 7px 50px 0;"></span>
+            <span>This will open the map on a new tab.</span>
+            <br />
+			<span>You can use the map to get the coordinate.</span>
+            <br />
+			<span>Click OK to continue.</span>
+        </p>        
+    </div>
+	
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<?php include_once ("header.inc.php"); ?>
+	
+	<link href="../css/themes/cupertino/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="../css/chpass.css" rel="stylesheet" type="text/css" />	
+	
+	<script type="text/javascript" src="../script/jquery/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../script/jquery/jquery-ui-1.10.2.custom.min.js"></script>
+    <script type="text/javascript" src="../script/chpass.js"></script>
+	
+</head>
+  
+  <body data-spy="scroll" data-target=".subnav" data-offset="50" screen_capture_injected="true">
+  
+    <?php include_once ("top.inc.php"); ?>
+	
+	<div class="container">
+		
+		<ol class="breadcrumb">
+			<li><a href="/index.html">Home</a></li>
+			<li class="active">Change Password</li>
+		</ol>
+	  
+	  <div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">Change Password</div>
+	
+		   <!-- Table -->
+		  <table class="table">			  
+			  <tr>
+				  <td style="width: 26%">Current Password</td>
+				  <td style="width: 4%">:</td>
+				  <td>
+					  <div class="input-group">						
+						<input type="password" class="reg_input" id="old_passwd" name="old_passwd" maxlength="1024" />
+					  </div>
+				  </td>
+			  </tr>
+			  <tr>
+				  <td>New Password</td>
+				  <td>:</td>
+				  <td>
+					  <div class="input-group">						
+						<input type="password" class="reg_input" id="new_passwd" name="new_passwd" maxlength="1024" />
+					  </div>
+				  </td>
+			  </tr>
+			  <tr>
+				  <td>Re-type New Password</td>
+				  <td>:</td>
+				  <td>
+					  <div class="input-group">				
+						<input type="password" class="reg_input" id="new_passwd_confirm" name="new_passwd_confirm" maxlength="1024" />
+					  </div>
+				  </td>
+			  </tr>
+		  </table>
+		  
+	  </div>
+	  <!-- /panel -->
+	  
+	  <button type="button" class="btn btn-primary" id="btnSave">Save</button>&nbsp;
+	  
+	  <?php include_once ("footer.inc.php"); ?>
+	
+	</div> 
+    <!-- /container -->
+	
+	<input type="hidden" id="obj" value="">
+	
+	<div id="input-alert" title="Change Password">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin: 0 7px 50px 0;"></span>
+            <span id="alert-message">&nbsp;</span> 
+            <br />            
+        </p>        
+    </div>
+	
+	<div id="input-success" title="Change Password">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-info" style="float:left; margin: 0 7px 50px 0;"></span>
+            <span>Password was changed successfully.</span>
+			<br />			
+        </p>        
+    </div>
+	
+	<div id="input-error" title="Change Password">
+        <br />
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin: 0 7px 50px 0;"></span>
+            <span>Failed to changed.</span>
+			<br />
+			<span id="error-message">&nbsp;</span>
+            <br />            
+        </p>        
+    </div>
+	
+ </body>
+</html>				

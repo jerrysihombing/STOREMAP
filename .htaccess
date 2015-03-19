@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2&cmd=$3&type=$4&brand=$5&id=$6 [L]
+RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2&cmd=$3&type=$4&id=$5 [L]
+RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2&cmd=$3&id=$4 [L]
+RewriteRule ^([^/]*)/([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2&id=$3 [L]
+RewriteRule ^([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2 [L]
+RewriteRule ^([^/]*)\.html$ /?op=$1 [L]

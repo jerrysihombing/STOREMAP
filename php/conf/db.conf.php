@@ -1,0 +1,11 @@
+<?php
+#host=localhost
+#dbname=storemap
+#user=storemap
+#pass=storemapteam
+#uploaddir=/Users/user/Data/Appl/STOREMAP/map
+#uploaddir2=/Users/user/Data/Appl/STOREMAP/upload
+#logdir=/Users/user/Data/Appl/STOREMAP/log
+#backupdir=/Users/user/Data/Appl/STOREMAP/backup
+#webservice=http://venditore.yogya.com/ws
+?>

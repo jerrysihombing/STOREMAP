@@ -1,0 +1,180 @@
+/* CSS Document */
+
+.ui-front {
+	z-index:1000000 !important; /* The default is 100. !important overrides the default. */
+}
+.ui-icon-closethick { margin-top: -8px !important; margin-left: -8px !important; }
+.ui-dialog {font-size: 85%;}
+.ui-widget-overlay { background: url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+
+.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
+	overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
+	width: 100%;
+	/*margin-top:10px;*/
+	margin-bottom:6px;
+	/*border:1px solid #FF0000;*/
+}
+
+.ml-btn-add {
+	margin-left: 990px;
+}
+
+.reg_input {
+	border:1px solid #92ABDB;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.red_star {
+	color: #FF0000;  
+}
+
+.red_star_text {
+	color: #FF0000; 
+	font-style: italic;
+}
+
+
+#validate-tips-7 {
+	float:left;
+	width:90%;
+	min-height:33px;
+	height:auto !important;
+	height:33px;
+	margin-left:40px;
+	/*border:1px solid yellow;*/
+}
+
+#validate-tips-6 {
+	float:left;
+	width:90%;
+	min-height:33px;
+	height:auto !important;
+	height:33px;
+	margin-left:40px;
+	/*border:1px solid yellow;*/
+}
+
+#validate-tips-5 {
+	float:left;
+	width:90%;
+	min-height:33px;
+	height:auto !important;
+	height:33px;
+	margin-left:40px;
+	/*border:1px solid yellow;*/
+}
+
+#validate-tips-4 {
+	float:left;
+	width:90%;
+	min-height:33px;
+	height:auto !important;
+	height:33px;
+	margin-left:40px;
+	/*border:1px solid yellow;*/
+}
+
+#validate-tips-3 {
+	float:left;
+	width:90%;
+	min-height:33px;
+	height:auto !important;
+	height:33px;
+	margin-left:40px;
+	/*border:1px solid yellow;*/
+}
+
+#validate-tips-2 {
+	float:left;
+	width:90%;
+	min-height:33px;
+	height:auto !important;
+	height:33px;
+	margin-left:40px;
+	/*border:1px solid yellow;*/
+}
+
+#validate-tips {
+	float:left;
+	width:70%;
+	min-height:33px;
+	height:auto !important;
+	height:33px; 
+	/*border:1px solid yellow;*/
+}
+
+.validate_init {
+	/*border:1px solid red;*/
+}
+
+.validate_proccess {
+	color:#f87600;
+	background:url(../images/loading_20.gif) no-repeat left;
+	/*border:1px solid red;*/	
+}
+
+.validate_done {
+	color:#588e0f;
+	/*color:#4fbb10;*/
+	background:url(../images/circle-check_24.png) no-repeat left;	
+}
+
+.validate_error {
+	color:#cc2d25;
+	background:url(../images/circle-delete_24.png) no-repeat left;	
+}
+
+.validate_warning {
+	color:#e6b30b;
+	background:url(../images/circle-alert_24.png) no-repeat left;	
+}
+
+.dataTables_wrapper { width:100% !important; }
+#tbl_user { width:100% !important; }
+#tbl_user th { padding:5px 10px; }
+#tbl_user td { padding:5px 10px; background:#fff; border-bottom:1px solid #d0d0d0; }
+#tbl_role { width:100% !important; }
+#tbl_role th { padding:5px 10px; }
+#tbl_role td { padding:5px 10px; background:#fff; border-bottom:1px solid #d0d0d0; }		
+#tbl_assign_role { width:100% !important; margin-top: 30px; margin-bottom: 20px; }
+#tbl_assign_role th { padding:5px 10px; }
+#tbl_assign_role td { padding:5px 10px; border-bottom:1px solid #d0d0d0; }    
+#tbl_backup { width:100% !important; margin-top: 30px; }
+#tbl_backup th { padding:5px 10px; border-top:3px solid #E67817; border-bottom:none; background-color:#FFCC66; }
+#tbl_backup td { padding:5px 10px; background:#fff; border-bottom:1px solid #d0d0d0; }
+#tbl_backup_2 { width:100% !important; }
+#tbl_backup_2 th { padding:5px 10px; border-top:3px solid #E67817; border-bottom:none; background-color:#FFCC66; }
+#tbl_backup_2 td { padding:5px 10px; background:#fff; border-bottom:1px solid #d0d0d0; }
+#tbl_backup_3 { width:100% !important; }
+#tbl_backup_3 th { padding:5px 10px; }
+#tbl_backup_3 td { padding:5px 10px; background:#fff; border-bottom:1px solid #d0d0d0; }
+
+#tbl_add_user { width:92% !important; margin:0 0 0 15px; }
+#tbl_add_user th { padding:5px 10px; }
+#tbl_add_user td { padding:5px 10px; border-bottom:1px solid #d0d0d0; }
+#tbl_edit_user { width:92% !important; margin:0 0 0 15px; }
+#tbl_edit_user th { padding:5px 10px; }
+#tbl_edit_user td { padding:5px 10px; border-bottom:1px solid #d0d0d0; }
+#tbl_add_user tr:last-child td {border: none;}
+#tbl_edit_user tr:last-child td {border: none;}
+
+#tbl_add_role { width:92% !important; margin:0 0 0 15px; }
+#tbl_add_role th { padding:5px 10px; }
+#tbl_add_role td { padding:5px 10px; border-bottom:1px solid #d0d0d0; }
+#tbl_edit_role { width:92% !important; margin:0 0 0 15px; }
+#tbl_edit_role th { padding:5px 10px; }
+#tbl_edit_role td { padding:5px 10px; border-bottom:1px solid #d0d0d0; }
+#tbl_add_role tr:last-child td {border: none;}
+#tbl_edit_role tr:last-child td {border: none;}
+	
+#btn_lov { width:24px !important; height:24px !important; margin-left:2px; margin-top:-2px;}
+.ui-tabs {  font-size:12px !important; width:100%; } 
+.ui-tabs .ui-tabs-nav li { width:150px;  }
+#validate-tips-2 { margin-left:2px !important; }
+
+.input_ro {
+	background: none;
+	background-color: #FFFFDD !important;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Store Map</title>
+    
+    <script type="text/javascript" src="script/jquery/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="script/jquery/jquery.maphilight.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            
+            $(".map").maphilight({
+                stroke: false
+            });
+        
+        });
+        
+    </script>
+    
+</head>
+
+<body>
+
+    <div>
+        
+        
+        <img class="map" id="denahId" src="map/LAYOUT_FIX_1742014-FASHION_CIWALK_LG.png" alt="map" border="0" usemap="#denah" >
+            
+        <map name="denah" id="denah">
+            
+        <?php
+            for ($i = 0; $i < sizeof($data); $i++) {
+                $code = $data[$i]["code"];
+                $shape = $data[$i]["shape"];
+                $coordinate = "";
+                if ($shape == "rect") {
+                    $coordinate = $data[$i]["top_left"] . ", " . $data[$i]["bottom_right"];
+                }
+                else if ($shape == "circle") {
+                    $coordinate = $data[$i]["center"] . ", " . $data[$i]["radius"];
+                }
+                else if ($shape == "poly") {
+                    $coordinate = $data[$i]["coordinate"];
+                }
+        ?>
+            <area shape="<?php echo $shape; ?>" coords="<?php echo $coordinate; ?>" alt="<?php echo $code; ?>" >
+        <?php
+            }
+        ?>
+            
+        </map>
+        
+    </div>
+        
+    <?php
+        for ($i = 0; $i < sizeof($data); $i++) {
+            
+            echo '<script type="text/javascript">';
+            echo 'var data = {};';
+            echo 'data.alwaysOn = true;';
+            echo 'data.fillColor = "' . $data[$i]["init_color"] . '";';
+            echo 'data.fillOpacity = "0.6";';
+            echo '$("area[alt=\'' . $data[$i]["code"] . '\']").data("maphilight", data).trigger("alwaysOn.maphilight");';
+            echo '</script>';
+            
+        }
+    ?>
+    
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Yogya Map Intelligence - Report by Map</title>
+    
+    <link href="../../../../css/jquery.qtip.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <style>
+        .qtip-titlebar {
+            font-size:14px;
+        }
+        .qtip-content {
+            font-size:14px;
+        }
+    </style>
+    
+    <script type="text/javascript" src="../../../../script/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../../script/jquery/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="../../../../script/jquery/jquery.maphilight.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            
+            $(".map").maphilight({
+                stroke: false
+            });
+            
+            $(".areaTip").qtip({
+                content: {
+                    text: function(event, api) {
+                        var alt = $(this).prop("alt");
+                        var aCode = alt.split("#");
+                        var brand = (aCode[1] != null ? aCode[1] : "-1");
+                        var data = (aCode[2] != null ? aCode[2] : "-1");
+                        var type = (aCode[3] != null ? aCode[3] : "-1");
+                        var id = (aCode[4] != null ? aCode[4] : "-1");
+                        
+                        // replace space with '~'
+                        brand = brand.replace(/ /g, "~");
+                        
+                        var theUrl = 'http://' + '<?php echo $hostname; ?>' + '/report/info/' + data + "/" + type + "/" + brand + "/" + id + ".html";
+                        $.ajax({ url: theUrl })
+                            .done(function(html) {
+                                api.set('content.text', html)
+                            })
+                            .fail(function(xhr, status, error) {
+                                api.set('content.text', status + ': ' + error)
+                            })
+            
+                        return 'Loading...';
+                    },
+                    title: function(event, api) {
+                        // Retrieve content from ALT attribute of the $('.selector') element
+                        var alt = $(this).prop("alt");
+                        var aCode = alt.split("#");
+                        var code1 = (aCode[0] != null ? aCode[0] : "");
+                        var code2 = (aCode[1] != null ? aCode[1] : "");
+                        
+                        return (code2 != "" ? code2 : code1);
+                        //return $(this).prop('alt');
+                    }
+                    //,button: true
+                },
+                /*
+                hide: {
+                        event: false
+                },
+                */
+                position: {
+                    //viewport: $(window)
+                    /*
+                    my: 'top left',
+                    at: 'top left'
+                    */
+                    target: 'mouse'
+                },
+                show: {
+                    effect: function(offset) {
+                        $(this).slideDown(100); // "this" refers to the tooltip
+                    }
+                },
+                style: {
+                    classes: 'qtip-blue qtip-shadow'
+                }
+             });
+   
+        });
+        
+    </script>
+    
+</head>
+
+<body>
+
+    <div>
+        
+        <img class="map" id="denahId" src="../../../../map/<?php echo $MDL->getMapFile(); ?>" alt="map" border="0" usemap="#denah" > <!-- ISMAP -->
+        
+        <map name="denah" id="denah">
+            
+        <?php
+            for ($i = 0; $i < sizeof($data); $i++) {
+                $code = $data[$i]["code"];
+                $shape = $data[$i]["shape"];
+                $brandName = $data[$i]["brand_name"];
+                $coordinate = "";
+                if ($shape == "rect") {
+                    $coordinate = $data[$i]["top_left"] . ", " . $data[$i]["bottom_right"];
+                }
+                else if ($shape == "circle") {
+                    $coordinate = $data[$i]["center"] . ", " . $data[$i]["radius"];
+                }
+                else if ($shape == "poly") {
+                    $coordinate = $data[$i]["coordinate"];
+                }
+                
+                echo $brandName . " " . $coordinate . "<br>";
+        ?>
+            <area class="areaTip" title="this should be a tool tip" shape="<?php echo $shape; ?>" coords="<?php echo $coordinate; ?>" alt="<?php echo $code . '#' . $brandName . '#' . $cmd . '#' . $type . '#' . $id; ?>" >
+        <?php
+            }
+        ?>
+            
+        </map>
+                
+    </div>
+    
+    <?php
+    
+        for ($i = 0; $i < sizeof($data); $i++) {
+        
+            if ($articleType == -1) {
+                $value = $MDL3->findAmountByBrandMap($data[$i]["brand_name"], $id);
+            }
+            else {
+                $value = $MDL3->findAmountByBrandTypeMap($data[$i]["brand_name"], $articleType, $id);
+            }
+            $color = $MDL4->findColor($value);
+                 
+            if ($color == "") $color = $data[$i]["init_color"];
+            
+            echo '<script type="text/javascript">';
+            echo 'var data = {}; ';
+            echo 'data.alwaysOn = true; ';
+            echo 'data.fillColor = "' . $color . '"; ';
+            echo 'data.fillOpacity = "0.6"; ';
+            echo '$("area[alt=\'' . $data[$i]["code"] . "#" . $data[$i]["brand_name"] . '#' . $cmd . '#' . $type . '#' . $id . '\']").data("maphilight", data).trigger("alwaysOn.maphilight"); ';
+            echo '</script>';
+        }
+    ?>
+        
+</body>
+</html>
