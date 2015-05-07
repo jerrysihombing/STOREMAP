@@ -8,6 +8,7 @@
  */
 
 require_once (dirname(__FILE__) . "/../model/Brand.php");
+require_once (dirname(__FILE__) . "/../model/Division.php");
 
 class BrandController extends GlobalController {
 
@@ -24,6 +25,9 @@ class BrandController extends GlobalController {
 		$role = $this->getSessionItem("role");
 		$branch_code = $this->getSessionItem("branch_code");
 		
+		$DV = new Division();
+		$divisionData = $DV->loadAll();
+				
 		switch ($ac) {			
 			
 			case "":
@@ -31,6 +35,12 @@ class BrandController extends GlobalController {
 				$this->checkFirst();			
 				$this->isOperAllowable($a_auth, 151);
 				$createAllowable = $this->isAllow($a_auth, 152);
+				$uploadAllowable = $this->isAllow($a_auth, 155);
+				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$optDivision .= "<option values='" . $divisions["name"] . "'>" . $divisions["name"] . "</option>";	
+				}
 				
 				include_once("html/brand_list.html");
 				
@@ -40,7 +50,20 @@ class BrandController extends GlobalController {
 				$this->checkFirst();			
 				$this->isOperAllowable($a_auth, 152);
 				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$optDivision .= "<option values='" . $divisions["name"] . "'>" . $divisions["name"] . "</option>";	
+				}
+				
 				include_once("html/brand_add.html");
+				
+				break;
+			
+			case "upload":
+				$this->checkFirst();			
+				$this->isOperAllowable($a_auth, 155);
+		
+				include_once("html/brand_upload.html");
 				
 				break;
 			
@@ -53,6 +76,21 @@ class BrandController extends GlobalController {
 				$MDL->load($id);
 				
 				include_once("html/brand_edit.html");
+				
+				break;
+			
+			case "dwform-brand":
+				include_once(dirname(__FILE__) . "/../exe/dw_form.php");
+				exit;
+				
+				break;
+			
+			case "dwlog":
+				$id = $this->getItem("id");
+				$id = str_replace("-", "/", $id);
+				
+				include_once(dirname(__FILE__) . "/../exe/dw_form.php");
+				exit;
 				
 				break;
 

@@ -3,9 +3,12 @@
 	@session_start();
 	$a_auth = $_SESSION["a_auth"];
 	$branch_code = $_SESSION["branch_code"];
+	$store_code = $_SESSION["store_code"];
 	$userId = $_SESSION["user_id"];
+	$init = $_SESSION["salesListInit"];
 	
 	require_once(dirname(__FILE__) . "/../util/ConfigReader.php");
+	require_once(dirname(__FILE__) . "/../model/Site.php");
 	
 	# 31-07-2008 -> 2008-07-31
 	function toYmdDate($v) {
@@ -15,15 +18,17 @@
 		return substr($v, 6, 4) . "-" . substr($v, 3, 2)  . "-" . substr($v, 0, 2);
 	}
 	
+	$ST = new Site();
+	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * Easy set variables
 	 */
 	
 	/* Array of database columns which should be read and sent back to DataTables */
-	$aColumns = array('trans_date', 'brand_name', 'article_type', 'quantity', 'amount', 'store_init');
+	$aColumns = array('trans_date_f', 'brand_name', 'division', 'qty_f', 'amount_f', 'store_init');
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
-	$sIndexColumn = "id";
+	$sIndexColumn = "trans_date";
 	
 	$CR = new ConfigReader("db.conf.php");
 	
@@ -72,20 +77,19 @@
 				
 				# check for date field				
 				if (intval($_GET['iSortCol_'.$i]) == 0) { 
-					$sOrder .= "trans_date_ori " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", "; # format by original date field
+					$sOrder .= "trans_date " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", "; # format by original date field
 				}
 				# numeric
 				else if (intval($_GET['iSortCol_'.$i]) == 3) { 
-					$sOrder .= "quantity_ori " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", "; 
+					$sOrder .= "qty " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", "; 
 				}
 				# currency
 				else if (intval($_GET['iSortCol_'.$i]) == 4) { 
-					$sOrder .= "amount_ori " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", "; 
+					$sOrder .= "amount " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", "; 
 				}
 				else {
 					$sOrder .= $aColumns[ intval( $_GET['iSortCol_'.$i] ) ] . " " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", ";
 				}
-				
 			}
 		}
 		
@@ -115,11 +119,14 @@
 	#	$sWhere .= ')';
 	#}
 	
+	$allowedLoading = false;
+	
 	# using my custom single search
 	$sWhere = "";
 	if ( isset($_GET['sSearch']) && $_GET['sSearch'] != "" )
 	{
-		$sWhere = " AND brand_name like '%" . $_GET['sSearch'] . "%'";		
+		$sWhere = " AND trans_date = current_date AND brand_name like '%" . $_GET['sSearch'] . "%'";
+		$allowedLoading = true;
 	}
 	
 	# using my custom advance search
@@ -130,55 +137,72 @@
 		if ( isset($_GET['s_start_date']) && $_GET['s_start_date'] != "" )
 		{
 				if ( isset($_GET['s_end_date']) && $_GET['s_end_date'] != "" ) {
-					$sWhere .= " AND date_format(trans_date_ori, '%Y-%m-%d') between '" . toYmdDate($_GET['s_start_date']) . "' and '" . toYmdDate($_GET['s_end_date']) . "'";	
+					$sWhere .= " AND trans_date between '" . toYmdDate($_GET['s_start_date']) . "' and '" . toYmdDate($_GET['s_end_date']) . "'";	
 				}
 				else {
-					$sWhere .= " AND trans_date = '" . $_GET['s_start_date'] . "'";	
+					$sWhere .= " AND trans_date = '" . toYmdDate($_GET['s_start_date']) . "'";	
 				}
 		}
 		else {
 			if ( isset($_GET['s_end_date']) && $_GET['s_end_date'] != "" ) {
-				$sWhere .= " AND trans_date = '" . $_GET['s_end_date'] . "'";	
+				$sWhere .= " AND trans_date = '" . toYmdDate($_GET['s_end_date']) . "'";	
 			}
 		}
 		
 		if ( isset($_GET['s_brand_name']) && $_GET['s_brand_name'] != "" )
 		{
 			$sWhere .= " AND brand_name = '" . $_GET['s_brand_name'] . "'";		
-		}	
+		}
 		
+		if ( isset($_GET['s_division']) && $_GET['s_division'] != "" )
+		{
+			$sWhere .= " AND division = '" . $_GET['s_division'] . "'";		
+		}	
+		/*
 		if ( isset($_GET['s_article_type']) && $_GET['s_article_type'] != "" )
 		{
 			$sWhere .= " AND article_type = '" . $_GET['s_article_type'] . "'";		
 		}
-		
+		*/
 		if ( isset($_GET['s_store_init']) && $_GET['s_store_init'] != "" )
 		{
-			$sWhere .= " AND store_init = '" . $_GET['s_store_init'] . "'";		
+			$sWhere .= " AND store_init = '" . $ST->storeGetCode($_GET['s_store_init']). "'";		
 		}
 		
+		$allowedLoading = true;
+		
 	}
-
+	
 	/*
 	 * SQL queries
 	 * Get data to display
 	 */
-	
-	$wBranch = ($userId == "admin" ? "" : " where store_init = '" . $branch_code . "'");
-	
-	$table = 	"select id, date_format(trans_date, '%d-%m-%Y') trans_date, trans_date trans_date_ori, brand_name, case when article_type = 1 then 'Obral' else 'Normal' end article_type, format(quantity, 0) quantity, quantity quantity_ori, format(amount, 0) amount, amount amount_ori, store_init " .
-			 	"from trn_sales" . $wBranch;
-			 
-	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, trans_date, brand_name, article_type, quantity, amount, store_init " .
-				"FROM (" . $table . ") t WHERE 1 = 1 " . 
-				$sWhere . " " .
-				$sOrder . " " .
-				$sLimit;
+	if ($init || !$allowedLoading) {
+		$table = 	"select '' trans_date_f, '' trans_date, '' brand_name, '' division, ''  qty_f, '' qty, '' amount_f, '' amount, '' store_init ";
+		$sQuery =   $table;	
+	}
+	else {
+		$wBranch = ($userId == "admin" ? "where 1=1" : "where store_init = '" . $store_code . "'");
+		
+		$table =	"select trans_date, brand_name, division, qty, amount, store_init " .
+					"from trn_sales_by_brand " .
+					$wBranch;
+		
+		$sQuery = 	"select SQL_CALC_FOUND_ROWS date_format(trans_date, '%d-%m-%Y') trans_date_f, trans_date, brand_name, division, " .
+					"format(qty, 0) qty_f, qty, format(amount, 0) amount_f, amount, store_init " .
+					"from trn_sales_by_brand " .
+					$wBranch . " " .
+					$sWhere . " " .
+					$sOrder . " " .
+					$sLimit;
+	}
 	
 	# debuging
-	#$handle = fopen("/tmp/test.log", "a");
-	#fwrite($handle, $sQuery);
-	#fclose($handle);	
+	/*
+	$handle = fopen("/tmp/test.txt", "w");
+	fwrite($handle, $sQuery);
+	fclose($handle);	
+	*/
 	# eo debuging
 		
 	$rResult = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
@@ -190,7 +214,7 @@
 	$iFilteredTotal = $aResultFilterTotal[0];
 	
 	/* Total data set length */
-	$sQuery = "SELECT COUNT(id) FROM (" . $table . ") t";
+	$sQuery = "SELECT COUNT(1) FROM (" . $table . ") t";
 	$rResultTotal = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
 	$aResultTotal = mysql_fetch_array($rResultTotal);
 	$iTotal = $aResultTotal[0];
@@ -213,7 +237,15 @@
 			if ( $aColumns[$i] != ' ' )
 			{
 				/* General output */
-				$row[] = $aRow[ $aColumns[$i] ];
+				#$row[] = $aRow[ $aColumns[$i] ];
+				
+				if ($aColumns[$i] == "store_init") {
+					$row[] = ($userId == "admin" ? $ST->storeGetInit($aRow[$aColumns[$i]]) : ($init || !$allowedLoading ? "" : $branch_code));
+				}
+				else {
+					$row[] = $aRow[ $aColumns[$i] ];	
+				}
+				
 			}
 		}
 		
@@ -223,7 +255,7 @@
 		 * database - you can do it here
 		 */		 
 		# --- my code to make edit and delete functionality --- #		
-		
+		/*
 		if ($CR->is_oper_allowable(143, $a_auth)) {
 			$row[] = "<a href='/sales/edit/" . $aRow["id"] . ".html'><img src='../images/edit_24.png' title='Edit'></a>";
 		}
@@ -232,12 +264,12 @@
 		}	
 		
 		if ($CR->is_oper_allowable(144, $a_auth)) {
-			$row[] = "<span title='Click here to delete..' style='cursor:pointer' onclick='deleteAlert(" . $aRow["id"] . ", \"" . $aRow["trans_date"] . "\", \"" . $aRow["brand_name"] . "\", \"" . $aRow["article_type"] . "\", \"" . $aRow["store_init"] . "\")'><img src='../images/delete_24.png' /></span>";					
+			$row[] = "<span title='Click here to delete..' style='cursor:pointer' onclick='deleteAlert(" . $aRow["id"] . ", \"" . $aRow["trans_date"] . "\", \"" . $aRow["brand_name"] . "\", \"" . $aRow["division"] . "\", \"" . $aRow["article_type"] . "\", \"" . $aRow["store_init"] . "\")'><img src='../images/delete_24.png' /></span>";					
 		}
 		else {
 			$row[] = "&nbsp;";
 		}
-		
+		*/
 		# --- eo my code --- #
 				
 		$output['aaData'][] = $row;				

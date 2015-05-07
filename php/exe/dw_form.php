@@ -5,7 +5,7 @@
 			header('Content-disposition: attachment; filename=article_sample.xls');
 			#header('Content-type: application/vnd.ms-excel');
 			header('Content-type: application/octet-stream');
-			readfile('upload/article_sample.xls');					
+			readfile('sample/article_sample.xls');					
 
 			break;
 		
@@ -13,7 +13,15 @@
 			header('Content-disposition: attachment; filename=sales_sample.xls');
 			#header('Content-type: application/vnd.ms-excel');
 			header('Content-type: application/octet-stream');
-			readfile('upload/sales_sample.xls');					
+			readfile('sample/sales_sample.xls');					
+
+			break;
+		
+		case "dwform-brand":
+			header('Content-disposition: attachment; filename=brand_sample.xls');
+			#header('Content-type: application/vnd.ms-excel');
+			header('Content-type: application/octet-stream');
+			readfile('sample/brand_sample.xls');					
 
 			break;
 		

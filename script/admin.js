@@ -22,7 +22,7 @@ $(function() {
 	$("#role_add").dialog({
 		modal: true,
 		autoOpen: false,
-		height:600,
+		height:540,
 		width:620,
 		resizable: false,
 		buttons: {
@@ -106,7 +106,7 @@ $(function() {
 	$("#role_edit").dialog({
 		modal: true,
 		autoOpen: false,
-		height:600,
+		height:540,
 		width:620,
 		resizable: false,
 		buttons: {

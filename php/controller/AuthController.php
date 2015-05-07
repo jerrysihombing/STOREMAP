@@ -44,6 +44,7 @@ class AuthController extends GlobalController {
 
 			case "authentication":
 				require_once (dirname(__FILE__) . "/../model/RoleManager.php");
+				require_once (dirname(__FILE__) . "/../model/Site.php");
 				
 				$user_id = $this->getPostItem("user_id");
 				$passwd = $this->getPostItem("passwd");
@@ -51,7 +52,11 @@ class AuthController extends GlobalController {
 				if ($UM->isValidUser($user_id, $passwd)) {	
 				
 					$strdate = date("Y-m-d H:i:s");					
-					$UM->loadByUserId($user_id);					
+					$UM->loadByUserId($user_id);
+					
+					$ST = new Site();
+					$storeInfo = $ST->storeLoad($UM->getBranchCode());
+					$storeCode = (isset($storeInfo["store_code"]) ? $storeInfo["store_code"] : "");
 				
 					$RM = new RoleManager();
 					$a_auth = $RM->loadDetailByName($UM->getRoleName());					
@@ -59,6 +64,7 @@ class AuthController extends GlobalController {
 					$this->setSessionItem("user_id", $user_id);
 					$this->setSessionItem("user_name", $UM->getUserName());
 					$this->setSessionItem("branch_code", $UM->getBranchCode());
+					$this->setSessionItem("store_code", $storeCode);
 					$this->setSessionItem("role", $UM->getRoleName());
 					$this->setSessionItem("a_auth", $a_auth);
 										

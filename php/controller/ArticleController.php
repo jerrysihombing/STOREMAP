@@ -9,6 +9,7 @@
  
 require_once (dirname(__FILE__) . "/../model/Brand.php");
 require_once (dirname(__FILE__) . "/../model/Article.php");
+require_once (dirname(__FILE__) . "/../model/Division.php");
 
 class ArticleController extends GlobalController {
 
@@ -26,7 +27,10 @@ class ArticleController extends GlobalController {
 		$branch_code = $this->getSessionItem("branch_code");
 		
 		$BR = new Brand();
-		$data = $BR->loadAll();
+		$data = $BR->loadDistinctName();
+		
+		$DV = new Division();
+		$divisionData = $DV->loadAll();
 		
 		switch ($ac) {			
 			
@@ -37,9 +41,16 @@ class ArticleController extends GlobalController {
 				$createAllowable = $this->isAllow($a_auth, 162);
 				$uploadAllowable = $this->isAllow($a_auth, 165);
 				
+				$this->setSessionItem("articleListInit", 1);
+				
 				$optBrand = "";
 				foreach ($data as $brands) {
 					$optBrand .= "<option values='" . $brands["name"] . "'>" . $brands["name"] . "</option>";	
+				}
+				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$optDivision .= "<option values='" . $divisions["name"] . "'>" . $divisions["name"] . "</option>";	
 				}
 				
 				include_once("html/article_list.html");
@@ -54,7 +65,12 @@ class ArticleController extends GlobalController {
 				foreach ($data as $brands) {
 					$optBrand .= "<option values='" . $brands["name"] . "'>" . $brands["name"] . "</option>";	
 				}		
-		
+				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$optDivision .= "<option values='" . $divisions["name"] . "'>" . $divisions["name"] . "</option>";	
+				}
+				
 				include_once("html/article_add.html");
 				
 				break;
@@ -79,6 +95,12 @@ class ArticleController extends GlobalController {
 				foreach ($data as $brands) {
 					$sel = ($MDL->getBrandName() == $brands["name"] ? "selected='selected'" : "");
 					$optBrand .= "<option values='" . $brands["name"] . "' " . $sel . ">" . $brands["name"] . "</option>";	
+				}
+				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$sel = ($MDL->getDivision() == $divisions["name"] ? "selected='selected'" : "");
+					$optDivision .= "<option values='" . $divisions["name"] . "' " . $sel . ">" . $divisions["name"] . "</option>";	
 				}
 				
 				include_once("html/article_edit.html");

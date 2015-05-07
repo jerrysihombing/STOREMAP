@@ -1,0 +1,20 @@
+Trying to read excel file by admin at Mar 24, 2015, 9:21 am.
+Trying to make database connection.
+..connected.
+
+1st sheet is consist of 12 rows.
+..insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date) values ('2015-02-24', 'JOBB', '0', '193', '47000800', 'YCW', 'admin', '2015-03-24 09:21:01').
+..insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date) values ('2015-02-24', 'JOBB', '1', '0', '0', 'YCW', 'admin', '2015-03-24 09:21:01').
+..insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date) values ('2015-02-24', 'JOSEPH LAURIN', '0', '43', '11204400', 'YCW', 'admin', '2015-03-24 09:21:01').
+..insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date) values ('2015-02-24', 'JOSEPH LAURIN', '1', '2009', '231857450', 'YCW', 'admin', '2015-03-24 09:21:01').
+..insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date) values ('2015-02-24', 'FELANCY', '0', '3698', '276950200', 'YCW', 'admin', '2015-03-24 09:21:01').
+..insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date) values ('2015-02-24', 'FELANCY', '1', '2694', '275465000', 'YCW', 'admin', '2015-03-24 09:21:01').
+..insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date) values ('2015-02-24', 'SIMPLICITY', '0', '2407', '498733450', 'YCW', 'admin', '2015-03-24 09:21:01').
+..insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date) values ('2015-02-24', 'SIMPLICITY', '1', '410', '46729950', 'YCW', 'admin', '2015-03-24 09:21:01').
+read 1st sheet done.
+
+Done.
+Finish the job at Mar 24, 2015, 9:21 am.
+
+Close database connection.
+Leave procedure.

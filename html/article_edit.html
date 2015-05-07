@@ -77,6 +77,7 @@
                           </div>
                   </td>
 			  </tr>
+			  <!--
 			  <tr>
 				  <td>Article Code</td>
 				  <td>:</td>
@@ -87,6 +88,7 @@
                           </div>
                   </td>
 			  </tr>
+			  -->
               <tr>
 				  <td>Description</td>
 				  <td>:</td>
@@ -106,6 +108,19 @@
                             <select id="brand_name" name="brand_name" class="form-control required">
 								<option value="">Select brand name</option>
 								<?php echo $optBrand; ?>
+							</select>
+                          </div>
+                  </td>
+			  </tr>
+			  <tr>
+				  <td>Division<span class="red-star"> *</span></td>
+				  <td>:</td>
+				  <td>
+                        <div class="input-group">
+                            <span class="input-group-addon">&nbsp;</span>
+                            <select id="division" name="division" class="form-control required">
+								<option value="">Select division</option>
+								<?php echo $optDivision; ?>
 							</select>
                           </div>
                   </td>

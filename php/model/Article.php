@@ -22,6 +22,7 @@ class Article {
 	private $_articleCode;
 	private $_description;
 	private $_brandName;
+	private $_division;
 	private $_storeInit;
 	
 	private $_createdBy;
@@ -50,6 +51,7 @@ class Article {
 			$this->_description = $this->_mysqli->real_escape_string($this->_description);
 			$this->_brandName = $this->_mysqli->real_escape_string($this->_brandName);
 			$this->_storeInit = $this->_mysqli->real_escape_string($this->_storeInit);
+			$this->_division = $this->_mysqli->real_escape_string($this->_division);
 		}
 		catch (Exception $e) {
 			# do nothing
@@ -94,6 +96,7 @@ class Article {
 			$this->_createdDate = $row["created_date"];
 			$this->_lastUser = $row["last_user"];
 			$this->_lastUpdate = $row["last_update"];
+			$this->_division = $row["division"];
 		}
 		
 		$res->close();
@@ -125,7 +128,8 @@ class Article {
 					$this->_brandName . "', '" .
 					$this->_storeInit . "', '" .
 					$this->_lastUser . "', '" .
-					$this->_lastUpdate . 
+					$this->_lastUpdate . "', '" .
+					$this->_division .
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -147,7 +151,8 @@ class Article {
 					$this->_brandName . "', '" .
 					$this->_storeInit . "', '" .
 					$this->_createdBy . "', '" .
-					$this->_createdDate . 
+					$this->_createdDate . "', '" .
+					$this->_division .
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -215,6 +220,9 @@ class Article {
 	public function getBrandName() {
 		return $this->_brandName;	
 	}
+	public function getDivision() {
+		return $this->_division;	
+	}
 	public function getStoreInit() {
 		return $this->_storeInit;	
 	}
@@ -251,6 +259,9 @@ class Article {
 	}
 	public function setBrandName($v) {
 		$this->_brandName = $v;	
+	}
+	public function setDivision($v) {
+		$this->_division = $v;	
 	}
 	public function setStoreInit($v) {
 		$this->_storeInit = $v;	

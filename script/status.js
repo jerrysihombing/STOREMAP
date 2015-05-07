@@ -31,6 +31,8 @@ $(function() {
             
             $("#min_value").autoNumeric('init', {aSep: ',', aPad: false, vMax: '999999999999999999'});
             $("#max_value").autoNumeric('init', {aSep: ',', aPad: false, vMax: '999999999999999999'});
+            $("#min_value_wide").autoNumeric('init', {aSep: ',', aPad: false, vMax: '999999999999999999'});
+            $("#max_value_wide").autoNumeric('init', {aSep: ',', aPad: false, vMax: '999999999999999999'});
             
             var vColor = "#" + $("#color").val();
             if (vColor == "") {
@@ -147,6 +149,8 @@ function goSave() {
             var color = $("#color").val();
             var minValue = $("#min_value").val();
             var maxValue = $("#max_value").val();
+            var minValueWide = $("#min_value_wide").val();
+            var maxValueWide = $("#max_value_wide").val();
              
             // validation here
             if (code == "") {
@@ -169,13 +173,24 @@ function goSave() {
                 $("#obj").val("max_value");
                 inputAlert("Please enter MAX VALUE.");
             }
+            else if (minValueWide == "") {
+                $("#obj").val("min_value_wide");
+                inputAlert("Please enter MIN VALUE PER M2.");
+            }
+            else if (maxValueWide == "") {
+                $("#obj").val("max_value_wide");
+                inputAlert("Please enter MAX VALUE PER M2.");
+            }
             else {
                 //minValue = $("#min_value").autoNumericGet();
                 //maxValue = $("#max_value").autoNumericGet();
                 minValue = $("#min_value").autoNumeric("get");
                 maxValue = $("#max_value").autoNumeric("get");
+                minValueWide = $("#min_value_wide").autoNumeric("get");
+                maxValueWide = $("#max_value_wide").autoNumeric("get");
                 
-                var dataString = "code=" + code + "&name=" + name + "&description=" + description + "&color=" + color + "&minValue=" + minValue + "&maxValue=" + maxValue;
+                var dataString = "code=" + code + "&name=" + name + "&description=" + description + "&color=" + color +
+                                    "&minValue=" + minValue + "&maxValue=" + maxValue + "&minValueWide=" + minValueWide + "&maxValueWide=" + maxValueWide;
                 $.ajax({
                         type: "POST",
                         url: "../php/exe/status_add.php",
@@ -212,6 +227,8 @@ function goUpdate() {
             var color = $("#color").val();
             var minValue = $("#min_value").val();
             var maxValue = $("#max_value").val();
+            var minValueWide = $("#min_value_wide").val();
+            var maxValueWide = $("#max_value_wide").val();
              
             // validation here
             if (code == "") {
@@ -234,13 +251,24 @@ function goUpdate() {
                 $("#obj").val("max_value");
                 inputAlert("Please enter MAX VALUE.");
             }
+            else if (minValueWide == "") {
+                $("#obj").val("min_value_wide");
+                inputAlert("Please enter MIN VALUE PER M2.");
+            }
+            else if (maxValueWide == "") {
+                $("#obj").val("max_value_wide");
+                inputAlert("Please enter MAX VALUE PER M2.");
+            }
             else {
                 //minValue = $("#min_value").autoNumericGet();
                 //maxValue = $("#max_value").autoNumericGet();
                 minValue = $("#min_value").autoNumeric("get");
                 maxValue = $("#max_value").autoNumeric("get");
+                minValueWide = $("#min_value_wide").autoNumeric("get");
+                maxValueWide = $("#max_value_wide").autoNumeric("get");
                 
-                var dataString = "id=" + id + "&code=" + code + "&name=" + name + "&description=" + description + "&color=" + color + "&minValue=" + minValue + "&maxValue=" + maxValue;
+                var dataString = "id=" + id + "&code=" + code + "&name=" + name + "&description=" + description + "&color=" + color +
+                                    "&minValue=" + minValue + "&maxValue=" + maxValue + "&minValueWide=" + minValueWide + "&maxValueWide=" + maxValueWide;
                 $.ajax({
                         type: "POST",
                         url: "../../php/exe/status_update.php",

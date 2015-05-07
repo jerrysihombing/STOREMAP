@@ -28,6 +28,8 @@ $(document).ajaxStart(function () {
 
 $(function() {         
             
+            $("#wide").autoNumeric('init', {aSep: ',', aDec: '.' , aPad: false, vMax: '9999999999'});
+            
             // view alert
             $("#view-alert").dialog({
                 modal: true,
@@ -176,6 +178,7 @@ function goSave() {
             var name = $("#name").val();
             var description = $("#description").val();
             var brandName = $("#brand_name option:selected").val();
+            var division = $("#division option:selected").val();
             var map = $("#map_code option:selected").val();
             var aMap = map.split("#");
             var mapCode = "";
@@ -189,6 +192,8 @@ function goSave() {
             var radius = $("#radius").val();
             var center = $("#center").val();
             var coordinate = $("#coordinate").val();
+            
+            var wide = $("#wide").val();
              
             // validation here
             if (code == "") {
@@ -202,6 +207,10 @@ function goSave() {
             else if (brandName == "") {
                 $("#obj").val("brand_name");
                 inputAlert("Please choose BRAND NAME.");
+            }
+            else if (division == "") {
+                $("#obj").val("division");
+                inputAlert("Please choose DIVISION.");
             }
             else if (mapCode == "") {
                 $("#obj").val("map_code");
@@ -235,9 +244,14 @@ function goSave() {
                         $("#obj").val("coordinate");
                         inputAlert("Please enter MULTIPLE X, Y.");        
             }
+            else if (wide == "") {
+                $("#obj").val("wide");
+                inputAlert("Please enter WIDE.");
+            }
             else {
-                var dataString = "code=" + code + "&name=" + name + "&description=" + description + "&brandName=" + brandName + "&mapCode=" + mapCode + "&shape=" + shape +
-                                 "&topLeft=" + topLeft + "&bottomRight=" + bottomRight + "&radius=" + radius + "&center=" + center + "&coordinate=" + coordinate;
+                wide = $("#wide").autoNumeric("get");
+                var dataString = "code=" + code + "&name=" + name + "&description=" + description + "&brandName=" + brandName + "&division=" + division + "&mapCode=" + mapCode + "&shape=" + shape +
+                                 "&topLeft=" + topLeft + "&bottomRight=" + bottomRight + "&radius=" + radius + "&center=" + center + "&coordinate=" + coordinate + "&wide=" + wide;
                 $.ajax({
                         type: "POST",
                         url: "../php/exe/coordinate_add.php",
@@ -272,6 +286,7 @@ function goUpdate() {
             var name = $("#name").val();
             var description = $("#description").val();
             var brandName = $("#brand_name option:selected").val();
+            var division = $("#division option:selected").val();
             var map = $("#map_code option:selected").val();
             var aMap = map.split("#");
             var mapCode = "";
@@ -298,6 +313,10 @@ function goUpdate() {
             else if (brandName == "") {
                 $("#obj").val("brand_name");
                 inputAlert("Please choose BRAND NAME.");
+            }
+            else if (division == "") {
+                $("#obj").val("division");
+                inputAlert("Please choose DIVISION.");
             }
             else if (mapCode == "") {
                 $("#obj").val("map_code");
@@ -331,9 +350,14 @@ function goUpdate() {
                         $("#obj").val("coordinate");
                         inputAlert("Please enter MULTIPLE X, Y.");        
             }
+            else if (wide == "") {
+                $("#obj").val("wide");
+                inputAlert("Please enter WIDE.");
+            }
             else {
-                var dataString = "id=" + id + "&code=" + code + "&name=" + name + "&description=" + description + "&brandName=" + brandName + "&mapCode=" + mapCode + "&shape=" + shape +
-                                 "&topLeft=" + topLeft + "&bottomRight=" + bottomRight + "&radius=" + radius + "&center=" + center + "&coordinate=" + coordinate;
+                wide = $("#wide").autoNumeric("get");
+                var dataString = "id=" + id + "&code=" + code + "&name=" + name + "&description=" + description + "&brandName=" + brandName + "&division=" + division + "&mapCode=" + mapCode + "&shape=" + shape +
+                                 "&topLeft=" + topLeft + "&bottomRight=" + bottomRight + "&radius=" + radius + "&center=" + center + "&coordinate=" + coordinate + "&wide=" + wide;
                 $.ajax({
                         type: "POST",
                         url: "../../php/exe/coordinate_update.php",

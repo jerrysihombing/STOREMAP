@@ -46,7 +46,7 @@
 			
 			echo "emptying table.. ";
 			# -- empty first
-			$sql = "delete from mst_site";
+			$sql = "truncate table mst_site";
 			$result = mysql_query($sql);
 			echo "ok.\n";
 			
@@ -69,6 +69,6 @@
 	}
 	
 	echo "job done.. leave job.\n";
-	echo "finished job at " . date("Y-m-d H:i:s") . "\n";
+	echo "finished job at " . date("Y-m-d H:i:s") . "\n\n";
 	
 ?>

@@ -13,9 +13,10 @@
 	
 	$MDL = new Sales();	
 	
-	if (!$MDL->isExist($_POST["transDate"], $_POST["brandName"], $_POST["articleType"], $_POST["storeInit"])) {
+	if (!$MDL->isExist($_POST["transDate"], $_POST["brandName"], $_POST["division"], $_POST["articleType"], $_POST["storeInit"])) {
 		$MDL->setTransDate(substr($_POST["transDate"], 6) . "-" . substr($_POST["transDate"], 3, 2) . "-" . substr($_POST["transDate"], 0, 2));
 		$MDL->setBrandName($_POST["brandName"]);
+		$MDL->setDivision($_POST["division"]);
 		$MDL->setArticleType($_POST["articleType"]);
 		$MDL->setQuantity((is_numeric($_POST["quantity"]) ? $_POST["quantity"] : 0));
 		$MDL->setAmount((is_numeric($_POST["amount"]) ? $_POST["amount"] : 0));

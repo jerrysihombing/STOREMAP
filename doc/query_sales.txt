@@ -1,0 +1,72 @@
+-- general
+select x.store_init, x.trans_date, x.gold_plu, y.description, y.brand_name, w.name division, x.qty, x.gross_sale-x.disc netto, store_init
+from trn_sales_tpl x
+inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date)
+inner join mst_division w on y.division = w.code
+where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code)
+and store_init = 183 and date_format(trans_date, '%d-%m-%y') = '13-04-15' limit 10;
+
+-- sales by brand and division
+select y.brand_name, w.name division, sum(x.qty) qty, sum(x.gross_sale-x.disc) netto, x.store_init
+from trn_sales_tpl x
+inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date)
+inner join mst_division w on y.division = w.code
+where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code)
+and store_init = 183 and date_format(trans_date, '%d-%m-%y') = '13-04-15'
+group by y.brand_name, w.name, store_init;
+
+select x.trans_date, y.brand_name, w.name division, sum(x.qty) qty, sum(x.gross_sale-x.disc) netto, store_get_init(x.store_init) store_initial
+from trn_sales_tpl x
+inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date)
+inner join mst_division w on y.division = w.code
+where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code)
+and store_init = 183 and date_format(trans_date, '%d-%m-%y') = '13-04-15'
+group by x.trans_date, y.brand_name, w.name, store_init;
+
+select sum(x.gross_sale-x.disc) netto
+from trn_sales_tpl x
+inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date)
+inner join mst_division w on y.division = w.code
+where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code)
+and store_init = 183 and date_format(trans_date, '%d-%m-%y') = '13-04-15';
+and y.brand_name = '' and w.name = '';
+
+select ifnull(sum(x.gross_sale-x.disc), 0) 
+from trn_sales_tpl x
+inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date)
+inner join mst_division w on y.division = w.code
+inner join mst_storemap i on i.brand_name = y.brand_name and i.division = substr(x.dept, 1, 1) 
+inner join mst_map j on j.code = i.map_code and j.store_init = store_get_init(x.store_init)
+where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code)
+and j.id = 4
+and x.store_init = 183 and date_format(x.trans_date, '%d-%m-%y') = '13-04-15'
+and y.brand_name = 'SIMPLICITY' and w.name = 'LADIES';
+
+select ifnull(sum(x.gross_sale-x.disc), 0) 
+from trn_sales_tpl x
+inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date)
+inner join mst_division w on y.division = w.code
+where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code)
+and x.store_init = 183 and date_format(x.trans_date, '%d-%m-%y') = '13-04-15'
+and y.brand_name = 'SIMPLICITY' and w.name = 'LADIES';
+
+select * 
+from trn_sales_tpl x
+inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date)
+inner join mst_division w on y.division = w.code
+inner join mst_storemap i on i.brand_name = y.brand_name and i.division = substr(x.dept, 1, 1) 
+inner join mst_map j on j.code = i.map_code and j.store_init = store_get_init(x.store_init)
+where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code)
+and j.id = 4
+and x.store_init = 183 and date_format(x.trans_date, '%d-%m-%y') = '13-04-15'
+and y.brand_name = 'SIMPLICITY' and w.name = 'LADIES';
+
+select *
+from trn_sales_tpl x
+inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date)
+inner join mst_division w on y.division = w.code
+where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code)
+and x.store_init = 183 and date_format(x.trans_date, '%d-%m-%y') = '13-04-15'
+and y.brand_name = 'SIMPLICITY' and w.name = 'LADIES';
+
+

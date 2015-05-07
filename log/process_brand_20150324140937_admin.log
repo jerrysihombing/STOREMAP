@@ -1,0 +1,19 @@
+Trying to read excel file by admin at Mar 24, 2015, 2:09 pm.
+Trying to make database connection.
+..connected.
+
+1st sheet is consist of 8 rows.
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F016', 'FABULOUS', 'LADIES', '', 'admin', '2015-03-24 14:09:37').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V049', 'VENICY', 'LADIES', '', 'admin', '2015-03-24 14:09:37').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F016', 'FABULOUS', 'MENS', '', 'admin', '2015-03-24 14:09:37').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C094', 'CARDINAL', 'MENS', '', 'admin', '2015-03-24 14:09:37').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G079', 'GIANI GRACIO', 'MENS', '', 'admin', '2015-03-24 14:09:37').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B026', 'BABYPOPEYE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:09:37').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D189', 'DONITABABY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:09:37').
+read 1st sheet done.
+
+Done.
+Finish the job at Mar 24, 2015, 2:09 pm.
+
+Close database connection.
+Leave procedure.

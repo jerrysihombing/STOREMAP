@@ -1,0 +1,21 @@
+Trying to read excel file by admin at Mar 24, 2015, 4:38 pm.
+Trying to make database connection.
+..connected.
+
+1st sheet is consist of 10 rows.
+..insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('90012532', '0', 'FABULOUS LDS, DISCOUNT 0%', 'FABULOUS', 'LADIES', 'admin', '2015-03-24 16:38:37').
+..insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('90012549', '0', 'FABULOUS LDS, DISCOUNT 20%', 'FABULOUS', 'LADIES', 'admin', '2015-03-24 16:38:37').
+..insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('90006050', '0', 'FELANCY, DISCOUNT 0%', 'FELANCY', 'LADIES', 'admin', '2015-03-24 16:38:37').
+..insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('90006067', '0', 'FELANCY, DISCOUNT 20%', 'FELANCY', 'LADIES', 'admin', '2015-03-24 16:38:37').
+..insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('90009884', '0', 'FELANCY, DISCOUNT 20%+10%', 'FELANCY', 'LADIES', 'admin', '2015-03-24 16:38:37').
+..insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('91031884', '0', 'JOBB, BUY 1 GET 1 FREE', 'JOBB', 'MENS', 'admin', '2015-03-24 16:38:37').
+..insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('91005304', '0', 'JOBB, DISCOUNT 30%', 'JOBB', 'MENS', 'admin', '2015-03-24 16:38:37').
+..insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('91032249', '0', 'JOSEPH LAURIN, BUY 1 GET 1 FREE REG', 'JOSEPH LAURIN', 'MENS', 'admin', '2015-03-24 16:38:37').
+..insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('91013507', '1', 'JOSEPH LAURIN, SPECIAL PRICE 2', 'JOSEPH LAURIN', 'MENS', 'admin', '2015-03-24 16:38:37').
+read 1st sheet done.
+
+Done.
+Finish the job at Mar 24, 2015, 4:38 pm.
+
+Close database connection.
+Leave procedure.

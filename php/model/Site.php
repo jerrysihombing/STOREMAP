@@ -48,6 +48,54 @@ class Site {
 		return $data;
 	}
 	
+	public function storeGetCode($init) {
+		$this->makeConnection();
+        $init = $this->_mysqli->real_escape_string($init);
+		
+		$sql = "SELECT store_get_code('$init')";	
+			
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	public function storeGetInit($code) {
+		$this->makeConnection();
+        $code = $this->_mysqli->real_escape_string($code);
+		
+		$sql = "SELECT store_get_init('$code')";	
+			
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	public function storeLoad($init) {				
+		$this->makeConnection();
+		
+		$sql = "CALL store_load('$init')";
+		
+		$res = $this->_mysqli->query($sql);
+		
+		$data = array();
+		if ($row = $res->fetch_assoc()) {
+			$data["store_code"] = $row["store_code"];
+			$data["store_init"] = $row["store_init"];
+			$data["store_name"] = $row["store_name"];
+		}
+		
+		$res->close();
+		$this->closeConnection();
+		
+		return $data;
+	}
+	
 	public function storeLoadAll() {				
 		$this->makeConnection();
 		

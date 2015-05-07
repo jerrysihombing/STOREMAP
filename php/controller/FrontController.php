@@ -178,6 +178,19 @@ class FrontController extends GlobalController  {
 				break;
 			# --- eo report --- #
 			
+			# --- reportv2 --- #
+			case "reportv2":
+				#$this->checkFirst();
+				#$this->isOperAllowable($a_auth, 100);
+				
+				require_once ("Reportv2Controller.php");
+				
+				$CTR = new Reportv2Controller();
+				$CTR->controll();
+
+				break;
+			# --- eo reportv2 --- #
+			
 			
 			# --- system --- #
 			

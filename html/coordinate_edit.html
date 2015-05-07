@@ -27,6 +27,7 @@
     <script type="text/javascript" src="../../script/jquery/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="../../script/jquery/jquery-ui-1.10.2.custom.min.js"></script>
 	<!--<script type="text/javascript" src="../../script/jquery/jquery.ajaxfileupload.js"></script>-->
+	<script type="text/javascript" src="../../script/jquery/autoNumeric.js"></script>
 	<script type="text/javascript" src="../../script/jquery/spin.js"></script>
 	<script type="text/javascript" src="../../script/jquery/jquery.spin.js"></script>
 	<script type="text/javascript" src="../../script/coordinate.js"></script>
@@ -100,6 +101,19 @@
 					  </div>
 				  </td>
 			  </tr>
+			  <tr>
+				  <td>Division<span class="red-star"> *</span></td>
+				  <td>:</td>
+				  <td>
+                        <div class="input-group">
+                            <span class="input-group-addon">&nbsp;</span>
+                            <select id="division" name="division" class="form-control required">
+								<option value="">Select division</option>
+								<?php echo $optDivision; ?>
+							</select>
+                          </div>
+                  </td>
+			  </tr>
               <tr>
 				  <td>Map<span class="red-star"> *</span></td>
 				  <td>:</td>
@@ -159,6 +173,16 @@
 					  </div>
                       <div id="coordinate_poly" class="input-group" <?php if ($shape == "poly") { ?>style="display: block;"<?php } else { ?>style="display: none;"<?php } ?>>
                             Multiple X, Y: <input type="text" name="coordinate" id="coordinate" value="<?php echo $MDL->getCoordinate(); ?>" class="required" maxlength="255" placeholder="X, Y, X, Y, X, Y, X, Y, X, Y .." style="width: 666px;" > &nbsp;
+					  </div>
+				  </td>
+			  </tr>
+			  <tr>
+				  <td>Wide [ M<sup>2</sup> ]<span class="red-star"> *</span></td>
+				  <td>:</td>
+				  <td>
+					  <div class="input-group">
+						<span class="input-group-addon">&nbsp;</span>
+						<input type="text" name="wide" id="wide" value="<?php echo $MDL->getWide(); ?>" class="form-control required" maxlength="10">
 					  </div>
 				  </td>
 			  </tr>

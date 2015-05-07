@@ -13,6 +13,9 @@
 		.ui-icon-closethick { margin-top: -8px !important; margin-left: -8px !important; }
 		.ui-dialog {font-size: 90%;}
 		.ui-widget-overlay { background: url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+		.ui-datepicker {
+		  font-size:12px;
+		}
 	</style>
 	<link href="../css/report.css" rel="stylesheet" type="text/css" media="screen" />
 	
@@ -57,7 +60,28 @@
 						<select id="data" name="data" class="form-control required">
 							<option value="">Select data</option>
 							<option value="sales">Sales</option>
+							<option value="sales-per-square">Sales per M2</option>
 						</select>
+					  </div>
+				  </td>
+			  </tr>
+			  <tr>
+				  <td>Single Trans. Date<span class="red-star"> *</span></td>
+				  <td>:</td>
+				  <td>
+					  <div class="input-group">
+						<span class="input-group-addon">&nbsp;</span>
+						<input type="text" name="start_date" id="start_date" class="form-control required" maxlength="10" value="<?php echo $today; ?>" readonly="readonly" style="cursor: auto; background: none;">
+					  </div>
+				  </td>
+			  </tr>
+			  <tr>
+				  <td>or until</td>
+				  <td>:</td>
+				  <td>
+					  <div class="input-group">
+						<span class="input-group-addon">&nbsp;</span>
+						<input type="text" name="end_date" id="end_date" class="form-control required" maxlength="10"  readonly="readonly" style="cursor: auto; background: none;">
 					  </div>
 				  </td>
 			  </tr>
@@ -70,8 +94,10 @@
 						<select id="article_type" name="article_type" class="form-control required">
 							<option value="">Select article type</option>
 							<option value="all">All</option>
+							<!--
 							<option value="normal">Normal</option>
 							<option value="obral">Obral</option>
+							-->
 						</select>
 					  </div>
 				  </td>

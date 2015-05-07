@@ -12,7 +12,7 @@
 	 */
 	
 	/* Array of database columns which should be read and sent back to DataTables */
-	$aColumns = array('code', 'name', 'description', 'brand_name', 'map_code', 'shape', 'store_init');
+	$aColumns = array('code', 'name', 'description', 'brand_name', 'division', 'map_code', 'shape', 'wide', 'store_init');
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "id";
@@ -122,6 +122,11 @@
 			$sWhere .= " AND brand_name = '" . $_GET['s_brand_name'] . "'";		
 		}
 		
+		if ( isset($_GET['s_division']) && $_GET['s_division'] != "" )
+		{
+			$sWhere .= " AND division = '" . $_GET['s_division'] . "'";		
+		}
+		
 		if ( isset($_GET['s_map_code']) && $_GET['s_map_code'] != "" )
 		{
 			$sWhere .= " AND map_code like '%" . addslashes($_GET['s_map_code']) . "%'";		
@@ -146,11 +151,11 @@
 	
 	$wBranch = ($userId == "admin" ? " WHERE 1 = 1 " : " where store_init = '" . $branch_code . "' ");
 	
-	$table = 	"select x.id, x.code, x.name, x.description, x.brand_name, x.map_code, y.store_init, " .
+	$table = 	"select x.id, x.code, x.name, x.description, x.brand_name, x.division, x.map_code, format(x.wide, 2) wide, y.store_init, " .
 				"case x.shape when 'circle' then 'Circle' when 'rect' then 'Rectangular' when 'poly' then 'Polygon' else '' end shape " .
 			 	"from mst_storemap x inner join mst_map y on y.code = x.map_code";
 			 
-	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, code, name, description, brand_name, map_code, store_init, shape " .
+	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, code, name, description, brand_name, division, map_code, wide, store_init, shape " .
 				"FROM (" . $table . ") t" . $wBranch . 
 				$sWhere . " " .
 				$sOrder . " " .

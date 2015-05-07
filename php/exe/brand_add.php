@@ -13,7 +13,9 @@
 	
 	$MDL = new Brand();	
 	
-	if (!$MDL->isExist($_POST["name"])) {
+	#if (!$MDL->isExist($_POST["name"])) {
+	if (!$MDL->isBrandDivisionExist($_POST["name"], $_POST["division"])) {
+		$MDL->setCode($_POST["code"]);
 		$MDL->setName($_POST["name"]);
 		$MDL->setDivision($_POST["division"]);
 		$MDL->setDescription($_POST["description"]);
@@ -31,7 +33,7 @@
 		}	
 	}
 	else {
-		echo "BRAND already exist.";
+		echo "BRAND at DIVISION already exist.";
 	}
 	
 ?>

@@ -18,6 +18,7 @@
 		$MDL->setName($_POST["name"]);
 		$MDL->setDescription($_POST["description"]);
 		$MDL->setBrandName($_POST["brandName"]);
+		$MDL->setDivision($_POST["division"]);
 		$MDL->setInitColor("FAFAD7"); # default
 		$MDL->setMapCode($_POST["mapCode"]);
 		
@@ -51,6 +52,7 @@
 		$MDL->setBottomRight($bottomRight);
 		$MDL->setCenter($center);
 		$MDL->setRadius($radius);
+		$MDL->setWide((is_numeric($_POST["wide"]) ? $_POST["wide"] : 0));
 		
 		$MDL->setLastUser($struid);
 		$MDL->setLastUpdate($strdate);

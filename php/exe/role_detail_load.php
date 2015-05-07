@@ -15,8 +15,8 @@
 	
 	if (!empty($menu_data)) {		
 		$cnt = sizeof($menu_data);
-		$cnt1 = ($cnt > 14) ? 14 : $cnt;
-		$cnt2 = ($cnt > 14) ? $cnt : 0;
+		$cnt1 = ($cnt > 12) ? 12 : $cnt;
+		$cnt2 = ($cnt > 12) ? $cnt : 0;
 		
 		$no = 0;
 							

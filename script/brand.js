@@ -122,20 +122,25 @@ function goBack() {
 }
 
 function goSave() {
+            var code = $("#code").val();
             var name = $("#name").val();
-            var division = $("#division").val();
+            var division = $("#division option:selected").val();
             var description = $("#description").val();
             //var storeInit = $("#store_init").val();
             var storeInit = "";
             
             // validation here
-            if (name == "") {
+            if (code == "") {
+                $("#obj").val("code");
+                inputAlert("Please enter CODE.");
+            }
+            else if (name == "") {
                 $("#obj").val("name");
                 inputAlert("Please enter NAME.");
             }
             else if (division == "") {
                 $("#obj").val("division");
-                inputAlert("Please enter DIVISION.");
+                inputAlert("Please select DIVISION.");
             }
             /*
             else if (storeInit == "") {
@@ -144,7 +149,7 @@ function goSave() {
             }
             */
             else {
-                var dataString = "name=" + name + "&division=" + division + "&description=" + description + "&storeInit=" + storeInit;
+                var dataString = "code=" + code + "&name=" + name + "&division=" + division + "&description=" + description + "&storeInit=" + storeInit;
                 $.ajax({
                         type: "POST",
                         url: "../php/exe/brand_add.php",
@@ -175,6 +180,7 @@ function goSave() {
 
 function goUpdate() {
             var id = $("#id").val();
+            var code = $("#code").val();
             var name = $("#name").val();
             var division = $("#division").val();
             var description = $("#description").val();
@@ -182,13 +188,17 @@ function goUpdate() {
             var storeInit = "";
             
             // validation here
-            if (name == "") {
+            if (code == "") {
+                $("#obj").val("code");
+                inputAlert("Please enter CODE.");
+            }
+            else if (name == "") {
                 $("#obj").val("name");
                 inputAlert("Please enter NAME.");
             }
             else if (division == "") {
                 $("#obj").val("division");
-                inputAlert("Please enter DIVISION.");
+                inputAlert("Please select DIVISION.");
             }
             /*
             else if (storeInit == "") {
@@ -197,7 +207,7 @@ function goUpdate() {
             }
             */
             else {
-                var dataString = "id=" + id + "&name=" + name + "&division=" + division + "&description=" + description + "&storeInit=" + storeInit;
+                var dataString = "id=" + id + "&code=" + code + "&name=" + name + "&division=" + division + "&description=" + description + "&storeInit=" + storeInit;
                 $.ajax({
                         type: "POST",
                         url: "../../php/exe/brand_update.php",

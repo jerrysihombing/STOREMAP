@@ -5,7 +5,7 @@
 	  <div class="container">
         
 		<div class="navbar-header">          
-          <a class="navbar-brand" href="#"><h1>Yogya Map Intelligence</h1></a>		  		  
+          <a class="navbar-brand" href="#"><h1>Yogya Space Intelligence</h1></a>		  		  
         </div>
 		
 		<div class="collapse navbar-collapse">
@@ -14,19 +14,21 @@
 
             <div id="bannerads-container">
               
-			  <div class="bannerad">
+			  <!--<div class="bannerad">-->
                 
-				<span class="bannerad-image">
+				<div class="bannerad-img">
                   <a href="#" title="Toserba Yogya" target="_blank">
-                    <img class="bannerad-img" src="" title="Toserba Yogya" alt="Toserba Yogya">
+                    <img src="../images/yg_red_300.png" title="Toserba Yogya" alt="Toserba Yogya">
                   </a>
-                </span>
+                </div>
                 
+				<!--
 				<span class="bannerad-text">
                   <a href="#">&nbsp;<small>&nbsp;</small></a>
                 </span>
-			  
-              </div>
+				-->
+				
+              <!--</div>-->
 			  <!-- /bannerad -->
 			  
             </div>

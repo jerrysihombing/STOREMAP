@@ -1,0 +1,18 @@
+Trying to read excel file by admin at Mar 24, 2015, 10:19 am.
+Trying to make database connection.
+..connected.
+
+1st sheet is consist of 7 rows.
+..insert into mst_brand (name, division, description, created_by, created_date) values ('FABULOUS', 'LADIES', '', 'admin', '2015-03-24 10:19:02').
+..insert into mst_brand (name, division, description, created_by, created_date) values ('VENICY', 'LADIES', '', 'admin', '2015-03-24 10:19:02').
+..insert into mst_brand (name, division, description, created_by, created_date) values ('CARDINAL', 'MENS', '', 'admin', '2015-03-24 10:19:02').
+..insert into mst_brand (name, division, description, created_by, created_date) values ('GIANI GRACIO', 'MENS', '', 'admin', '2015-03-24 10:19:02').
+..insert into mst_brand (name, division, description, created_by, created_date) values ('BABYPOPEYE', 'BABY AND KIDS', '', 'admin', '2015-03-24 10:19:02').
+..insert into mst_brand (name, division, description, created_by, created_date) values ('DONITABABY', 'BABY AND KIDS', '', 'admin', '2015-03-24 10:19:02').
+read 1st sheet done.
+
+Done.
+Finish the job at Mar 24, 2015, 10:19 am.
+
+Close database connection.
+Leave procedure.

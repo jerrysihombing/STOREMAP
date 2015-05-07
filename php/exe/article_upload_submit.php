@@ -102,19 +102,20 @@
 			
 			for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {						
 				
-				$brandName = mysql_real_escape_string($data->sheets[0]['cells'][$i][1]);
-				$articleType = $data->sheets[0]['cells'][$i][2];
+				$division = mysql_real_escape_string($data->sheets[0]['cells'][$i][1]);
+				$brandName = mysql_real_escape_string($data->sheets[0]['cells'][$i][2]);
+				$articleType = $data->sheets[0]['cells'][$i][3];
 				$articleType = ($articleType == "Obral" ? "1" : "0");
-				$plu8 = mysql_real_escape_string($data->sheets[0]['cells'][$i][3]);
-				$description = mysql_real_escape_string($data->sheets[0]['cells'][$i][4]);
+				$plu8 = mysql_real_escape_string($data->sheets[0]['cells'][$i][4]);
+				$description = mysql_real_escape_string($data->sheets[0]['cells'][$i][5]);
 				
 				# entry test
-				$check = $brandName . $articleType . $plu8 . $description;
+				$check = $division . $brandName . $articleType . $plu8 . $description;
 				
 				if ($check != "") {
 					
 					# -- INSERT ARTICLES --
-					$sql = "insert into mst_article (plu8, article_type, description, brand_name, created_by, created_date) values ('" . $plu8 . "', '" . $articleType . "', '" . $description . "', '" . $brandName . "', '" . $struid . "', '" . $strdate . "')";
+					$sql = "insert into mst_article (plu8, article_type, description, brand_name, division, created_by, created_date) values ('" . $plu8 . "', '" . $articleType . "', '" . $description . "', '" . $brandName . "', '" . $division . "', '" . $struid . "', '" . $strdate . "')";
 					$result = mysql_query($sql);
 					
 					fwrite($h, ".." . $sql . "." . ENTER);

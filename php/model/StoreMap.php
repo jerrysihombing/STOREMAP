@@ -21,6 +21,7 @@ class StoreMap {
 	private $_name;
 	private $_description;
 	private $_brandName;
+	private $_division;
 	private $_shape;
 	private $_coordinate;
 	private $_initColor;
@@ -35,6 +36,8 @@ class StoreMap {
 	private $_bottomRight;
 	private $_center;
 	private $_radius;
+	
+	private $_wide;
 	
 	private $_error;
 
@@ -64,6 +67,7 @@ class StoreMap {
 			$this->_bottomRight = $this->_mysqli->real_escape_string($this->_bottomRight);
 			$this->_center = $this->_mysqli->real_escape_string($this->_center);
 			$this->_radius = $this->_mysqli->real_escape_string($this->_radius);
+			$this->_division = $this->_mysqli->real_escape_string($this->_division);
 		}
 		catch (Exception $e) {
 			# do nothing
@@ -150,6 +154,8 @@ class StoreMap {
 			$this->_createdDate = $row["created_date"];
 			$this->_lastUser = $row["last_user"];
 			$this->_lastUpdate = $row["last_update"];
+			$this->_wide = $row["wide"];
+			$this->_division = $row["division"];
 		}
 		
 		$res->close();
@@ -187,7 +193,9 @@ class StoreMap {
 					$this->_center . "', '" .
 					$this->_radius . "', '" .
 					$this->_lastUser . "', '" .
-					$this->_lastUpdate . 
+					$this->_lastUpdate . "', '" .
+					$this->_wide . "', '" .
+					$this->_division . 
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -215,7 +223,9 @@ class StoreMap {
 					$this->_center . "', '" .
 					$this->_radius . "', '" .
 					$this->_createdBy . "', '" .
-					$this->_createdDate . 
+					$this->_createdDate . "', '" .
+					$this->_wide . "', '" .
+					$this->_division . 
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -280,6 +290,9 @@ class StoreMap {
 	public function getBrandName() {
 		return $this->_brandName;	
 	}
+	public function getDivision() {
+		return $this->_division;	
+	}
 	public function getShape() {
 		return $this->_shape;	
 	}
@@ -303,6 +316,9 @@ class StoreMap {
 	}
 	public function getRadius() {
 		return $this->_radius;	
+	}
+	public function getWide() {
+		return $this->_wide;	
 	}
 	public function getCreatedDate() {
 		return $this->_createdDate;
@@ -335,6 +351,9 @@ class StoreMap {
 	public function setBrandName($v) {
 		$this->_brandName = $v;	
 	}
+	public function setDivision($v) {
+		$this->_division = $v;	
+	}
 	public function setShape($v) {
 		$this->_shape = $v;	
 	}
@@ -358,6 +377,9 @@ class StoreMap {
 	}
 	public function setRadius($v) {
 		$this->_radius = $v;	
+	}
+	public function setWide($v) {
+		$this->_wide = $v;	
 	}
 	public function setCreatedDate($v) {
 		$this->_createdDate = $v;

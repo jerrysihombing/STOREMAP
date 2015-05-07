@@ -17,6 +17,7 @@ class Brand {
 	private $_pass;
 	
 	private $_id;
+	private $_code;
 	private $_name;
 	private $_description;
 	private $_division;
@@ -47,13 +48,32 @@ class Brand {
 			$this->_description = $this->_mysqli->real_escape_string($this->_description);
 			$this->_division = $this->_mysqli->real_escape_string($this->_division);
 			$this->_storeInit = $this->_mysqli->real_escape_string($this->_storeInit);
+			$this->_code = $this->_mysqli->real_escape_string($this->_code);
 		}
 		catch (Exception $e) {
 			# do nothing
 		}
 		
 	}	
-
+	
+	public function loadDistinctName() {				
+		$this->makeConnection();
+		
+		$sql = "CALL brand_load_distinct_name()";
+		
+		$res = $this->_mysqli->query($sql);
+		
+		$data = array();
+		while ($row = $res->fetch_assoc()) {
+			array_push($data, $row);
+		}
+		
+		$res->close();
+		$this->closeConnection();
+		
+		return $data;
+	}
+	
 	public function loadAll() {				
 		$this->makeConnection();
 		
@@ -89,6 +109,7 @@ class Brand {
 			$this->_createdDate = $row["created_date"];
 			$this->_lastUser = $row["last_user"];
 			$this->_lastUpdate = $row["last_update"];
+			$this->_code = $row["code"];
 		}
 		
 		$res->close();
@@ -118,7 +139,8 @@ class Brand {
 					$this->_division . "', '" .
 					$this->_storeInit . "', '" .
 					$this->_lastUser . "', '" .
-					$this->_lastUpdate . 
+					$this->_lastUpdate . "', '" .
+					$this->_code . 
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -138,7 +160,8 @@ class Brand {
 					$this->_division . "', '" .
 					$this->_storeInit . "', '" .
 					$this->_createdBy . "', '" .
-					$this->_createdDate . 
+					$this->_createdDate . "', '" .
+					$this->_code . 
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -146,6 +169,21 @@ class Brand {
 		$this->closeConnection();
 
 		return $ret;
+	}
+	
+	public function isBrandDivisionExist($name, $division) {
+		$this->makeConnection();
+        $name = $this->_mysqli->real_escape_string($name);
+		$division = $this->_mysqli->real_escape_string($division);
+		
+		$sql = "SELECT brand_division_count('$name', '$division')";	
+			
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return ($row[0] > 0 ? true : false);
 	}
 	
 	public function isExist($name) {
@@ -190,7 +228,10 @@ class Brand {
 
 	public function getId() {
 		return $this->_id;
-	}	
+	}
+	public function getCode() {
+		return $this->_code;	
+	}
 	public function getName() {
 		return $this->_name;	
 	}
@@ -221,7 +262,10 @@ class Brand {
 
 	public function setId($v) {
 		$this->_id = $v;
-	}	
+	}
+	public function setCode($v) {
+		$this->_code = $v;	
+	}
 	public function setName($v) {
 		$this->_name = $v;	
 	}

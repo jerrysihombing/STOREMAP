@@ -103,17 +103,40 @@
 			# tell the log size of rows
 			fwrite($h, "1st sheet is consist of " . $data->sheets[0]['numRows'] . " rows.\n");
 			
-			for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {						
+			for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {	
 				
-				$brandName = $data->sheets[0]['cells'][$i][1];
-				$articleType = $data->sheets[0]['cells'][$i][2];
-				$plu8 = $data->sheets[0]['cells'][$i][3];
-				$description = $data->sheets[0]['cells'][$i][4];
+				$division = $data->sheets[0]['cells'][$i][1];
+				$brandName = $data->sheets[0]['cells'][$i][2];
+				$articleType = $data->sheets[0]['cells'][$i][3];
+				$plu8 = $data->sheets[0]['cells'][$i][4];
+				$description = $data->sheets[0]['cells'][$i][5];
 				
 				# entry test
-				$check = $brandName . $articleType . $plu8 . $description;
+				$check = $division . $brandName . $articleType . $plu8 . $description;
 				
 				if ($check != "") {
+					
+					# check division
+					$sql = "select count(code) CNT from mst_division where upper(name) = upper('" . mysql_real_escape_string($division) . "')";
+					$result = mysql_query($sql);
+					if (!$result) {
+						mysql_close($conn);
+						fwrite($h, "Failed, cannot do a 'division' query. Leaving procedure" . "." . ENTER);
+						# close the log file
+						fclose($h);
+						fclose($h2);
+						echo "Error: cannot do a query.";
+						exit;
+					}
+					$found = 0;
+					if ($row = mysql_fetch_assoc($result)) {
+						$found = $row["CNT"];
+					}
+					if (!$found) {
+						$invalidFound++;
+						fwrite($h2, "Invalid division found at row " . $i . "." . ENTER);
+					}
+					mysql_free_result($result);
 					
 					# check brand
 					$sql = "select count(id) CNT from mst_brand where upper(name) = upper('" . mysql_real_escape_string($brandName) . "')";
@@ -137,6 +160,16 @@
 					}
 					mysql_free_result($result);
 					
+					if (empty($articleType)) {
+						$invalidFound++;
+						fwrite($h2, "Empty article type found at row " . $i . "." . ENTER);
+					}
+					
+					if (empty($plu8)) {
+						$invalidFound++;
+						fwrite($h2, "Empty plu found at row " . $i . "." . ENTER);
+					}
+					
 					# check article exist
 					$sql = "select count(id) CNT from mst_article where upper(plu8) = upper('" . mysql_real_escape_string($plu8) . "')";
 					$result = mysql_query($sql);
@@ -155,11 +188,12 @@
 					}
 					if ($found) {
 						$invalidFound++;
-						fwrite($h2, "Article exists found at row " . $i . "." . ENTER);
+						fwrite($h2, "Plu exists found at row " . $i . "." . ENTER);
 					}
 					mysql_free_result($result);
 					
-				} # end check
+				}
+				# end check
 			
 			}
 			

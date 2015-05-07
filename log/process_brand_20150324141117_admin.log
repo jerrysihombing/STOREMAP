@@ -1,0 +1,917 @@
+Trying to read excel file by admin at Mar 24, 2015, 2:11 pm.
+Trying to make database connection.
+..connected.
+
+1st sheet is consist of 906 rows.
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('1015', '10 PM', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('3003', '3 SECOND', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('3011', '3H', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('9001', '90 DEGREES', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A016', 'ABBA COLLECTION', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A030', 'ACCENT', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A031', 'ACCENT MATERNITY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A098', 'AKO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A125', 'ALICE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A134', 'ALL PEOPLE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A181', 'ANGGAS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A188', 'ANNA FUNG', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A216', 'ARCEN CIEL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A218', 'ARELLA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A224', 'ARITHALIA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A225', 'ARIWANNI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A273', 'ATMOSPHERE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A438', 'AZQA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A510', 'ASYIFA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A518', 'AMELIA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A602', 'AL FATH', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A643', 'ANTRA KESUMA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A705', 'ANGGIA HANDMADE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A716', 'AMARY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A717', 'ANGGUN BATIK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B010', 'B_BOOP LDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B118', 'BAYANNE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B130', 'BE NINE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B155', 'BEETHOVEN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B157', 'BE-GAYA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B220', 'BIANGLALA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B315', 'BODY FIT', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B316', 'BODY GIRL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B346', 'BOOGIEGIRL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B373', 'BRATALK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B383', 'BRIGHT', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B388', 'BRILIANT GIRL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B545', 'BODY TALK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B550', 'BLF', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B563', 'BODYTALK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B585', 'BATIK IBR', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B600', 'BATIKU', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B602', 'BOSSINI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B606', 'BLACK MAGIC WOMAN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B630', 'BTK WIJAYA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B657', 'BALLEN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B672', 'BATIK LISA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B714', 'BATIKPATRA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B752', 'BATIKFIRST', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B755', 'BATIK PANGESTU', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B774', 'BANDIDAS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B819', 'BATIK VICO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B820', 'BULAN GEMILANG', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B831', 'BATIK FRESA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B890', 'BATIK AGNESA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B893', 'BATIK HASAN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B927', 'BUCKAROO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C010', 'C. SISTER', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C018', 'C2', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C105', 'CARLA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C112', 'CAROLINE KOSASIH', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C131', 'CAVALIER', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C138', 'CDL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C214', 'CHEVAL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C252', 'CHOISE ME', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C357', 'COLORBOX', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C363', 'COME', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C371', 'CONTEMPO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C380', 'COOL TEEN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C390', 'CORNICHE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C398', 'COTTONCLUB', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C407', 'COVER GIRL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C459', 'CYNTHIA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C585', 'CARDINAL LDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C616', 'C SISTER', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C626', 'CLC', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C627', 'CHOCOLATE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C653', 'CHIC GIRL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C733', 'CITY CHIC', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C752', 'COPAS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C778', 'CRESSIDA LDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C817', 'CARVIENO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C853', 'CANTING ART', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C878', 'CAESAR', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C879', 'CAMMOMILE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D137', 'DINERO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D141', 'DIRTY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D188', 'DONITA MISS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D258', 'DUST', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D342', 'DUAL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D351', 'DEMADA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D398', 'DAMES KLEREN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D405', 'DISSETANTE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D424', 'D-LIGHT', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D434', 'DST', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D514', 'DEVAGO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E007', 'EARLY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E016', 'ECRU', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E017', 'EDDY P. CHANDRA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E028', 'EKS EXPORT LDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E035', 'ELFAS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E052', 'ELLIDA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E123', 'ESCRAVA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E140', 'ETHMOS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E171', 'EXIT LDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E183', 'EZPRESSO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E227', 'EL ZOYA BSN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E231', 'EL ZOYA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E245', 'ET CETERA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E254', 'ETHNIC BTK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E271', 'EXPAND', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E346', 'EUGENE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E361', 'EDDY MUSLIM', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F016', 'FABULOUS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F048', 'FASHION PARK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F058', 'FELANCY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F127', 'FLUORESCENCES', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F137', 'FOIL BY CRV', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F172', 'FREE&FREE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F300', 'FEEL 100%', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F338', 'FLORIN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F371', 'FEMME', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F453', 'FLAMOUSH', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G189', 'GRAPHIS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G537', 'GEELA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G541', 'G2000', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G562', 'GARUDA KENCANA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G722', 'GROOVI LDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H039', 'HAMMER', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H108', 'HEATH', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H143', 'HERMAN NUARY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H249', 'HUITIEME', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H251', 'HUMAIRA BSN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H252', 'HUMAIRA KRD', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H359', 'HAFIZA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I132', 'IRISH', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I199', 'INDO ARTISTIC', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I229', 'IDAMAN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I278', 'INVIO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I289', 'INDITEX', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J027', 'JANE LORISA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J159', 'JUN MISSONI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K126', 'KICKERS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K245', 'KREATIF', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K246', 'KREATIFBSN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K253', 'KRNY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K254', 'KARTIKA SARI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K385', 'KANALA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K439', 'KEIKO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K477', 'KUSUMAPUTRI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K484', 'KERUDUNG HESSA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K596', 'KORZ', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L012', 'LA FAMOSA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L014', 'LA SUELA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L072', 'LEAF', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L076', 'LEE VIERRA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L078', 'L\'EGGS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L079', 'LEGGS LDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L138', 'LINE&COLOR', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L158', 'LITTLE INK LDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L176', 'LOGO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L189', 'LOONEY T', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L199', 'LORIDA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L236', 'LULUDI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L239', 'LUMINATION', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L254', 'LYLA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L266', 'LAMPION', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L332', 'LOIS GIRLS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L333', 'LDS EXE\'99', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L334', 'LABEL PLUS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L433', 'LABEL 9', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M046', 'MAISARA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M164', 'MB GIRL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M291', 'MINIMAL ACTIVE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M297', 'MINT', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M313', 'MISS K', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M314', 'MISS RODEO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M319', 'MISSTY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M357', 'MOBIL POWER', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M383', 'MONIQUE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M409', 'MOSH INC', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M411', 'MOST', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M472', 'MUTI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M965', 'MOBILE POWER', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M985', 'MULIABATIK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MA97', 'MINIMAL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MC46', 'MOBSTER', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD39', 'MAP', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD41', 'MARK SPENCER', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD43', 'MRT', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD44', 'MAYESA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD71', 'MF DESIGN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N009', 'NADHIRA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N010', 'NAFISA\'S', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N056', 'NATURAL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N060', 'NATURE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N100', 'NEU\'MOR', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N175', 'NOVEL MICE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N292', 'NUANSA BTK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N311', 'NULU', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O049', 'OMARA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O065', 'OPELON', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O142', 'ORIZZA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O176', 'OSMOSE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O214', 'OSELLA LDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O249', 'OPUS ONE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P050', 'PANELLI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P069', 'PARADISE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P132', 'PERMATA\'S', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P165', 'PIERRE CARDIN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P232', 'POINT ONE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P314', 'PRIVATELDS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P344', 'PS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P362', 'PURI BSN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P363', 'PURI KRD', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P509', 'PARADISE BATIK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P514', 'POLO LADIES', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P596', 'PICOLETA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R007', 'RABANNI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R026', 'RAMPAGE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R030', 'RANTI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R134', 'RIMA BUSANA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R290', 'REMIX', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R296', 'RYUSEI', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R329', 'RIMAPLNGKP', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R357', 'RISNIF', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R394', 'RADEN SIRAIT', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R427', 'REMIX JEANS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R428', 'RILLEY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R468', 'RGRF', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R486', 'RASYA BATIK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R491', 'RIANTY BATIK', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S046', 'SAFFRON', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S070', 'SALMA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S175', 'SCALA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S226', 'SEKIDO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S230', 'SELARAS', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S263', 'SEVENTEEN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S272', 'SHADE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S274', 'SHAFFA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S275', 'SHAFIRA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S312', 'SHIRA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S342', 'SIGMENT', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S359', 'SIMPLICITY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S381', 'SIXTY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S396', 'SLEEP EXP', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S462', 'SORCIE AGE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S463', 'SORELLA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S502', 'SPORT EXP', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S691', 'SWEETDANCE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S711', 'SYAQILLA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S830', 'SHELINNY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA01', 'SHINY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA10', 'SIMPLI RED', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA21', 'SOFIA MSLM', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA44', 'SITI HAJAR', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA58', 'SHENNY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA99', 'SHOWY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SB81', 'SURFER GIRL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SB91', 'SHASMIRA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T066', 'TATTO DESIGN', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T080', 'TEENATION', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T118', 'THE B CLUB', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T120', 'THE EXECUTIVE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T138', 'TIATIRA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T210', 'TORSO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T263', 'TRISET', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T284', 'TULIP', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T316', 'TWO17', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T417', 'TRANCE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T620', 'TRIUMPH', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('U006', 'U. WEAR EXP', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('U027', 'UNIQUE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('U037', 'UP 2 DATE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V016', 'VALINO DONNA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V049', 'VENICY', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V074', 'VIENNA FAIR', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V260', 'VALERIA PHILIP', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W005', 'WACOAL', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W216', 'WINNA', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('X021', 'X\'PRESSIVE', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('X039', 'X8', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Y063', 'YOUNGHEART', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Y072', 'YULIFAR', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Z054', 'ZONZO', 'LADIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('3003', '3 SECOND', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A157', 'AMCO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A226', 'ARJUNAWEDA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A234', 'ARNET', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A236', 'ARNOLD PALMER', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A237', 'ARNON BROOK', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A242', 'ARPEGGIO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A303', 'AXIS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A482', 'AGRAPANA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A497', 'ANDRE M', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A614', 'ARONOW', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A655', 'ANDRE LAURENT', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B050', 'BALI LESTARI', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B112', 'BATIK GALLERY', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B113', 'BATIK KERIS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B333', 'BOMB BOOGIE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B436', 'BUON GIORNO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B448', 'BYFORD', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B585', 'BATIK IBR', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B668', 'BOEATAN BANDOENG', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B715', 'BOURGEOIS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B763', 'BATIK KOMAR', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B778', 'BATIK SEMAR', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B789', 'BUZZ', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B849', 'BATIK BATHARA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B927', 'BUCKAROO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C063', 'CANOTIER', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C094', 'CARDINAL', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C117', 'CARTHAGO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C298', 'CKF', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C371', 'CONTEMPO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C404', 'COUNTRY FIESTA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C417', 'CRESSIDA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C427', 'CROCODILE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C463', 'C-59', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C474', 'CLUB SODA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C610', 'CARVIL J', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C611', 'CROCODLUW', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C625', 'CASERINIACC', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C701', 'COSTA BRAVA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C816', 'CARLOS MORENO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C878', 'CAESAR', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D002', 'D&F', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D037', 'DANAR HADI', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D076', 'DECARLO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D119', 'DF', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D252', 'DURBAN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D380', 'DAMON', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D466', 'DOPHARD', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D514', 'DEVAGO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D542', 'DANABRATA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E037', 'ELGINI', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E060', 'EMBA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E232', 'ENZORO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E355', 'EDWIN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F016', 'FABULOUS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F052', 'FAVO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F059', 'FELIX BUHLER', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F131', 'FLYMAN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F321', 'FAMO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G018', 'GABRIELLE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G079', 'GIANI GRACIO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G094', 'GIORGIO VASARI', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G104', 'GKH', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G111', 'GLENBROOKE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G178', 'GQ', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G196', 'GREENBERET', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G202', 'GREENLIGHT', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G221', 'GT MAN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G233', 'GUFO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G733', 'GIANNI VISENTIN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H003', 'H&R', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H078', 'HARRY MARTIN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H132', 'HENRY ADAMS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H259', 'HUSH PUPPIES', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H450', 'HICOOP', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I034', 'IE-BE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I127', 'INTRESSE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I289', 'INDITEX', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I297', 'INDOETHNIC', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J019', 'JAIL', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J089', 'JIMMY&MARTIN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J101', 'JOBB', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J125', 'JOSEPH LAURIN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J223', 'JOHNWIN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J249', 'JEEP', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J260', 'JAKJAZZ', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J294', 'JAVENIR', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K096', 'KENT', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K395', 'KICKERSAPP', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L016', 'LABETTE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L050', 'LARUSSO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L070', 'LEA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L078', 'L\'EGGS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L105', 'LIBERAL', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L177', 'LOIS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L407', 'LITTLE INK M', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L503', 'LEMBUR BATIK', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M011', 'M.GEE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M077', 'MANHATTAN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M358', 'MOC', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M361', 'MODASPORT', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M388', 'MONOTONE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M463', 'MUNDO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MA88', 'MOUTLEY', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MB69', 'MAHANAGARI', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MB84', 'MIGHTY', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MB87', 'MANCLUB', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MC78', 'MORGER', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MC92', 'MOST WANTED', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD39', 'MAP', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD41', 'MARK SPENCER', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD81', 'MAGNUM RELOAD', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('ME25', 'MANLY', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('ME34', 'MCB', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O011', 'OCEAN LINE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O012', 'OCEAN PASIFIC', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O089', 'OSELLA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O216', 'ONE MAN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O252', 'OXYGEN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P025', 'PALATINO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P111', 'PEDEPE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P165', 'PIERRE CARDIN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P239', 'POLO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P266', 'POSH BOY', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P402', 'PO JEANS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P589', 'PROSHOP', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P669', 'PLAYBOY', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R103', 'RFL', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R127', 'RIDER', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R166', 'ROCKETEER', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R290', 'REMIX', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R326', 'REVOLUTION', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R328', 'ROYALIST', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R356', 'RAWHIDE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R453', 'RILLEY MENS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R491', 'RIANTY BATIK', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S285', 'SHARK', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S339', 'SIERRA MORENA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S375', 'SISA EXPORT M', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S484', 'SPARKLE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S541', 'STAR-WAY', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S860', 'SAVINO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S869', 'SPC BRAND', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S884', 'SAINTLUCAS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S941', 'SOFTLENS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SC30', 'SAVILE ROW', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SC86', 'SNAPBACK MARVEL', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T120', 'THE EXECUTIVE', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T159', 'TIRA', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T198', 'TOOTAL', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T210', 'TORSO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('U088', 'UNCHAL', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V010', 'VALENTINO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V015', 'VALINO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V018', 'VAN HEUSEN', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V236', 'VIALLI MILANO', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V256', 'VOGARD', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W019', 'WALRUS', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W029', 'WATCHOUT', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W098', 'WOOD', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W108', 'WRANGLER', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('X023', 'X-TEND', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('X049', 'X8', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Z057', 'ZOOMERANG', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Z081', 'ZHEV', 'MENS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A548', 'ALIENFORCE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A641', 'ARNOLDKIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A646', 'APPLEBERRY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B021', 'BABY LOONEY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B026', 'BABYPOPEYE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B028', 'BABYSNOOPY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B058', 'BALLOON', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B064', 'BANANA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B089', 'BARNEY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B114', 'BATMAN', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B146', 'BEBITO', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B221', 'BICYCLE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B367', 'BOY TOY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B562', 'BEN 10', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B638', 'BOSSINIKID', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B788', 'BABY V', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C094', 'CARDINAL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C219', 'CHICCO', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C235', 'CHIPIRON', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C361', 'COLOURS IN', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C371', 'CONTEMPO', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C377', 'COOL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C379', 'COOL SHOES', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C428', 'CROCOKIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C443', 'CUBITUS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C454', 'CUTE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C457', 'CYBKIDZ', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C541', 'CARTOONTEE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C543', 'COSMO', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C572', 'CURLY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C573', 'CONTEMPOJR', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C697', 'CLS JUNIOR', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C796', 'COOL GIRL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C808', 'CLUE BEBE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C838', 'CRESIDAKID', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D080', 'DEE DEE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D126', 'DIALOGUE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D187', 'DONITA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D189', 'DONITABABY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D192', 'DORAEMON', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D237', 'DUCK DUCK', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D502', 'DODO BABY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D511', 'DODOSHB', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D557', 'DODORINDO', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E032', 'ELEGANCE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E182', 'EYKA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E276', 'ENFANT', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E314', 'EXIT JR', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F002', 'F&F KIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F016', 'FABULOUS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F023', 'FAITH BOYZ', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F325', 'FUN LABEL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F348', 'FISHER PRICE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F382', 'PINGERPRINT', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F408', 'FNR', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F445', 'FASHCLICK', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G215', 'GROOVY KID', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G220', 'GT KIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G467', 'GTKIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H064', 'HAPPY KIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H174', 'HIPOFANT', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H354', 'HOTWHELL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I213', 'IKAVOU', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I298', 'I BONEKA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J142', 'JSP', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J143', 'JSP BABY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J245', 'JEDEA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J275', 'JAKJAZZKIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K129', 'KIDDY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K130', 'KIDDYART', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K557', 'KIDDOSTICK', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K590', 'KIOS ANAK', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L094', 'LES ENPHANT', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L161', 'LITTLECOOL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L223', 'LTL C-IN', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L225', 'LTL INDIAN', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L227', 'LTLCUBITUS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L255', 'LYNEA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L443', 'LULLABY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L472', 'LAMIABELA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L509', 'LTLFELLA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M009', 'M. MONIQUE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M383', 'MONIQUE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M396', 'MOONEYES', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M905', 'M2P', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MB01', 'MAM', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MC79', 'M.MONIQUE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MC92', 'MOST WANTED', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD41', 'MARK SPENCER', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD98', 'MAP KIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('ME02', 'MAP TOYS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N329', 'NIGUA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N392', 'NATALIE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N393', 'NEXT KIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O090', 'OSELLAKIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O094', 'OSHKOSH BG', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O205', 'OMNOM', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O207', 'ONE PLUS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O227', 'OKIDOKI', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P005', 'P.CARDINKID', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P006', 'P.DITO BOY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P117', 'PENGUIN', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P178', 'PINK', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P179', 'PINK', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P197', 'PITO DITO', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P250', 'POOH BABY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P257', 'POPEYE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P274', 'POWER PUFF', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P295', 'PRETTYGIRL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P308', 'PRINCESS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P350', 'PUKU PUKU', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P497', 'PRINCESACC', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P500', 'PRETTYGCSL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P504', 'POLOKIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P630', 'POYKETOYS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Q039', 'QNA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R095', 'RETRO MICKEY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R113', 'RIBY PUTRA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R172', 'RODEO JNR', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R333', 'RAPUNZEL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R374', 'REICHEL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R438', 'RODEO GIRL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R439', 'RIMA KIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S421', 'SNOOPY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S494', 'SPIDERMAN', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S499', 'SPONGE BOB', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S616', 'SUNDAY MORNING', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA03', 'SNOBBY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA32', 'SUPERHERO', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA90', 'SOUL', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SB88', 'SPOSTA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SC36', 'SDY WHYTE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SC83', 'SHARK KIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T117', 'THAT\'S DONALD', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T133', 'THOUGH GUY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T185', 'TOLLYJOY', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T212', 'TORSOKIDS', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T310', 'TWIST', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T491', 'TRANSFORMER', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T645', 'TOYS BOX', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T660', 'TINYBUTTON', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V009', 'VALENTINE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V055', 'VERSAILLES', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W167', 'WDKI', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W249', 'WAREHOUSE', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Z048', 'ZARA', 'BABY AND KIDS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A007', 'A.ANTONIO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A048', 'ADIDAS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A083', 'AIRWALK', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A086', 'AIX AGGIO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A154', 'AMANDA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A155', 'AMANDA JANE\'S', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A173', 'ANDRE VALENTINO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A217', 'ARDILES', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A444', 'ALMEDO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A582', 'ANCA SHOES', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A617', 'ANTON CO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A696', 'ADIDAS GAB', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A699', 'ANDRE COMFORT', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B107', 'BATA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B147', 'BEBOB', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B153', 'BEEBUG', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B164', 'BELEZZA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B212', 'BETTINA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B249', 'BINGO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B355', 'BORSA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B359', 'BOSSWAY', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B521', 'BUMBLEBEE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B596', 'BELLEZZA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B597', 'BERTINI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B631', 'BROOKS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B640', 'BRIAN&JOANNE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C043', 'CAMEL ACTIVE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C094', 'CARDINAL', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C118', 'CARVIL', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C144', 'CELESTINO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C184', 'CHARACTER', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C324', 'CLOWNY', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C339', 'COCONEL', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C348', 'COLETTE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C349', 'COLETTE KIDS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C373', 'CONVERSE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C427', 'CROCODILE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C481', 'CASTELLO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C585', 'CARDINAL LDS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C609', 'COHEN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C641', 'CROCODILE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C651', 'CALBI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C680', 'CLIVER', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C770', 'CLOI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C788', 'CONNEC', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C803', 'CERELIA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C806', 'CATCHEER', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C817', 'CARVIENO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C873', 'COSMOPOLITAN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D124', 'DIADORA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D181', 'DONATELLO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D203', 'DR.MOCC', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D279', 'D.PRINCESS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D348', 'D\'CAT', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D350', 'DIORUCCI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D450', 'DEALOVE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E005', 'EAGLE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E048', 'ELLE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E051', 'ELLESE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E064', 'EMERALD', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E103', 'ENVOI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E176', 'EXSPORT', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E305', 'EVERBEST', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E323', 'ETHNIQUE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F016', 'FABULOUS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F046', 'FARREL', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F082', 'FILA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F110', 'FLADEO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F115', 'FLEURETTE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F272', 'FORTUNE DUCK', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F297', 'FELIX_VRGS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F302', 'FARISH_SPT', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F303', 'FARISH_BAG', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F329', 'FELLUCI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F333', 'FANDEI LDS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F334', 'FANDEI KID', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F381', 'FITFLOP', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G049', 'GATS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G127', 'GOBELINI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G208', 'GRENADIER', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G216', 'GROUPIE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G228', 'GUCHI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G232', 'GUESS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G422', 'GRANDIR', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G466', 'GERRANINO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G555', 'GINAROSSI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G628', 'GIOR MORENTO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G691', 'GIOVANNI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H040', 'HANA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H202', 'HOMYPED', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H259', 'HUSH PUPPIES', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I263', 'IPANEMA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I284', 'IORA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I289', 'INDITEX', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J155', 'JULIA\'R', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J221', 'JOMA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J222', 'JEMMA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J280', 'JOO COUTURE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J295', 'JANSPORT', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J318', 'JIM JOKER', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K055', 'KASOGI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K126', 'KICKERS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K197', 'KOALA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K226', 'KONNICHIWA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K428', 'KELME', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K480', 'KANINNA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K524', 'KICKERS BAG', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K589', 'KHAKIKAKIKU', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K595', 'KELOM GEULIS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L073', 'LEAGUE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L093', 'LES CATINO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L127', 'LILLE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L152', 'LIPTON', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L204', 'LOTTO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L338', 'LINESA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L339', 'LUCKY SAR', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L340', 'LE AGAVI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L368', 'LILLE BAG', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L376', 'LEFRIN LICCARDO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L458', 'LALUNA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L522', 'LAVIOLA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M147', 'MAX BARENS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M216', 'MELS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MC11', 'MISSEL', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD11', 'MGEE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD39', 'MAP', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD41', 'MARK SPENCER', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD54', 'MARC&STUART', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD60', 'MODELLO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N087', 'NEOSACK', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N103', 'NEW BALANCE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N132', 'NIKE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N167', 'NOCHE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N261', 'NIEL\'S', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N372', 'NOCHE BAGS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N401', 'NIKE GAB', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O004', 'OBERMAIN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O016', 'ODITY', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O091', 'OSH KOSH', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O105', 'OUTKAST', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O178', 'ONTIME', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O179', 'OXIGEN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O195', 'OMILES', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O246', 'ODETTE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P002', 'P. CARDIN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P024', 'PAKALOLO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P027', 'PALDO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P037', 'PALOMINO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P067', 'PAPILLON', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P117', 'PENGUIN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P141', 'PETER KEIZA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P165', 'PIERRE CARDIN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P208', 'PLAYBOY', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P282', 'PRECISE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P293', 'PRETTY BAG', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P294', 'PRETY SHOES', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P352', 'PUMA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P431', 'PALAZZO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P458', 'PATROL', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P534', 'P.GRANT', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P563', 'PINEAPPLE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P612', 'PAULISTA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P737', 'PICK YOUR DENIM', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Q026', 'QUIVA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R069', 'REEBOK', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R137', 'RINDI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R156', 'ROBELLI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R175', 'ROHDE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R204', 'ROSITA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R496', 'RAJUTAN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S113', 'SANTA BARBARA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S205', 'SEASON', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S483', 'SPALDING', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S570', 'STUDIO NINE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S601', 'SUMMER', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S714', 'SYMBOLIZE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S831', 'S.VANDECKA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S932', 'SPEEDO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S933', 'ST.BRBARAL', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S934', 'SAMSONITE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA29', 'SPORT STATIONS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA31', 'SIMPLY HEART', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SB81', 'SURFER GIRL', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SC20', 'SNEAKERS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SD06', 'SUPER JELLY', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SD45', 'SAVVY BAGS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T059', 'TASIA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T134', 'THREE REY', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T190', 'TOMKINS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T230', 'TRACKER', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T237', 'TRAVELTIME', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T263', 'TRISET', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T290', 'TURATI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T423', 'TRISET TAS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T470', 'TEENMIX', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T496', 'TRISET KIDS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T521', 'THE FED', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T632', 'THE SAK', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('U073', 'UNIVERSITY', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V139', 'VOTE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V216', 'VONNY&ELLEN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V257', 'VINAASTEE', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W029', 'WATCHOUT', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W041', 'WEIDENMANN', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W072', 'WIMO', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Y055', 'YONGKI KOMALADI', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Y056', 'YONGKIDZ', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Y116', 'YUCCA', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Y124', 'YONGKIMENS', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Z011', 'ZANDILAC', 'SHOES AND BAGS', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A023', 'ABIGAIL', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A245', 'ART FASHION', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A498', 'A. CHRISTIE', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A544', 'APEL ACC', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A639', 'AMARANTHINE', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('A657', 'AK', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B057', 'BALLIN', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B138', 'BEAUTY2000', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B383', 'BRIGHT', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('B471', 'BLOOM', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C005', 'C&D ACCS', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C006', 'C&F PARFUM', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C192', 'CHATELAIN', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C253', 'CHOISES', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C624', 'CHRONOTECH', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C666', 'CASIO', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C667', 'CITIZEN', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C668', 'CS', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C669', 'CHRONO MASTER', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('C876', 'CINDERELLA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D060', 'DAYA MULIA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('D493', 'D EYEKO', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E044', 'ELIZABETH ARDEN', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E138', 'ETERNALLY', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E144', 'ETUDEHOUSE', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E253', 'ELLE WATCH', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E342', 'ESSENCE', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('E368', 'ELISE', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F035', 'FANS.ACC', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F085', 'FINE ART', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('F090', 'FIOR', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G106', 'GLAMOUR', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G135', 'GOLD MART', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G468', 'GOLDSMITH', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G564', 'GIRLICIOUS', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G606', 'GAZZA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('G661', 'GS GUESS', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H008', 'H. WARMDOLL', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H106', 'HEART WARMER', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('H275', 'H.WARMER', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I023', 'ICY ACC', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I195', 'INFINITY', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('I214', 'IN-ART', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('J252', 'JACQEU MARTIN', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K019', 'KAIZA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('K458', 'KUDETA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('L328', 'LT PRO', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M029', 'MADONNA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M087', 'MARC ECKO', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M307', 'MISHA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M379', 'MONET', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M471', 'MUSTIKA RT', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M980', 'MARIE KAY', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M981', 'MAWARMERAH', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('M992', 'MURAH JAYA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MC39', 'MAKE OVER', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD39', 'MAP', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('MD41', 'MARK SPENCER', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N058', 'NATURAL WONDER', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N070', 'NAUTICA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N290', 'NON GUESS', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N291', 'NOONA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('N376', 'NICOLES', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('O184', 'OPEE', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P013', 'PAC', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P178', 'PINK', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P198', 'PIXY', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P292', 'PRETTY', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P475', 'PUROSILVER', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('P603', 'PVLGATORI', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Q030', 'Q & Q', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R097', 'REVLON', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('R360', 'RICH ACC', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S129', 'SARI AYU', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S178', 'SCARLET', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S315', 'SHISEIDO', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S569', 'STUDIO CLR', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S738', 'SILKY GIRL', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S887', 'SAKURA JT', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S888', 'SAKURA KCM', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('S935', 'SHIRO ACC', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SA04', 'SKIN79', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SB81', 'SURFER GIRL', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('SC32', 'SPEX SYMBOL', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T036', 'TAMMIA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('T368', 'TIME MASTER', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('U015', 'ULTIMA II', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('U086', 'UTAMA SPICE', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V005', 'VADOX', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('V066', 'VICTORIA ALEXANDRA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W024', 'WARDAH', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W030', 'WATCHWORLD', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('W191', 'WATCHGLRY', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Y015', 'YAMCO', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Y032', 'YEPI ACCS', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Y106', 'YU!PLUS', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Z005', 'ZA', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+..insert into mst_brand (code, name, division, description, created_by, created_date) values ('Z055', 'ZA\' BIJOUX', 'BEAUTY AND ACCESSORIES', '', 'admin', '2015-03-24 14:11:17').
+read 1st sheet done.
+
+Done.
+Finish the job at Mar 24, 2015, 2:11 pm.
+
+Close database connection.
+Leave procedure.

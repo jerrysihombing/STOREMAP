@@ -9,6 +9,7 @@
 
 require_once (dirname(__FILE__) . "/../model/Brand.php");
 require_once (dirname(__FILE__) . "/../model/Sales.php");
+require_once (dirname(__FILE__) . "/../model/Division.php");
 
 class SalesController extends GlobalController {
 
@@ -24,7 +25,11 @@ class SalesController extends GlobalController {
 		$user_name = empty($user_name) ? $user_id : $user_name;
 		$role = $this->getSessionItem("role");
 		$branch_code = $this->getSessionItem("branch_code");
+		$store_code = $this->getSessionItem("store_code");
 		
+		$DV = new Division();
+		$divisionData = $DV->loadAll();
+			
 		switch ($ac) {			
 			
 			case "":
@@ -34,12 +39,21 @@ class SalesController extends GlobalController {
 				$createAllowable = $this->isAllow($a_auth, 142);
 				$uploadAllowable = $this->isAllow($a_auth, 145);
 				
+				$this->setSessionItem("salesListInit", 1);
+				
 				$BR = new Brand();
-				$brandData = $BR->loadAll();
+				$brandData = $BR->loadDistinctName();
 				$optBrand = "";
 				foreach ($brandData as $brands) {
 					$optBrand .= "<option values='" . $brands["name"] . "'>" . $brands["name"] . "</option>";	
 				}
+				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$optDivision .= "<option values='" . $divisions["name"] . "'>" . $divisions["name"] . "</option>";	
+				}
+				
+				$today = date("d-m-Y");
 				
 				include_once("html/sales_list.html");
 				
@@ -50,10 +64,15 @@ class SalesController extends GlobalController {
 				$this->isOperAllowable($a_auth, 142);
 				
 				$BR = new Brand();
-				$brandData = $BR->loadAll();
+				$brandData = $BR->loadDistinctName();
 				$optBrand = "";
 				foreach ($brandData as $brands) {
 					$optBrand .= "<option values='" . $brands["name"] . "'>" . $brands["name"] . "</option>";	
+				}
+				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$optDivision .= "<option values='" . $divisions["name"] . "'>" . $divisions["name"] . "</option>";	
 				}
 				
 				include_once("html/sales_add.html");

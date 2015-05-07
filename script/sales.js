@@ -135,6 +135,7 @@ function goBack() {
 function goSave() {
             var transDate = $("#trans_date").val();
             var brandName = $("#brand_name option:selected").val();
+            var division = $("#division option:selected").val();
             var articleType = $("#article_type option:selected").val();
             var quantity = $("#quantity").val();
             var amount = $("#amount").val();
@@ -148,6 +149,10 @@ function goSave() {
             else if (brandName == "") {
                 $("#obj").val("brand_name");
                 inputAlert("Please enter BRAND NAME.");
+            }
+            else if (division == "") {
+                $("#obj").val("division");
+                inputAlert("Please enter DIVISION.");
             }
             else if (articleType == "") {
                 $("#obj").val("article_type");
@@ -170,7 +175,7 @@ function goSave() {
             else {
                 quantity = $("#quantity").autoNumeric("get");
                 amount = $("#amount").autoNumeric("get");
-                var dataString = "transDate=" + transDate + "&brandName=" + brandName + "&articleType=" + articleType + "&quantity=" + quantity + "&amount=" + amount + "&storeInit=" + storeInit;
+                var dataString = "transDate=" + transDate + "&brandName=" + brandName + "&division=" + division + "&articleType=" + articleType + "&quantity=" + quantity + "&amount=" + amount + "&storeInit=" + storeInit;
                 $.ajax({
                         type: "POST",
                         url: "../php/exe/sales_add.php",
@@ -203,6 +208,7 @@ function goUpdate() {
             var id = $("#id").val();
             var transDate = $("#trans_date_e").val();
             var brandName = $("#brand_name").val();
+            var division = $("#division").val();
             var articleType = ($("#article_type").val() == "Obral" ? "1" : "0");
             var quantity = $("#quantity").val();
             var amount = $("#amount").val();
@@ -216,6 +222,10 @@ function goUpdate() {
             else if (brandName == "") {
                 $("#obj").val("brand_name");
                 inputAlert("Please enter BRAND NAME.");
+            }
+            else if (division == "") {
+                $("#obj").val("division");
+                inputAlert("Please enter DIVISION.");
             }
             else if (articleType == "") {
                 $("#obj").val("article_type");
@@ -238,7 +248,7 @@ function goUpdate() {
             else {
                 quantity = $("#quantity").autoNumeric("get");
                 amount = $("#amount").autoNumeric("get");
-                var dataString = "id=" + id + "&transDate=" + transDate + "&brandName=" + brandName + "&articleType=" + articleType + "&quantity=" + quantity + "&amount=" + amount + "&storeInit=" + storeInit;
+                var dataString = "id=" + id + "&transDate=" + transDate + "&brandName=" + brandName + "&division=" + division + "&articleType=" + articleType + "&quantity=" + quantity + "&amount=" + amount + "&storeInit=" + storeInit;
                 $.ajax({
                         type: "POST",
                         url: "../../php/exe/sales_update.php",

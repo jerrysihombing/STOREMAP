@@ -23,6 +23,8 @@ class Status {
 	private $_color;
 	private $_minValue;
     private $_maxValue;
+	private $_minValueWide;
+    private $_maxValueWide;
 	
 	private $_createdBy;
 	private $_createdDate;
@@ -56,10 +58,10 @@ class Status {
 		
 	}	
 	
-	public function findColor($value) {
+	public function findColor($value, $wide = 0) {
 		$this->makeConnection();
 		
-		$sql = "SELECT status_find_color($value)";	
+		$sql = "SELECT status_find_color($value, $wide)";	
 			
 		$res = $this->_mysqli->query($sql);
 		$row = $res->fetch_row(); 
@@ -102,6 +104,8 @@ class Status {
 			$this->_color = $row["color"];			
 			$this->_minValue = $row["min_value"];
             $this->_maxValue = $row["max_value"];
+			$this->_minValueWide = $row["min_value_wide"];
+            $this->_maxValueWide = $row["max_value_wide"];
 			$this->_createdBy = $row["created_by"];
 			$this->_createdDate = $row["created_date"];
 			$this->_lastUser = $row["last_user"];
@@ -137,7 +141,9 @@ class Status {
 					$this->_minValue . "', '" .
                     $this->_maxValue . "', '" .
 					$this->_lastUser . "', '" .
-					$this->_lastUpdate . 
+					$this->_lastUpdate . "', '" .
+					$this->_minValueWide . "', '" .
+                    $this->_maxValueWide . 
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -159,7 +165,9 @@ class Status {
 					$this->_minValue . "', '" .
                     $this->_maxValue . "', '" .
 					$this->_createdBy . "', '" .
-					$this->_createdDate . 
+					$this->_createdDate . "', '" .
+					$this->_minValueWide . "', '" .
+                    $this->_maxValueWide . 
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -230,6 +238,12 @@ class Status {
     public function getMaxValue() {
 		return $this->_maxValue;	
 	}
+	public function getMinValueWide() {
+		return $this->_minValueWide;	
+	}
+    public function getMaxValueWide() {
+		return $this->_maxValueWide;	
+	}
 	public function getCreatedDate() {
 		return $this->_createdDate;
 	}
@@ -266,6 +280,12 @@ class Status {
 	}
     public function setMaxValue($v) {
 		$this->_maxValue = $v;	
+	}
+	public function setMinValueWide($v) {
+		$this->_minValueWide = $v;	
+	}
+    public function setMaxValueWide($v) {
+		$this->_maxValueWide = $v;	
 	}
 	public function setCreatedDate($v) {
 		$this->_createdDate = $v;

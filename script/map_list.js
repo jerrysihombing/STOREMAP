@@ -112,7 +112,7 @@ $(function() {
                              {"bSearchable": false, "bSortable": false, "sClass": "al_center"},
                              {"bSearchable": false, "bSortable": false, "sClass": "al_center"}			
                         ],
-                        "aaSorting": [[ 0, "desc" ]],
+                        "aaSorting": [[ 0, "asc" ]],
                         "bLengthChange": false,
                         //"sDom": '<"H"lfr>t<"F"ip>', //-> default
                         //"sDom": '<"H"lr>t<"F"ip>',

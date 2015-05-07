@@ -85,19 +85,20 @@ insert into adm_menu (id_menu, title, created_by, created_date, last_user, last_
     (133, 'Status - Edit', 'system', sysdate(), 'system', sysdate()),
     (134, 'Status - Delete', 'system', sysdate(), 'system', sysdate()),
     (141, 'Sales - List', 'system', sysdate(), 'system', sysdate()),
-    (142, 'Sales - Create', 'system', sysdate(), 'system', sysdate()),
-    (143, 'Sales - Edit', 'system', sysdate(), 'system', sysdate()),
-    (144, 'Sales - Delete', 'system', sysdate(), 'system', sysdate()),
-    (145, 'Sales - Upload', 'system', sysdate(), 'system', sysdate()),
+    --(142, 'Sales - Create', 'system', sysdate(), 'system', sysdate()),
+    --(143, 'Sales - Edit', 'system', sysdate(), 'system', sysdate()),
+    --(144, 'Sales - Delete', 'system', sysdate(), 'system', sysdate()),
+    --(145, 'Sales - Upload', 'system', sysdate(), 'system', sysdate()),
     (151, 'Brand - List', 'system', sysdate(), 'system', sysdate()),
     (152, 'Brand - Create', 'system', sysdate(), 'system', sysdate()),
     (153, 'Brand - Edit', 'system', sysdate(), 'system', sysdate()),
     (154, 'Brand - Delete', 'system', sysdate(), 'system', sysdate()),
-    (161, 'Article - List', 'system', sysdate(), 'system', sysdate()),
-    (162, 'Article - Create', 'system', sysdate(), 'system', sysdate()),
-    (163, 'Article - Edit', 'system', sysdate(), 'system', sysdate()),
-    (164, 'Article - Delete', 'system', sysdate(), 'system', sysdate()),
-    (165, 'Article - Upload', 'system', sysdate(), 'system', sysdate())
+    (155, 'Brand - Upload', 'system', sysdate(), 'system', sysdate()),
+    (161, 'Article - List', 'system', sysdate(), 'system', sysdate())--,
+    --(162, 'Article - Create', 'system', sysdate(), 'system', sysdate()),
+    --(163, 'Article - Edit', 'system', sysdate(), 'system', sysdate()),
+    --(164, 'Article - Delete', 'system', sysdate(), 'system', sysdate()),
+    --(165, 'Article - Upload', 'system', sysdate(), 'system', sysdate())
    ;
     
 -- transaction, start with 3 --
@@ -115,8 +116,10 @@ insert into adm_role_hdr (role_name, description, created_by, created_date, last
 
 insert into adm_role_dtl (id_hdr, id_menu) values
     (1, 111), (1, 112), (1, 113), (1, 114), (1, 115), (1, 121), (1, 122), (1, 123), (1, 124), (1, 125),
-    (1, 131), (1, 132), (1, 133), (1, 134), (1, 141), (1, 142), (1, 143), (1, 144), (1, 145),
-    (1, 151), (1, 152), (1, 153), (1, 154), (1, 161), (1, 162), (1, 163), (1, 164), (1, 165), 
+    (1, 131), (1, 132), (1, 133), (1, 134), (1, 141),
+    --(1, 142), (1, 143), (1, 144), (1, 145),
+    (1, 151), (1, 152), (1, 153), (1, 154), (1, 155), (1, 161),
+    --(1, 162), (1, 163), (1, 164), (1, 165), 
     (1, 711), (1, 999);
 
 insert into adm_user (user_id, user_name, passwd, email, branch_code, departement, role_name, active, created_by, created_date, last_user, last_update) values

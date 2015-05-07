@@ -2,9 +2,9 @@
 
 <html>
 <head>
-    <title>Yogya Map Intelligence - Report by Map</title>
+    <title>Yogya Space Intelligence - Report by Map</title>
     
-    <link href="../../../../css/jquery.qtip.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../../../../../../css/jquery.qtip.min.css" rel="stylesheet" type="text/css" media="screen" />
     <style>
         .qtip-titlebar {
             font-size:14px;
@@ -14,9 +14,9 @@
         }
     </style>
     
-    <script type="text/javascript" src="../../../../script/jquery/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="../../../../script/jquery/jquery.qtip.min.js"></script>
-    <script type="text/javascript" src="../../../../script/jquery/jquery.maphilight.min.js"></script>
+    <script type="text/javascript" src="../../../../../../script/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../../../../../script/jquery/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="../../../../../../script/jquery/jquery.maphilight.min.js"></script>
     
     <script type="text/javascript">
         $(function() {
@@ -34,11 +34,19 @@
                         var data = (aCode[2] != null ? aCode[2] : "-1");
                         var type = (aCode[3] != null ? aCode[3] : "-1");
                         var id = (aCode[4] != null ? aCode[4] : "-1");
+                        var division = (aCode[5] != null ? aCode[5] : "-1");
+                        var wide = (aCode[6] != null ? aCode[6] : "0");
+                        var startDate = (aCode[7] != null ? aCode[7] : "0000-00-00");
+                        var endDate = (aCode[8] != null ? aCode[8] : "0000-00-00");
+                        // concate start and end date, because mod rewrite httpd cannot read more than 9 parameters 
+                        var sDate = startDate + '~' + endDate;
                         
                         // replace space with '~'
                         brand = brand.replace(/ /g, "~");
+                        division = division.replace(/ /g, "~");
                         
-                        var theUrl = 'http://' + '<?php echo $hostname; ?>' + '/report/info/' + data + "/" + type + "/" + brand + "/" + id + ".html";
+                        var theUrl = "http://" + "<?php echo $hostname; ?>" + "/report/info/" + data + "/" + type + "/" + brand + "/" + division + "/" + wide + "/" + sDate + "/" + id + ".html";
+                        //var theUrl = "http://" + "<?php echo $hostname; ?>" + "/report/info/" + data + "/" + type + "/" + brand + "/" + division + "/" + wide + "/" + id + ".html";
                         $.ajax({ url: theUrl })
                             .done(function(html) {
                                 api.set('content.text', html)
@@ -56,7 +64,9 @@
                         var code1 = (aCode[0] != null ? aCode[0] : "");
                         var code2 = (aCode[1] != null ? aCode[1] : "");
                         
-                        return (code2 != "" ? code2 : code1);
+                        var div = (aCode[5] != null ? aCode[5] : "");
+                        
+                        return (code2 != "" ? code2 : code1) + " | " + div;
                         //return $(this).prop('alt');
                     }
                     //,button: true
@@ -94,7 +104,7 @@
 
     <div>
         
-        <img class="map" id="denahId" src="../../../../map/<?php echo $MDL->getMapFile(); ?>" alt="map" border="0" usemap="#denah" > <!-- ISMAP -->
+        <img class="map" id="denahId" src="../../../../../../map/<?php echo $MDL->getMapFile(); ?>" alt="map" border="0" usemap="#denah" > <!-- ISMAP -->
         
         <map name="denah" id="denah">
             
@@ -103,6 +113,7 @@
                 $code = $data[$i]["code"];
                 $shape = $data[$i]["shape"];
                 $brandName = $data[$i]["brand_name"];
+                $division = $data[$i]["division"];
                 $coordinate = "";
                 if ($shape == "rect") {
                     $coordinate = $data[$i]["top_left"] . ", " . $data[$i]["bottom_right"];
@@ -113,10 +124,9 @@
                 else if ($shape == "poly") {
                     $coordinate = $data[$i]["coordinate"];
                 }
-                
-                echo $brandName . " " . $coordinate . "<br>";
+                $wide = ($data[$i]["wide"] == "" ? 0 : $data[$i]["wide"]);
         ?>
-            <area class="areaTip" title="this should be a tool tip" shape="<?php echo $shape; ?>" coords="<?php echo $coordinate; ?>" alt="<?php echo $code . '#' . $brandName . '#' . $cmd . '#' . $type . '#' . $id; ?>" >
+            <area class="areaTip" title="this should be a tool tip" shape="<?php echo $shape; ?>" coords="<?php echo $coordinate; ?>" alt="<?php echo $code . '#' . $brandName . '#' . $cmd . '#' . $type . '#' . $id . '#' . $division . '#' . $wide . '#' . $startDateEn . '#' . $endDateEn; ?>" >
         <?php
             }
         ?>
@@ -126,26 +136,48 @@
     </div>
     
     <?php
-    
-        for ($i = 0; $i < sizeof($data); $i++) {
         
+        for ($i = 0; $i < sizeof($data); $i++) {
+            /*
             if ($articleType == -1) {
-                $value = $MDL3->findAmountByBrandMap($data[$i]["brand_name"], $id);
+                $value = $MDL3->findAmount($data[$i]["brand_name"], $data[$i]["division"], $startDateEn, $endDateEn, $storeCode);
             }
             else {
-                $value = $MDL3->findAmountByBrandTypeMap($data[$i]["brand_name"], $articleType, $id);
+                $value = $MDL3->findAmountByType($data[$i]["brand_name"], $data[$i]["division"], $startDateEn, $endDateEn, $storeCode, $articleType);
             }
-            $color = $MDL4->findColor($value);
-                 
-            if ($color == "") $color = $data[$i]["init_color"];
+            */
+            $value = $MDL3->findAmountPerBrand($data[$i]["brand_name"], $data[$i]["division"], $startDateEn, $endDateEn, $storeCode, $articleType);
+            
+            $wide = ($data[$i]["wide"] == "" ? 0 : $data[$i]["wide"]);
+            
+            if ($cmd == "sales-per-square") {
+                if ($wide != 0) {
+                    if ($daysCount) {
+                        $value = ($value / $daysCount) / $wide;
+                    }
+                    else {
+                        $value = $value / $wide;	
+                    }
+                }
+                else {
+                    $value = 0;
+                }
+                $color = $MDL4->findColor($value, 1);
+            }
+            else {
+                $color = $MDL4->findColor($value);
+            }
+            if ($value <= 0) $color = "CCCCCC";
+            if ($color == "") $color = "CCCCCC";
             
             echo '<script type="text/javascript">';
             echo 'var data = {}; ';
             echo 'data.alwaysOn = true; ';
             echo 'data.fillColor = "' . $color . '"; ';
             echo 'data.fillOpacity = "0.6"; ';
-            echo '$("area[alt=\'' . $data[$i]["code"] . "#" . $data[$i]["brand_name"] . '#' . $cmd . '#' . $type . '#' . $id . '\']").data("maphilight", data).trigger("alwaysOn.maphilight"); ';
+            echo '$("area[alt=\'' . $data[$i]["code"] . '#' . $data[$i]["brand_name"] . '#' . $cmd . '#' . $type . '#' . $id . "#" . $data[$i]["division"] . '#' . $wide . '#' . $startDateEn . '#' . $endDateEn . '\']").data("maphilight", data).trigger("alwaysOn.maphilight"); ';
             echo '</script>';
+
         }
     ?>
         

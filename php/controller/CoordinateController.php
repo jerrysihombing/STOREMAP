@@ -11,6 +11,7 @@ require_once (dirname(__FILE__) . "/../model/Brand.php");
 require_once (dirname(__FILE__) . "/../model/Map.php");
 require_once (dirname(__FILE__) . "/../model/StoreMap.php");
 require_once (dirname(__FILE__) . "/../model/Data.php");
+require_once (dirname(__FILE__) . "/../model/Division.php");
 
 class CoordinateController extends GlobalController {
 
@@ -27,6 +28,9 @@ class CoordinateController extends GlobalController {
 		$role = $this->getSessionItem("role");
 		$branch_code = $this->getSessionItem("branch_code");
 		
+		$DV = new Division();
+		$divisionData = $DV->loadAll();
+		
 		switch ($ac) {			
 			
 			case "":
@@ -36,10 +40,15 @@ class CoordinateController extends GlobalController {
 				$createAllowable = $this->isAllow($a_auth, 122);
 				
 				$BR = new Brand();
-				$brandData = $BR->loadAll();
+				$brandData = $BR->loadDistinctName();
 				$optBrand = "";
 				foreach ($brandData as $brands) {
 					$optBrand .= "<option values='" . $brands["name"] . "'>" . $brands["name"] . "</option>";	
+				}
+				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$optDivision .= "<option values='" . $divisions["name"] . "'>" . $divisions["name"] . "</option>";	
 				}
 				
 				include_once("html/coordinate_list.html");
@@ -85,7 +94,7 @@ class CoordinateController extends GlobalController {
 				$this->isOperAllowable($a_auth, 122);
 				
 				$BR = new Brand();
-				$brandData = $BR->loadAll();
+				$brandData = $BR->loadDistinctName();
 				$optBrand = "";
 				foreach ($brandData as $brands) {
 					$optBrand .= "<option values='" . $brands["name"] . "'>" . $brands["name"] . "</option>";	
@@ -104,6 +113,11 @@ class CoordinateController extends GlobalController {
 					$optMapCode .= "<option value='" . $v["id"] . "#" . $v["code"] . "'>" . $v["name"] . "</option>";
 				}
 				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$optDivision .= "<option values='" . $divisions["name"] . "'>" . $divisions["name"] . "</option>";	
+				}
+				
 				include_once("html/coordinate_add.html");
 				
 				break;
@@ -120,7 +134,7 @@ class CoordinateController extends GlobalController {
 				$brandName = $MDL->getBrandName();
 				
 				$BR = new Brand();
-				$brandData = $BR->loadAll();
+				$brandData = $BR->loadDistinctName();
 				$optBrand = "";
 				foreach ($brandData as $brands) {
 					$sel = ($brands["name"] == $brandName ? "selected='selected'" : "");
@@ -139,6 +153,12 @@ class CoordinateController extends GlobalController {
 				foreach($data as $v) {
 					$sel = ($mapCode == $v["code"] ? " selected='selected' " : "");
 					$optMapCode .= "<option value='" . $v["id"] . "#" . $v["code"] . "' " . $sel . ">" . $v["name"] . "</option>";
+				}
+				
+				$optDivision = "";
+				foreach ($divisionData as $divisions) {
+					$sel = ($MDL->getDivision() == $divisions["name"] ? "selected='selected'" : "");
+					$optDivision .= "<option values='" . $divisions["name"] . "' " . $sel . ">" . $divisions["name"] . "</option>";	
 				}
 				
 				include_once("html/coordinate_edit.html");

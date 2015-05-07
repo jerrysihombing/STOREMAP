@@ -14,12 +14,14 @@
 
 <body>
     
+    <?php if ($value > 0) { ?>
     <div class="lblItem">
         Article <?php echo ucfirst($type); ?>
     </div>
     <div class="lblItem">
-        <?php echo ucfirst($cmd); ?> Rp <?php echo number_format($value, "0", ".", ","); ?>
+        <?php if ($cmd == "sales-per-square") echo "Sales per M2"; else echo ucfirst($cmd); ?> Rp <?php echo number_format($value, "0", ".", ","); ?>
     </div>
+    <?php } ?>
     
 </body>
 </html>

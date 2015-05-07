@@ -1,10 +1,10 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title> Yogya Map Intelligence </title>
+    <title> Yogya Space Intelligence </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="yogya, toserba yogya, yogya group, akur pratama" />
-    <meta name="description" content="Welcome to Yogya Store Map." />
+    <meta name="description" content="Welcome to Yogya Space Intelligence." />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">

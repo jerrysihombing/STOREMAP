@@ -125,15 +125,44 @@
 			
 			for ($i = 5; $i <= $data->sheets[0]['numRows']; $i++) {						
 				
-				$brandName = $data->sheets[0]['cells'][$i][1];
-				$articleType = $data->sheets[0]['cells'][$i][2];
-				$quantity = $data->sheets[0]['cells'][$i][3];
-				$amount = $data->sheets[0]['cells'][$i][4];
+				$division = $data->sheets[0]['cells'][$i][1];
+				$brandName = $data->sheets[0]['cells'][$i][2];
+				$articleType = $data->sheets[0]['cells'][$i][3];
+				$quantity = $data->sheets[0]['cells'][$i][4];
+				$amount = $data->sheets[0]['cells'][$i][5];
 				
 				# entry test
-				$check = $brandName . $articleType . $quantity . $amount;
+				$check = $brandName . $division . $articleType . $quantity . $amount;
 				
 				if ($check != "") {
+					
+					if (empty($division)) {
+						$invalidFound++;
+						fwrite($h2, "Empty division found at row " . $i . "." . ENTER);
+					}
+					else {
+						# check division
+						$sql = "select count(code) CNT from mst_division where upper(name) = upper('" . mysql_real_escape_string($division) . "')";
+						$result = mysql_query($sql);
+						if (!$result) {
+							mysql_close($conn);
+							fwrite($h, "Failed, cannot do a 'division' query. Leaving procedure" . "." . ENTER);
+							# close the log file
+							fclose($h);
+							fclose($h2);
+							echo "Error: cannot do a query.";
+							exit;
+						}
+						$found = 0;
+						if ($row = mysql_fetch_assoc($result)) {
+							$found = $row["CNT"];
+						}
+						if (!$found) {
+							$invalidFound++;
+							fwrite($h2, "Invalid division found at row " . $i . "." . ENTER);
+						}
+						mysql_free_result($result);
+					}
 					
 					if (empty($brandName)) {
 						$invalidFound++;

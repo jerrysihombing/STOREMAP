@@ -1,4 +1,5 @@
 var oTable;
+var changeSessionState = false;
 
 $(function() {
             
@@ -105,12 +106,13 @@ $(function() {
                              null,
                              null,
                              null,
+                             //null,
                              {"sClass": "al_right"},
                              {"sClass": "al_right"},
-                             null,
+                             {"bSortable": false},
                              //{"asSorting": [ "desc", "asc" ]},
-                             {"bSearchable": false, "bSortable": false, "sClass": "al_center"},
-                             {"bSearchable": false, "bSortable": false, "sClass": "al_center"}			
+                             //{"bSearchable": false, "bSortable": false, "sClass": "al_center"},
+                             //{"bSearchable": false, "bSortable": false, "sClass": "al_center"}			
                         ],
                         "aaSorting": [[ 0, "desc" ]],
                         "bLengthChange": false,
@@ -124,14 +126,15 @@ $(function() {
                                             "<option value='40'>40</option>" + 
                                             "<option value='50'>50</option>" + 
                                             "</select> records per page.",
-                            "sSearch": "Brand name: " 
+                            "sSearch": "Brand Name @TODAY: " 
                         },
                         "fnServerData": function(sSource, aoData, fnCallback) {
                             /* Add some extra data to the sender */
                             aoData.push({"name": "s_start_date", "value": $("#s_start_date").val()});
                             aoData.push({"name": "s_end_date", "value": $("#s_end_date").val()});	
                             aoData.push({"name": "s_brand_name", "value": $("#s_brand_name option:selected").val()});
-                            aoData.push({"name": "s_article_type", "value": $("#s_article_type option:selected").val()});
+                            aoData.push({"name": "s_division", "value": $("#s_division option:selected").val()});
+                            //aoData.push({"name": "s_article_type", "value": $("#s_article_type option:selected").val()});
                             aoData.push({"name": "s_store_init", "value": $("#s_store_init").val()});
                             aoData.push({"name": "s_adv", "value": $("#s_adv").val()});	
                             $.getJSON(sSource, aoData, function (json) {
@@ -152,6 +155,29 @@ $(function() {
             // use this plugin to replace some code below
             oTable.fnFilterOnReturn();
             
+            // tell datatables to use filter
+            $("div.dataTables_filter input").keyup(function (e) {
+                        if ($(this).val() != "") {
+                                    if (!changeSessionState) {            
+                                                var dataString = "toChange=salesListInit&changeTo=0";
+                                                $.ajax({
+                                                        type: "POST",
+                                                        url: "../php/exe/change_session_vars.php",
+                                                        data: dataString,
+                                                        beforeSend: function() {
+                                                        },
+                                                        success: function(data, textStatus, xhr) {
+                                                        },
+                                                        error: function(xhr, textStatus, errorThrown) { 
+                                                        },
+                                                        complete: function(xhr, textStatus) {
+                                                                    changeSessionState = true;
+                                                        }
+                                                });
+                                    }
+                        }
+            });
+            
             // for show / hide search form
             $("#search_container").hide();
             $('#adv_main').click(function(){
@@ -164,23 +190,72 @@ function goSearch() {
 	$(".dataTables_filter input").val("");
 	$("#s_adv").val("yes");
 	
-	oTable.fnDraw();
+	//oTable.fnDraw();
+    
+    // tell datatables to use filter
+    if (!changeSessionState) {
+            var dataString = "toChange=salesListInit&changeTo=0";
+            $.ajax({
+                    type: "POST",
+                    url: "../php/exe/change_session_vars.php",
+                    data: dataString,
+                    beforeSend: function() {
+                    },
+                    success: function(data, textStatus, xhr) {
+                    },
+                    error: function(xhr, textStatus, errorThrown) { 
+                    },
+                    complete: function(xhr, textStatus) {
+                                oTable.fnDraw();
+                                changeSessionState = true;
+                    }
+            });
+    }
+    else {
+            oTable.fnDraw();
+    }
 }
 
 function goReset() {
-	$("input").each(function() {		
-		$(this).val("");
+	$("input").each(function() {
+            if ($(this).prop("id") != "today") {
+                        if ($(this).prop("id") == "s_start_date") {
+                                    $(this).val($("#today").val());
+                        }
+                        else {
+                                    $(this).val("");
+                        }           
+            }
 	});
     $("#s_brand_name").val("");
-    $("#s_article_type").val("");
+    $("#s_division").val("");
+    //$("#s_article_type").val("");
 	$("#s_adv").val("no");	
     
-	oTable.fnFilter("");
+	//oTable.fnFilter("");
+    
+    // tell datatables not to use filter
+    var dataString = "toChange=salesListInit&changeTo=1";
+    $.ajax({
+            type: "POST",
+            url: "../php/exe/change_session_vars.php",
+            data: dataString,
+            beforeSend: function() {
+            },
+            success: function(data, textStatus, xhr) {
+            },
+            error: function(xhr, textStatus, errorThrown) { 
+            },
+            complete: function(xhr, textStatus) {
+                        oTable.fnDraw();
+                        changeSessionState = false;
+            }
+    });
 }
 
-function deleteAlert(id, transDate, brandName, articleType, storeInit) {
+function deleteAlert(id, transDate, brandName, division, articleType, storeInit) {
     $("#id").val(id);
-	$("#delete-id").html(transDate + ", " + brandName + ", " + articleType + ", " + storeInit);
+	$("#delete-id").html(transDate + ", " + brandName + ", " + division + ", " + articleType + ", " + storeInit);
 	$("#delete-alert").dialog("open");
 }
 

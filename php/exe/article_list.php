@@ -2,6 +2,7 @@
 	
 	@session_start();
 	$a_auth = $_SESSION["a_auth"];
+	$init = $_SESSION["articleListInit"];
 	
 	require_once(dirname(__FILE__) . "/../util/ConfigReader.php");
 	
@@ -10,7 +11,7 @@
 	 */
 	
 	/* Array of database columns which should be read and sent back to DataTables */
-	$aColumns = array('plu8', 'article_type', 'article_code', 'description', 'brand_name');
+	$aColumns = array('article_code', 'description', 'brand_name', 'division_name', 'tipo');
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "id";
@@ -88,11 +89,14 @@
 	#	$sWhere .= ')';
 	#}
 	
+	$allowedLoading = false;
+	
 	# using my custom single search
 	$sWhere = "";
 	if ( isset($_GET['sSearch']) && $_GET['sSearch'] != "" )
 	{
-		$sWhere = " AND plu8 like '%" . $_GET['sSearch'] . "%'";		
+		$sWhere = " AND article_code like '%" . $_GET['sSearch'] . "%'";
+		$allowedLoading = true;
 	}
 	
 	# using my custom advance search
@@ -100,19 +104,9 @@
 		
 		$sWhere = ""; # reset filter				
 		
-		if ( isset($_GET['s_plu8']) && $_GET['s_plu8'] != "" )
-		{
-			$sWhere .= " AND plu8 like '%" . addslashes($_GET['s_plu8']). "%'";		
-		}	
-		
-		if ( isset($_GET['s_article_type']) && $_GET['s_article_type'] != "" )
-		{
-			$sWhere .= " AND article_type = '" . addslashes($_GET['s_article_type']) . "'";		
-		}
-		
 		if ( isset($_GET['s_article_code']) && $_GET['s_article_code'] != "" )
 		{
-			$sWhere .= " AND article_code = '" . addslashes($_GET['s_article_code']) . "'";		
+			$sWhere .= " AND article_code like '%" . addslashes($_GET['s_article_code']) . "%'";		
 		}	
 		
 		if ( isset($_GET['s_description']) && $_GET['s_description'] != "" )
@@ -125,26 +119,59 @@
 			$sWhere .= " AND brand_name = '" . addslashes($_GET['s_brand_name']) . "'";		
 		}
 		
-		/*
-		if ( isset($_GET['s_store_init']) && $_GET['s_store_init'] != "" )
+		if ( isset($_GET['s_division']) && $_GET['s_division'] != "" )
 		{
-			$sWhere .= " AND store_init like '%" . addslashes($_GET['s_store_init']) . "%'";		
+			$sWhere .= " AND division_name = '" . addslashes($_GET['s_division']) . "'";		
 		}
-		*/
+		
+		if ( isset($_GET['s_tipo']) && $_GET['s_tipo'] != "" )
+		{
+			#$sWhere .= " AND tipo = '" . addslashes($_GET['s_tipo']) . "'";
+			if ($_GET['s_tipo'] == "Konsinyasi") {
+				$sWhere .= " AND tipo = 13";		
+			}
+			else {
+				$sWhere .= " AND tipo <> 13";		
+			}	
+		}
+		
+		$allowedLoading = true;
+		
 	}
 
 	/*
 	 * SQL queries
 	 * Get data to display
 	 */
-	$table = 	"select id, plu8, case when article_type = 1 then 'Obral' else 'Normal' end article_type, article_code, description, brand_name, store_init " .
-			 	"from mst_article";
-			 
-	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, plu8, article_type, article_code, description, brand_name, store_init " .
-				"FROM (" . $table . ") t WHERE 1 = 1 " . 
-				$sWhere . " " .
-				$sOrder . " " .
-				$sLimit;
+	
+	if ($init || !$allowedLoading) {
+		$table = 	"select '' id, '' article_code, '' description, '' brand_code, '' brand_name, '' division, ''  division_name, '' tipo ";
+		$sQuery =   $table;	
+	}
+	else {
+		/*
+		$table = 	"select x.id, x.article_code, x.description, x.brand_code, x.brand_name, x.division, y.name division_name, case when x.tipo = 13 then 'Konsinyasi' else 'Putus' end tipo " .
+					"from mst_article_gold x inner join mst_division y on x.division = y.code " .
+					"where current_date between x.start_date and x.end_date";
+				 
+		$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, article_code, description, brand_code, brand_name, division, division_name, tipo " .
+					"FROM (" . $table . ") t WHERE 1 = 1 " . 
+					$sWhere . " " .
+					$sOrder . " " .
+					$sLimit;
+		*/
+		
+		$table = 	"select x.id, x.article_code, x.description, x.brand_code, x.brand_name, x.division, y.name division_name, x.tipo " .
+					"from mst_article_gold x inner join mst_division y on x.division = y.code " .
+					"where current_date between x.start_date and x.end_date";
+		
+		$sQuery = 	"select SQL_CALC_FOUND_ROWS x.id, x.article_code, x.description, x.brand_code, x.brand_name, x.division, y.name division_name, x.tipo " .
+					"from mst_article_gold x inner join mst_division y on x.division = y.code " .
+					"where current_date between x.start_date and x.end_date " .
+					$sWhere . " " .
+					$sOrder . " " .
+					$sLimit;
+	}
 	
 	# debuging
 	#$handle = fopen("/tmp/test.log", "a");
@@ -161,7 +188,7 @@
 	$iFilteredTotal = $aResultFilterTotal[0];
 	
 	/* Total data set length */
-	$sQuery = "SELECT COUNT(id) FROM (" . $table . ") t";
+	$sQuery = "SELECT COUNT(1) FROM (" . $table . ") t";
 	$rResultTotal = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
 	$aResultTotal = mysql_fetch_array($rResultTotal);
 	$iTotal = $aResultTotal[0];
@@ -184,7 +211,16 @@
 			if ( $aColumns[$i] != ' ' )
 			{
 				/* General output */
-				$row[] = $aRow[ $aColumns[$i] ];
+				#$row[] = $aRow[ $aColumns[$i] ];
+				
+				if ($aColumns[$i] == "tipo") {
+					#$row[] = ($aRow[$aColumns[$i]] == 13 ? "Konsinyasi" : "Putus");
+					$row[] = (is_numeric($aRow[$aColumns[$i]]) ? ($aRow[$aColumns[$i]] == 13 ? "Konsinyasi" : "Putus") : "");
+				}
+				else {
+					$row[] = $aRow[ $aColumns[$i] ];	
+				}
+				
 			}
 		}
 		
@@ -194,7 +230,7 @@
 		 * database - you can do it here
 		 */		 
 		# --- my code to make edit and delete functionality --- #		
-		
+		/*
 		if ($CR->is_oper_allowable(163, $a_auth)) {
 			$row[] = "<a href='/article/edit/" . $aRow["id"] . ".html'><img src='../images/edit_24.png' title='Edit'></a>";
 		}
@@ -203,12 +239,12 @@
 		}	
 		
 		if ($CR->is_oper_allowable(164, $a_auth)) {
-			$row[] = "<span title='Click here to delete..' style='cursor:pointer' onclick='deleteAlert(" . $aRow["id"] . ", \"" . $aRow["plu8"] . "\")'><img src='../images/delete_24.png' /></span>";					
+			$row[] = "<span title='Click here to delete..' style='cursor:pointer' onclick='deleteAlert(" . $aRow["id"] . ", \"" . $aRow["article_code"] . "\")'><img src='../images/delete_24.png' /></span>";					
 		}
 		else {
 			$row[] = "&nbsp;";
 		}
-		
+		*/
 		# --- eo my code --- #
 				
 		$output['aaData'][] = $row;				

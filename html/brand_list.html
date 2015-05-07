@@ -31,9 +31,15 @@
 		  <!-- Default panel contents -->
 		  <div class="panel-heading">
 			Brand
-			<?php if ($createAllowable) { ?>
-			<a href="/brand/add.html" class="navbar-link" style="float: right">Create Brand</a>
-			<?php } ?>
+			
+			<?php #if ($uploadAllowable) { ?>
+			<!--<span style="float: right"><a href="/brand/upload.html" class="navbar-link">Upload Brand</a></span>-->
+			<?php #} ?>
+			
+			<?php #if ($createAllowable) { ?>
+			<!--<span style="float: right"><a href="/brand/add.html" class="navbar-link">Create Brand</a><?php if ($uploadAllowable) { ?> <span style="color: #428bca;">&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span> <?php } ?></span>-->
+			<?php #} ?>
+			
 		  </div>
 	
 		  <div class="panel-body">
@@ -51,7 +57,14 @@
 				  <table id="rounded-corner" border="0">
 					  <tbody>
 						  <tr>
-							  <td width="36%">Brand</td>
+							  <td>Code</td>
+							  <td>:</td>
+							  <td>
+								  <input type="text" id="s_code" name="s_code" value="" />
+							  </td>
+						  </tr>
+						  <tr>
+							  <td width="36%">Name</td>
 							  <td width="4%">:</td>
 							  <td>
 								  <input type="text" id="s_name" name="s_name" value="" />
@@ -61,7 +74,10 @@
 							  <td>Division</td>
 							  <td>:</td>
 							  <td>
-								  <input type="text" id="s_division" name="s_division" value="" />
+								  <select id="s_division" name="s_division">
+									  <option value="">Select division</option>
+									  <?php echo $optDivision; ?>
+								  </select>
 							  </td>
 						  </tr>
 						  <tr>
@@ -101,24 +117,26 @@
 			<!-- Table -->
 			<table id="listTable" class="table">
 			  <thead>
-				  <tr>                
-					  <th>Brand</th>
+				  <tr>
+					  <th>Code</th>
+					  <th>Name</th>
 					  <th>Division</th>
 					  <th>Description</th>
 					  <!--<th>Store Initial</th>-->
+					  <!--
 					  <th width="6%">Edit</th>
 					  <th width="6%">Delete</th>
+					  -->
 				  </tr>
 			  </thead>        
 			  <tbody>
 				  <tr>
-					  <td colspan="5" class="dataTables_empty">&nbsp;</td>
+					  <td colspan="4" class="dataTables_empty">&nbsp;</td>
 				  </tr>
 			  </tbody>
 			  <!--
 			  <tfoot>
 				  <tr>				
-					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>

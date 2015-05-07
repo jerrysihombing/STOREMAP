@@ -8,6 +8,14 @@
 	<link href="../css/demo_table_jui.css" rel="stylesheet" type="text/css" />	      
 	<link href="../css/article_list.css" rel="stylesheet" type="text/css" />	   
 	
+	<style>
+	  .alert {
+		padding: 10px;
+		margin-bottom: 20px;
+		border-radius: 4px;
+	  }
+	</style>
+	
     <script type="text/javascript" src="../script/jquery/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="../script/jquery/jquery-ui-1.10.2.custom.min.js"></script>
 	<script type="text/javascript" src="../script/jquery/jquery.dataTables.min.js"></script>
@@ -32,17 +40,21 @@
 		  <div class="panel-heading">
 			Article
 			
-			<?php if ($uploadAllowable) { ?>
-			<span style="float: right"><a href="/article/upload.html" class="navbar-link">Upload Article</a></span>
-			<?php } ?>
+			<?php #if ($uploadAllowable) { ?>
+			<!--<span style="float: right"><a href="/article/upload.html" class="navbar-link">Upload Article</a></span>-->
+			<?php #} ?>
 			
-			<?php if ($createAllowable) { ?>
-			<span style="float: right"><a href="/article/add.html" class="navbar-link">Create Article</a><?php if ($uploadAllowable) { ?> <span style="color: #428bca;">&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span> <?php } ?></span>
-			<?php } ?>
+			<?php #if ($createAllowable) { ?>
+			<!--<span style="float: right"><a href="/article/add.html" class="navbar-link">Create Article</a><?php if ($uploadAllowable) { ?> <span style="color: #428bca;">&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span> <?php } ?></span>-->
+			<?php #} ?>
 			
 		  </div>
 	
 		  <div class="panel-body">
+			
+			<div class="alert alert-success">
+			  <a href="#" class="alert-link">Please use search box to load data.</a>
+			</div>
 			
 			<div id="adv_search">    	        
         
@@ -57,26 +69,8 @@
 				  <table id="rounded-corner" border="0">
 					  <tbody>
 						  <tr>
-							  <td width="36%">Plu (8 Digits)</td>
+							  <td width="30%">Article Code</td>
 							  <td width="4%">:</td>
-							  <td>
-								  <input type="text" id="s_plu8" name="s_plu8" value="" />
-							  </td>
-						  </tr>
-						  <tr>
-							  <td>Article Type</td>
-							  <td>:</td>
-							  <td>
-								  <select id="s_article_type" name="s_article_type">
-									  <option value="">Select article type</option>
-									  <option value="Normal">Normal</option>
-									  <option value="Obral">Obral</option>
-								  </select>
-							  </td>
-						  </tr>
-						  <tr>
-							  <td>Article Code</td>
-							  <td>:</td>
 							  <td>
 								  <input type="text" id="s_article_code" name="s_article_code" value="" />
 							  </td>
@@ -99,15 +93,27 @@
 								  <input type="hidden" id="s_adv" name="s_adv" value="" />
 							  </td>
 						  </tr>
-						  <!--
 						  <tr>
-							  <td>Store Initial</td>
+							  <td>Division</td>
 							  <td>:</td>
 							  <td>
-								  <input type="text" id="s_store_init" name="s_store_init" value="" />
+								  <select id="s_division" name="s_division">
+									  <option value="">Select division</option>
+									  <?php echo $optDivision; ?>
+								  </select>
 							  </td>
 						  </tr>
-						  -->
+						  <tr>
+							  <td>Type</td>
+							  <td>:</td>
+							  <td>
+								  <select id="s_tipo" name="s_tipo">
+									  <option value="">Select type</option>
+									  <option value="Putus">Putus</option>
+									  <option value="Konsinyasi">Konsinyasi</option>
+								  </select>
+							  </td>
+						  </tr>
 					  </tbody>
 					  <tfoot>
 						  <tr>
@@ -129,26 +135,25 @@
 			<table id="listTable" class="table">
 			  <thead>
 				  <tr>                
-					  <th>PLU</th>
-					  <th>Article Type</th>
 					  <th>Article Code</th>
 					  <th>Description</th>
 					  <th>Brand Name</th>
-					  <!--<th>Store Initial</th>-->
+					  <th>Division</th>
+					  <th>Type</th>
+					  <!--
 					  <th width="6%">Edit</th>
 					  <th width="6%">Delete</th>
+					  -->
 				  </tr>
 			  </thead>        
 			  <tbody>
 				  <tr>
-					  <td colspan="7" class="dataTables_empty">&nbsp;</td>
-				  </tr>
+					  <td colspan="5" class="dataTables_empty">&nbsp;</td>
+				  </tr
 			  </tbody>
 			  <!--
 			  <tfoot>
 				  <tr>					  
-					  <th>&nbsp;</th>
-					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
@@ -177,7 +182,7 @@
         <br />
         <p>
             <span class="ui-icon ui-icon-alert" style="float:left; margin: 0 7px 50px 0;"></span>
-            Data with PLU: <span id="delete-id">&nbsp;</span> will be deleted.
+            Data with code: <span id="delete-id">&nbsp;</span> will be deleted.
             <br />
 			Continue?
 			<br />

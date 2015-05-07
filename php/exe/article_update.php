@@ -19,6 +19,7 @@
 		$MDL->setArticleCode($_POST["articleCode"]);
 		$MDL->setDescription($_POST["description"]);
 		$MDL->setBrandName($_POST["brandName"]);
+		$MDL->setDivision($_POST["division"]);
 		$MDL->setStoreInit($_POST["storeInit"]);
 		$MDL->setLastUser($struid);
 		$MDL->setLastUpdate($strdate);

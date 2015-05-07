@@ -100,37 +100,38 @@
 			
 			$result = mysql_query("START TRANSACTION");
 			
-			$storeInit = $data->sheets[0]['cells'][1][2];
+			$storeInit = mysql_real_escape_string($data->sheets[0]['cells'][1][2]);
 			$transDate = $data->sheets[0]['cells'][2][2];
 			#$transDate = "24022015" => "2015-02-24";
 			$transDate = substr($transDate, 4, 4) . "-" . substr($transDate, 2, 2) . "-" . substr($transDate, 0, 2);
 			
 			for ($i = 5; $i <= $data->sheets[0]['numRows']; $i++) {	
 				
-				$brandName = $data->sheets[0]['cells'][$i][1];
-				$articleType = $data->sheets[0]['cells'][$i][2];
+				$division = mysql_real_escape_string($data->sheets[0]['cells'][$i][1]);
+				$brandName = mysql_real_escape_string($data->sheets[0]['cells'][$i][2]);
+				$articleType = $data->sheets[0]['cells'][$i][3];
 				$articleType = (strtoupper($articleType) == "OBRAL" ? 1 : 0);
-				$quantity = (is_numeric($data->sheets[0]['cells'][$i][3]) ? $data->sheets[0]['cells'][$i][3] : 0);
-				$amount = (is_numeric($data->sheets[0]['cells'][$i][4]) ? $data->sheets[0]['cells'][$i][4] : 0);
+				$quantity = (is_numeric($data->sheets[0]['cells'][$i][4]) ? $data->sheets[0]['cells'][$i][4] : 0);
+				$amount = (is_numeric($data->sheets[0]['cells'][$i][5]) ? $data->sheets[0]['cells'][$i][5] : 0);
 				
 				# entry test
-				$check = $brandName . $articleType . $quantity . $amount;
+				$check = $brandName . $division . $articleType . $quantity . $amount;
 				
 				if ($check != "") {
 					
 					# -- copy existing trans_date + brand_name + article_type sales to history
-					$sql =  "insert into trn_sales_hst (id_ori, trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date, last_user, last_update) " .
-							"select id, trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date, last_user, last_update from trn_sales ".
-							"where date_format(trans_date, '%Y-%m-%d') = '" . $transDate . "' and brand_name = '" . $brandName . "' and article_type = " . $articleType . " and store_init = '" . $storeInit . "'";
+					$sql =  "insert into trn_sales_hst (id_ori, trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date, last_user, last_update, division) " .
+							"select id, trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date, last_user, last_update, division from trn_sales ".
+							"where date_format(trans_date, '%Y-%m-%d') = '" . $transDate . "' and brand_name = '" . $brandName . "' and division = '" . $division . "' and article_type = " . $articleType . " and store_init = '" . $storeInit . "'";
 					$result = mysql_query($sql);
 					
 					# -- delete existing trans_date + brand_name + article_type sales
-					$sql = "delete from trn_sales where date_format(trans_date, '%Y-%m-%d') = '" . $transDate . "' and brand_name = '" . $brandName . "' and article_type = " . $articleType . " and store_init = '" . $storeInit . "'";
+					$sql = "delete from trn_sales where date_format(trans_date, '%Y-%m-%d') = '" . $transDate . "' and brand_name = '" . $brandName . "' and division = '" . $division . "' and article_type = " . $articleType . " and store_init = '" . $storeInit . "'";
 					$result = mysql_query($sql);
 					
 					# -- INSERT SALES --
-					$sql = "insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date) values ('" .
-							$transDate . "', '" . $brandName . "', '" . $articleType . "', '" . $quantity . "', '" . $amount . "', '" . $storeInit . "', '" . $struid . "', '" . $strdate . "')";
+					$sql = "insert into trn_sales (trans_date, brand_name, article_type, quantity, amount, store_init, created_by, created_date, division) values ('" .
+							$transDate . "', '" . $brandName . "', '" . $articleType . "', '" . $quantity . "', '" . $amount . "', '" . $storeInit . "', '" . $struid . "', '" . $strdate . "', '" . $division . "')";
 					$result = mysql_query($sql);
 					
 					fwrite($h, ".." . $sql . "." . ENTER);

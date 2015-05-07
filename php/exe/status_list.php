@@ -10,7 +10,7 @@
 	 */
 	
 	/* Array of database columns which should be read and sent back to DataTables */
-	$aColumns = array('code', 'name', 'description', 'color', 'min_value', 'max_value');
+	$aColumns = array('code', 'name', 'description', 'color', 'min_value', 'max_value', 'min_value_wide', 'max_value_wide');
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "id";
@@ -121,10 +121,10 @@
 	 * SQL queries
 	 * Get data to display
 	 */
-	$table = 	"select id, code, name, description, color, format(min_value, 0) min_value, format(max_value, 0) max_value " .
+	$table = 	"select id, code, name, description, color, format(min_value, 0) min_value, format(max_value, 0) max_value, format(min_value_wide, 0) min_value_wide, format(max_value_wide, 0) max_value_wide " .
 			 	"from mst_status";
 			 
-	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, code, name, description, color, min_value, max_value " .
+	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, code, name, description, color, min_value, max_value, min_value_wide, max_value_wide " .
 				"FROM (" . $table . ") t WHERE 1 = 1 " . 
 				$sWhere . " " .
 				$sOrder . " " .

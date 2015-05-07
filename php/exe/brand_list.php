@@ -10,7 +10,7 @@
 	 */
 	
 	/* Array of database columns which should be read and sent back to DataTables */
-	$aColumns = array('name', 'division', 'description');
+	$aColumns = array('code', 'name', 'division', 'description');
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "id";
@@ -100,6 +100,11 @@
 		
 		$sWhere = ""; # reset filter				
 		
+		if ( isset($_GET['s_code']) && $_GET['s_code'] != "" )
+		{
+			$sWhere .= " AND code like '%" . addslashes($_GET['s_code']). "%'";		
+		}
+		
 		if ( isset($_GET['s_name']) && $_GET['s_name'] != "" )
 		{
 			$sWhere .= " AND name like '%" . addslashes($_GET['s_name']). "%'";		
@@ -127,10 +132,10 @@
 	 * SQL queries
 	 * Get data to display
 	 */
-	$table = 	"select id, name, division, description, store_init " .
+	$table = 	"select id, code, name, division, description, store_init " .
 			 	"from mst_brand";
 			 
-	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, name, division, description, store_init " .
+	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, code, name, division, description, store_init " .
 				"FROM (" . $table . ") t WHERE 1 = 1 " . 
 				$sWhere . " " .
 				$sOrder . " " .
@@ -184,7 +189,7 @@
 		 * database - you can do it here
 		 */		 
 		# --- my code to make edit and delete functionality --- #		
-		
+		/*
 		if ($CR->is_oper_allowable(153, $a_auth)) {
 			$row[] = "<a href='/brand/edit/" . $aRow["id"] . ".html'><img src='../images/edit_24.png' title='Edit'></a>";
 		}
@@ -193,12 +198,12 @@
 		}	
 		
 		if ($CR->is_oper_allowable(154, $a_auth)) {
-			$row[] = "<span title='Click here to delete..' style='cursor:pointer' onclick='deleteAlert(" . $aRow["id"] . ", \"" . $aRow["name"] . "\")'><img src='../images/delete_24.png' /></span>";					
+			$row[] = "<span title='Click here to delete..' style='cursor:pointer' onclick='deleteAlert(" . $aRow["id"] . ", \"" . $aRow["name"] . " | " . $aRow["division"] . "\")'><img src='../images/delete_24.png' /></span>";					
 		}
 		else {
 			$row[] = "&nbsp;";
 		}
-		
+		*/
 		# --- eo my code --- #
 				
 		$output['aaData'][] = $row;				

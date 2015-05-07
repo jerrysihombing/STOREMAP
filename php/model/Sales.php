@@ -20,6 +20,7 @@ class Sales {
 	private $_transDate;
 	private $_transDateF;
 	private $_brandName;
+	private $_division;
 	private $_articleType;
 	private $_quantity;
 	private $_amount;
@@ -55,8 +56,99 @@ class Sales {
 		
 	}	
 	
+	public function findAmountPerBrand($brandName, $division, $startDate, $endDate, $storeCode, $articleType) {
+		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
+		
+		$sql = "SELECT sales_find_amount_per_brand('$brandName', '$division', '$startDate', '$endDate', '$storeCode', $articleType)";	
+		
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	public function findQuantityPerBrand($brandName, $division, $startDate, $endDate, $storeCode, $articleType) {
+		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
+		
+		$sql = "SELECT sales_find_quantity_per_brand('$brandName', '$division', '$startDate', '$endDate', '$storeCode', $articleType)";	
+			
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	# -- replacing useless procedures below -- #
+	
+	public function findAmount($brandName, $division, $startDate, $endDate, $storeCode) {
+		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
+		
+		$sql = "SELECT sales_find_amount('$brandName', '$division', '$startDate', '$endDate', '$storeCode')";	
+		
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	public function findQuantity($brandName, $division, $startDate, $endDate, $storeCode) {
+		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
+		
+		$sql = "SELECT sales_find_quantity('$brandName', '$division', '$startDate', '$endDate', '$storeCode')";	
+			
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	public function findAmountByType($brandName, $division, $startDate, $endDate, $storeCode, $articleType) {
+		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
+		
+		$sql = "SELECT sales_find_amount_by_type('$brandName', '$division', '$startDate', '$endDate', '$storeCode', $articleType)";	
+		
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	public function findQuantityByType($brandName, $division, $startDate, $endDate, $storeCode, $articleType) {
+		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
+		
+		$sql = "SELECT sales_find_quantity_by_type('$brandName', '$division', '$startDate', '$endDate', '$storeCode', $articleType)";	
+			
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	# -- end replacing -- #
+	
+	# -- useless -- #
+	
 	public function findAmountByBrandMap($brandName, $mapId) {
 		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
 		
 		$sql = "SELECT sales_find_amount_by_brand_map('$brandName', $mapId)";	
 		
@@ -70,6 +162,7 @@ class Sales {
 	
 	public function findQuantityByBrandMap($brandName, $mapId) {
 		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
 		
 		$sql = "SELECT sales_find_quantity_by_brand_map('$brandName', $mapId)";	
 			
@@ -83,6 +176,7 @@ class Sales {
 	
 	public function findAmountByBrandTypeMap($brandName, $articleType, $mapId) {
 		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
 		
 		$sql = "SELECT sales_find_amount_by_brand_type_map('$brandName', $articleType, $mapId)";	
 		
@@ -96,6 +190,7 @@ class Sales {
 	
 	public function findQuantityByBrandTypeMap($brandName, $articleType, $mapId) {
 		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
 		
 		$sql = "SELECT sales_find_quantity_by_brand_type_map('$brandName', $articleType, $mapId)";	
 			
@@ -106,6 +201,8 @@ class Sales {
 		
 		return $row[0];
 	}
+	
+	# -- end useless -- #
 	
 	public function loadAll() {				
 		$this->makeConnection();
@@ -145,6 +242,7 @@ class Sales {
 			$this->_createdDate = $row["created_date"];
 			$this->_lastUser = $row["last_user"];
 			$this->_lastUpdate = $row["last_update"];
+			$this->_division = $row["division"];
 		}
 		
 		$res->close();
@@ -176,7 +274,8 @@ class Sales {
 					$this->_amount . "', '" .
 					$this->_storeInit . "', '" .
 					$this->_lastUser . "', '" .
-					$this->_lastUpdate . 
+					$this->_lastUpdate . "', '" .
+					$this->_division .
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -198,7 +297,8 @@ class Sales {
 					$this->_amount . "', '" .
 					$this->_storeInit . "', '" .
 					$this->_createdBy . "', '" .
-					$this->_createdDate . 
+					$this->_createdDate . "', '" .
+					$this->_division .
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -208,10 +308,11 @@ class Sales {
 		return $ret;
 	}
 	
-	public function isExist($transDate, $brandName, $articleType, $storeInit) {
+	public function isExist($transDate, $brandName, $division, $articleType, $storeInit) {
 		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
 		
-		$sql = "SELECT sales_count('$transDate', '$brandName', $articleType, '$storeInit')";	
+		$sql = "SELECT sales_count('$transDate', '$brandName', '$division', $articleType, '$storeInit')";	
 			
 		$res = $this->_mysqli->query($sql);
 		$row = $res->fetch_row(); 
@@ -259,6 +360,9 @@ class Sales {
 	public function getBrandName() {
 		return $this->_brandName;	
 	}
+	public function getDivision() {
+		return $this->_division;	
+	}
 	public function getArticleType() {
 		return $this->_articleType;	
 	}
@@ -298,6 +402,9 @@ class Sales {
 	}
 	public function setBrandName($v) {
 		$this->_brandName = $v;	
+	}
+	public function setDivision($v) {
+		$this->_division = $v;	
 	}
 	public function setArticleType($v) {
 		$this->_articleType = $v;	

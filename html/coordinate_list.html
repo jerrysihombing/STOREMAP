@@ -86,6 +86,16 @@
 							  </td>
 						  </tr>
 						  <tr>
+							  <td>Division</td>
+							  <td>:</td>
+							  <td>
+								  <select id="s_division" name="s_division">
+									  <option value="">Select division</option>
+									  <?php echo $optDivision; ?>
+								  </select>
+							  </td>
+						  </tr>
+						  <tr>
 							  <td>Map Code</td>
 							  <td>:</td>
 							  <td>
@@ -137,8 +147,10 @@
 					  <th>Name</th>
 					  <th>Description</th>
 					  <th>Brand Name</th>
+					  <th>Division</th>
 					  <th>Map Code</th>
 					  <th>Shape</th>
+					  <th>Wide</th>
 					  <th>Store Initial</th>
 					  <th width="6%">Info</th>
 					  <th width="6%">Edit</th>
@@ -147,12 +159,14 @@
 			  </thead>        
 			  <tbody>
 				  <tr>
-					  <td colspan="10" class="dataTables_empty">&nbsp;</td>
+					  <td colspan="12" class="dataTables_empty">&nbsp;</td>
 				  </tr>
 			  </tbody>
 			  <!--
 			  <tfoot>
 				  <tr>					  
+					  <th>&nbsp;</th>
+					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>

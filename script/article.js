@@ -124,9 +124,11 @@ function goBack() {
 function goSave() {
             var plu8 = $("#plu8").val();
             var articleType = $("#article_type option:selected").val();
-            var articleCode = $("#article_code").val();
+            //var articleCode = $("#article_code").val();
+            var articleCode = "";
             var description = $("#description").val();
             var brandName = $("#brand_name option:selected").val();
+            var division = $("#division option:selected").val();
             //var storeInit = $("#store_init").val();
             var storeInit = "";
             
@@ -143,6 +145,10 @@ function goSave() {
                 $("#obj").val("brand_name");
                 inputAlert("Please select BRAND NAME.");
             }
+            else if (division == "") {
+                $("#obj").val("division");
+                inputAlert("Please select DIVISION.");
+            }
             /*
             else if (storeInit == "") {
                 $("#obj").val("store_init");
@@ -150,7 +156,7 @@ function goSave() {
             }
             */
             else {
-                var dataString = "plu8=" + plu8 + "&articleType=" + articleType + "&articleCode=" + articleCode + "&description=" + description + "&brandName=" + brandName + "&storeInit=" + storeInit;
+                var dataString = "plu8=" + plu8 + "&articleType=" + articleType + "&articleCode=" + articleCode + "&description=" + description + "&brandName=" + brandName + "&division=" + division + "&storeInit=" + storeInit;
                 $.ajax({
                         type: "POST",
                         url: "../php/exe/article_add.php",
@@ -183,9 +189,11 @@ function goUpdate() {
             var id = $("#id").val();
             var plu8 = $("#plu8").val();
             var articleType = $("#article_type option:selected").val();
-            var articleCode = $("#article_code").val();
+            //var articleCode = $("#article_code").val();
+            var articleCode = "";
             var description = $("#description").val();
             var brandName = $("#brand_name option:selected").val();
+            var division = $("#division option:selected").val();
             //var storeInit = $("#store_init").val();
             var storeInit = "";
              
@@ -202,6 +210,10 @@ function goUpdate() {
                 $("#obj").val("brand_name");
                 inputAlert("Please select BRAND NAME.");
             }
+            else if (division == "") {
+                $("#obj").val("division");
+                inputAlert("Please select DIVISION.");
+            }
             /*
             else if (storeInit == "") {
                 $("#obj").val("store_init");
@@ -209,7 +221,7 @@ function goUpdate() {
             }
             */
             else {
-                var dataString = "id=" + id + "&plu8=" + plu8 + "&articleType=" + articleType + "&articleCode=" + articleCode + "&description=" + description + "&brandName=" + brandName + "&storeInit=" + storeInit;
+                var dataString = "id=" + id + "&plu8=" + plu8 + "&articleType=" + articleType + "&articleCode=" + articleCode + "&description=" + description + "&brandName=" + brandName + "&division=" + division + "&storeInit=" + storeInit;
                 $.ajax({
                         type: "POST",
                         url: "../../php/exe/article_update.php",

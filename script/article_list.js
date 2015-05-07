@@ -1,4 +1,5 @@
 var oTable;
+var changeSessionState = false;
 
 $(function() {
             
@@ -90,13 +91,14 @@ $(function() {
                              null,
                              null,
                              null,
-                             null,
+                             null
+                             //null,
                              //null,
                              //{"asSorting": [ "desc", "asc" ]},
-                             {"bSearchable": false, "bSortable": false, "sClass": "al_center"},
-                             {"bSearchable": false, "bSortable": false, "sClass": "al_center"}			
+                             //{"bSearchable": false, "bSortable": false, "sClass": "al_center"},
+                             //{"bSearchable": false, "bSortable": false, "sClass": "al_center"}			
                         ],
-                        "aaSorting": [[ 0, "desc" ]],
+                        "aaSorting": [[ 0, "asc" ]],
                         "bLengthChange": false,
                         //"sDom": '<"H"lfr>t<"F"ip>', //-> default
                         //"sDom": '<"H"lr>t<"F"ip>',
@@ -108,16 +110,15 @@ $(function() {
                                             "<option value='40'>40</option>" + 
                                             "<option value='50'>50</option>" + 
                                             "</select> records per page.",
-                            "sSearch": "Plu (8 Digits): " 
+                            "sSearch": "Article code: " 
                         },
                         "fnServerData": function(sSource, aoData, fnCallback) {
                             /* Add some extra data to the sender */
-                            aoData.push({"name": "s_plu8", "value": $("#s_plu8").val()});
-                            aoData.push({"name": "s_article_type", "value": $("#s_article_type option:selected").val()});
                             aoData.push({"name": "s_article_code", "value": $("#s_article_code").val()});
                             aoData.push({"name": "s_description", "value": $("#s_description").val()});
                             aoData.push({"name": "s_brand_name", "value": $("#s_brand_name option:selected").val()});
-                            //aoData.push({"name": "s_store_init", "value": $("#s_store_init").val()});
+                            aoData.push({"name": "s_division", "value": $("#s_division option:selected").val()});
+                            aoData.push({"name": "s_tipo", "value": $("#s_tipo option:selected").val()});
                             aoData.push({"name": "s_adv", "value": $("#s_adv").val()});	
                             $.getJSON(sSource, aoData, function (json) {
                                 /* Do whatever additional processing you want on the callback, then tell DataTables */								 
@@ -133,9 +134,32 @@ $(function() {
                             return nRow;
                         } */
             } );
-                        
+            
             // use this plugin to replace some code below
             oTable.fnFilterOnReturn();
+            
+            // tell datatables to use filter
+            $("div.dataTables_filter input").keyup(function (e) {
+                        if ($(this).val() != "") {
+                                    if (!changeSessionState) {
+                                                var dataString = "toChange=articleListInit&changeTo=0";
+                                                $.ajax({
+                                                        type: "POST",
+                                                        url: "../php/exe/change_session_vars.php",
+                                                        data: dataString,
+                                                        beforeSend: function() {
+                                                        },
+                                                        success: function(data, textStatus, xhr) {
+                                                        },
+                                                        error: function(xhr, textStatus, errorThrown) { 
+                                                        },
+                                                        complete: function(xhr, textStatus) {
+                                                                    changeSessionState = true;
+                                                        }
+                                                });
+                                    }
+                        }
+            });
             
             // for show / hide search form
             $("#search_container").hide();
@@ -148,8 +172,32 @@ $(function() {
 function goSearch() {
 	$(".dataTables_filter input").val("");
 	$("#s_adv").val("yes");
-	
-	oTable.fnDraw();
+
+	//oTable.fnDraw();
+    
+    // tell datatables to use filter
+    if (!changeSessionState) {
+            var dataString = "toChange=articleListInit&changeTo=0";
+            $.ajax({
+                    type: "POST",
+                    url: "../php/exe/change_session_vars.php",
+                    data: dataString,
+                    beforeSend: function() {
+                    },
+                    success: function(data, textStatus, xhr) {
+                    },
+                    error: function(xhr, textStatus, errorThrown) { 
+                    },
+                    complete: function(xhr, textStatus) {
+                                oTable.fnDraw();
+                                changeSessionState = true;
+                    }
+            });
+    }
+    else {
+            oTable.fnDraw();
+    }
+    
 }
 
 function goReset() {
@@ -158,10 +206,29 @@ function goReset() {
 	});
 	$("#s_adv").val("no");
     
-    $("#s_article_type").val("");
     $("#s_brand_name").val("");
+    $("#s_division").val("");
+    $("#s_tipo").val("");
     
-	oTable.fnFilter("");
+	//oTable.fnFilter("");
+    
+    // tell datatables not to use filter
+    var dataString = "toChange=articleListInit&changeTo=1";
+    $.ajax({
+            type: "POST",
+            url: "../php/exe/change_session_vars.php",
+            data: dataString,
+            beforeSend: function() {
+            },
+            success: function(data, textStatus, xhr) {
+            },
+            error: function(xhr, textStatus, errorThrown) { 
+            },
+            complete: function(xhr, textStatus) {
+                        oTable.fnDraw();
+                        changeSessionState = false;
+            }
+    });
 }
 
 function deleteAlert(id, code) {

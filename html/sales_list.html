@@ -12,6 +12,11 @@
 	  .ui-datepicker {
 		  font-size:12px;
 	  }
+	  .alert {
+		padding: 10px;
+		margin-bottom: 20px;
+		border-radius: 4px;
+	  }
 	</style>
 	
     <script type="text/javascript" src="../script/jquery/jquery-1.10.2.min.js"></script>
@@ -38,19 +43,23 @@
 		  <div class="panel-heading">
 			Sales
 			
-			<?php if ($uploadAllowable) { ?>
-			<span style="float: right"><a href="/sales/upload.html" class="navbar-link">Upload Sales</a></span>
-			<?php } ?>
+			<?php #if ($uploadAllowable) { ?>
+			<!--<span style="float: right"><a href="/sales/upload.html" class="navbar-link">Upload Sales</a></span>-->
+			<?php #} ?>
 			
-			<?php if ($createAllowable) { ?>
-			<span style="float: right"><a href="/sales/add.html" class="navbar-link">Create Sales</a><?php if ($uploadAllowable) { ?> <span style="color: #428bca;">&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span> <?php } ?></span>
-			<?php } ?>
+			<?php #if ($createAllowable) { ?>
+			<!--<span style="float: right"><a href="/sales/add.html" class="navbar-link">Create Sales</a><?php if ($uploadAllowable) { ?> <span style="color: #428bca;">&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span> <?php } ?></span>-->
+			<?php #} ?>
 			
 		  </div>
-	
+		  
 		  <div class="panel-body">
-			
-			<div id="adv_search">    	        
+		
+			<div class="alert alert-success">
+			  <a href="#" class="alert-link">Please use search box to load data.</a>
+			</div>
+		  
+		  	<div id="adv_search">    	        
         
 			  <div id="adv_main">        
 				  Advance Search (Click to toggle the form)     
@@ -63,14 +72,14 @@
 				  <table id="rounded-corner" border="0">
 					  <tbody>
 						  <tr>
-							  <td width="36%">Start Date</td>
+							  <td width="30%">Single Trans. Date</td>
 							  <td width="4%">:</td>
 							  <td>
-								  <input type="text" name="s_start_date" id="s_start_date" maxlength="10" readonly="readonly" class="al_center">
+								  <input type="text" name="s_start_date" id="s_start_date" value="<?php echo $today; ?>" maxlength="10" readonly="readonly" class="al_center">
 							  </td>
 						  </tr>
 						  <tr>
-							  <td>End Date</td>
+							  <td>or until</td>
 							  <td>:</td>
 							  <td>
 								  <input type="text" name="s_end_date" id="s_end_date" maxlength="10" readonly="readonly" class="al_center">
@@ -87,6 +96,17 @@
 							  </td>
 						  </tr>
 						  <tr>
+							  <td>Division</td>
+							  <td>:</td>
+							  <td>
+								  <select id="s_division" name="s_division">
+									  <option value="">Select division</option>
+									  <?php echo $optDivision; ?>
+								  </select>
+							  </td>
+						  </tr>
+						  <!--
+						  <tr>
 							  <td>Article Type</td>
 							  <td>:</td>
 							  <td>
@@ -97,6 +117,7 @@
 								  </select>
 							  </td>
 						  </tr>
+						  -->
 						  <tr>
 							  <td>Store Initial</td>
 							  <td>:</td>
@@ -128,24 +149,25 @@
 				  <tr>
 					  <th>Trans Date</th> 
 					  <th>Brand Name</th>
-					  <th>Article Type</th>
+					  <th>Division</th>
+					  <!--<th>Article Type</th>-->
 					  <th>Quantity</th>
 					  <th>Amount</th>
 					  <th>Store Initial</th>
+					  <!--
 					  <th width="6%">Edit</th>
 					  <th width="6%">Delete</th>
+					  -->
 				  </tr>
 			  </thead>        
 			  <tbody>
 				  <tr>
-					  <td colspan="8" class="dataTables_empty">&nbsp;</td>
+					  <td colspan="6" class="dataTables_empty">&nbsp;</td>
 				  </tr>
 			  </tbody>
 			  <!--
 			  <tfoot>
 				  <tr>					  
-					  <th>&nbsp;</th>
-					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
 					  <th>&nbsp;</th>
@@ -170,6 +192,7 @@
     <!-- /container -->
 	
 	<input type="hidden" id="id" value="">
+	<input type="hidden" id="today" value="<?php echo $today; ?>">
 	
 	<div id="delete-alert" title="Confirmation">
         <br />

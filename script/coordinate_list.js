@@ -92,13 +92,15 @@ $(function() {
                              null,
                              null,
                              null,
-                             null,  
+                             null,
+                             {"sClass": "al_right"},  
+                             null,
                              //{"asSorting": [ "desc", "asc" ]},
                              {"bSearchable": false, "bSortable": false, "sClass": "al_center"},
                              {"bSearchable": false, "bSortable": false, "sClass": "al_center"},
                              {"bSearchable": false, "bSortable": false, "sClass": "al_center"}			
                         ],
-                        "aaSorting": [[ 0, "desc" ]],
+                        "aaSorting": [[ 0, "asc" ]],
                         "bLengthChange": false,
                         //"sDom": '<"H"lfr>t<"F"ip>', //-> default
                         //"sDom": '<"H"lr>t<"F"ip>',
@@ -118,6 +120,7 @@ $(function() {
                             aoData.push({"name": "s_name", "value": $("#s_name").val()});
                             aoData.push({"name": "s_description", "value": $("#s_description").val()});
                             aoData.push({"name": "s_brand_name", "value": $("#s_brand_name option:selected").val()});
+                            aoData.push({"name": "s_division", "value": $("#s_division option:selected").val()});
                             aoData.push({"name": "s_map_code", "value": $("#s_map_code").val()});
                             aoData.push({"name": "s_store_init", "value": $("#s_store_init").val()});
                             aoData.push({"name": "s_shape", "value": $("#s_shape option:selected").val()});
@@ -160,6 +163,7 @@ function goReset() {
 		$(this).val("");
 	});
     $("#s_brand_name").val("");
+    $("#s_division").val("");
     $("#s_shape").val("");
 	$("#s_adv").val("no");	
     

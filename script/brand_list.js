@@ -89,12 +89,13 @@ $(function() {
                              null,
                              null,
                              null,
+                             null
                              //null,                             
                              //{"asSorting": [ "desc", "asc" ]},
-                             {"bSearchable": false, "bSortable": false, "sClass": "al_center"},
-                             {"bSearchable": false, "bSortable": false, "sClass": "al_center"}			
+                             //{"bSearchable": false, "bSortable": false, "sClass": "al_center"},
+                             //{"bSearchable": false, "bSortable": false, "sClass": "al_center"}			
                         ],
-                        "aaSorting": [[ 0, "desc" ]],
+                        //"aaSorting": [[ 0, "desc" ]],
                         "bLengthChange": false,
                         //"sDom": '<"H"lfr>t<"F"ip>', //-> default
                         //"sDom": '<"H"lr>t<"F"ip>',
@@ -106,12 +107,13 @@ $(function() {
                                             "<option value='40'>40</option>" + 
                                             "<option value='50'>50</option>" + 
                                             "</select> records per page.",
-                            "sSearch": "Brand: " 
+                            "sSearch": "Name: " 
                         },
                         "fnServerData": function(sSource, aoData, fnCallback) {
                             /* Add some extra data to the sender */
+                            aoData.push({"name": "s_code", "value": $("#s_code").val()});
                             aoData.push({"name": "s_name", "value": $("#s_name").val()});
-                            aoData.push({"name": "s_division", "value": $("#s_division").val()});
+                            aoData.push({"name": "s_division", "value": $("#s_division option:selected").val()});
                             aoData.push({"name": "s_description", "value": $("#s_description").val()});
                             //aoData.push({"name": "s_store_init", "value": $("#s_store_init").val()});
                             aoData.push({"name": "s_adv", "value": $("#s_adv").val()});	
@@ -153,6 +155,8 @@ function goReset() {
 		$(this).val("");
 	});
 	$("#s_adv").val("no");	
+    
+    $("#s_division").val("");
     
 	oTable.fnFilter("");
 }

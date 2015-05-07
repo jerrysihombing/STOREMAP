@@ -20,6 +20,8 @@
 		$MDL->setColor(strtoupper($_POST["color"]));
 		$MDL->setMinValue($_POST["minValue"]);
 		$MDL->setMaxValue($_POST["maxValue"]);
+		$MDL->setMinValueWide($_POST["minValueWide"]);
+		$MDL->setMaxValueWide($_POST["maxValueWide"]);
 		$MDL->setCreatedBy($struid);
 		$MDL->setCreatedDate($strdate);
 		
