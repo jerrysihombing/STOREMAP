@@ -92,7 +92,7 @@ $(function() {
                              null,
                              null,
                              null,
-                             null,
+                             {"sClass": "al_right"},  
                              {"sClass": "al_right"},  
                              null,
                              //{"asSorting": [ "desc", "asc" ]},

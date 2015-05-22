@@ -56,6 +56,38 @@ class Sales {
 		
 	}	
 	
+	/* -- new version -- */
+	
+	public function findAmountPerBrandV2($brandName, $division, $startDate, $endDate, $storeCode, $articleType, $posNo) {
+		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
+		
+		$sql = "SELECT sales_find_amount_per_brand_v2('$brandName', '$division', '$startDate', '$endDate', '$storeCode', $articleType, $posNo)";	
+		
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	public function findQuantityPerBrandV2($brandName, $division, $startDate, $endDate, $storeCode, $articleType, $posNo) {
+		$this->makeConnection();
+		$brandName = $this->_mysqli->real_escape_string($brandName);
+		
+		$sql = "SELECT sales_find_quantity_per_brand_v2('$brandName', '$division', '$startDate', '$endDate', '$storeCode', $articleType, $posNo)";	
+			
+		$res = $this->_mysqli->query($sql);
+		$row = $res->fetch_row(); 
+		$res->close();
+		$this->closeConnection();
+		
+		return $row[0];
+	}
+	
+	/* -- new version -- */
+	
 	public function findAmountPerBrand($brandName, $division, $startDate, $endDate, $storeCode, $articleType) {
 		$this->makeConnection();
 		$brandName = $this->_mysqli->real_escape_string($brandName);

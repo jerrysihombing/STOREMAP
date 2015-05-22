@@ -46,11 +46,19 @@
                 "armbcatt BRAND_CODE, armbcllibl BRANCD_DESC, merdiv division, to_char(ARMADDEB, 'yyyy-mm-dd') START_DATE, to_char(ARMADFIN, 'yyyy-mm-dd') END_DATE, to_char(ARMADMAJ, 'yyyy-mm-dd hh24:mi:ss') LAST_UPDATE " . 
                 "from GDWH_ARTMASTERA2 " . 
                 "inner join GDWH_ARTMASTERB on armatcinr = armbcinr and ARMBCCLA = '1' and (trunc(sysdate) between trunc(armbddeb) and trunc(armbdfin)) " .
-				"inner join gdwh_merch on armatcinr = mervcinr and armavcinv = mervcinv and (trunc(sysdate) between trunc(merdivddeb) and trunc(merdivdfin)) " .
-                "where trunc(ARMADMAJ) = :p_date";
+				# overcome double brand, remove if data already fixed
+                #"and instr(armatsobdesc, armbcllibl) > 0 " .
+				"and armbddeb = (select max(x.armbddeb) from GDWH_ARTMASTERB x where x.armbcinr = armatcinr and x.ARMBCCLA = '1' and (trunc(sysdate) between trunc(x.armbddeb) and trunc(x.armbdfin))) " . 
+                "inner join gdwh_merch on armatcinr = mervcinr and armavcinv = mervcinv and (trunc(sysdate) between trunc(merdivddeb) and trunc(merdivdfin)) " .
+				"and (trunc(sysdate) between trunc(mercatddeb) and trunc(mercatdfin)) " .
+				"and (trunc(sysdate) between trunc(merscatddeb) and trunc(merscatdfin)) " .
+				"and (trunc(sysdate) between trunc(merclassddeb) and trunc(merclassdfin)) " .
+				"and (trunc(sysdate) between trunc(mersclassddeb) and trunc(mersclassdfin)) " .
+				"where merdiv in ('A','B','C','D','E') and (trunc(sysdate) between trunc(armaddeb) and trunc(armadfin))"; 
+                #"where trunc(ARMADMAJ) = :p_date";
         
 		$stid = oci_parse($conn, $sql);
-        oci_bind_by_name($stid, ":p_date", $dateToProcess);
+        #oci_bind_by_name($stid, ":p_date", $dateToProcess);
         $ret = oci_execute($stid);
         
         if ($ret) {
@@ -79,6 +87,12 @@
             echo "start transaction.\n";
             $result = mysql_query("START TRANSACTION");
             
+			echo "emptying table.. ";
+			# -- empty first
+			$sql = "truncate table mst_article_gold";
+			$result = mysql_query($sql);
+			echo "ok.\n";
+			
             $totalInsertedRow = 0;
              
             while ($row = oci_fetch_assoc($stid)) {

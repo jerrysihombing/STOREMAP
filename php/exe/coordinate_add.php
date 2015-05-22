@@ -53,6 +53,7 @@
 		$MDL->setCenter($center);
 		$MDL->setRadius($radius);
 		$MDL->setWide((is_numeric($_POST["wide"]) ? $_POST["wide"] : 0));
+		$MDL->setTerminalNo((is_numeric($_POST["terminalNo"]) ? $_POST["terminalNo"] : 0));
 		
 		$MDL->setCreatedBy($struid);
 		$MDL->setCreatedDate($strdate);

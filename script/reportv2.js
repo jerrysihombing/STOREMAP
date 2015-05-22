@@ -124,7 +124,7 @@ function goView() {
                         }
                         
                         if (endDate == "") endDate = "-";
-                        var url = "/report/view/" + data + "/" + articleType + "/" + startDate + "/" + endDate + "/" + map + ".html";
+                        var url = "/reportv2/view/" + data + "/" + articleType + "/" + startDate + "/" + endDate + "/" + map + ".html";
 
                         //var url = "/report/view/" + data + "/" + articleType + "/" + map + ".html";
                         window.open(url, "reportViewer");

@@ -121,7 +121,7 @@
 		
 		if ( isset($_GET['s_division']) && $_GET['s_division'] != "" )
 		{
-			$sWhere .= " AND division_name = '" . addslashes($_GET['s_division']) . "'";		
+			$sWhere .= " AND name = '" . addslashes($_GET['s_division']) . "'";		
 		}
 		
 		if ( isset($_GET['s_tipo']) && $_GET['s_tipo'] != "" )

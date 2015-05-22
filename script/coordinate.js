@@ -29,6 +29,7 @@ $(document).ajaxStart(function () {
 $(function() {         
             
             $("#wide").autoNumeric('init', {aSep: ',', aDec: '.' , aPad: false, vMax: '9999999999'});
+            $("#terminal_no").autoNumeric('init', {aSep: ',', aDec: '.', mDec: '0', aPad: false, vMax: '99999'});
             
             // view alert
             $("#view-alert").dialog({
@@ -194,6 +195,7 @@ function goSave() {
             var coordinate = $("#coordinate").val();
             
             var wide = $("#wide").val();
+            var terminalNo = $("#terminal_no").val();
              
             // validation here
             if (code == "") {
@@ -203,6 +205,10 @@ function goSave() {
             else if (name == "") {
                 $("#obj").val("name");
                 inputAlert("Please enter NAME.");
+            }
+            else if (terminalNo == "") {
+                $("#obj").val("terminal_no");
+                inputAlert("Please enter TERMINAL NUMBER.");
             }
             else if (brandName == "") {
                 $("#obj").val("brand_name");
@@ -250,8 +256,9 @@ function goSave() {
             }
             else {
                 wide = $("#wide").autoNumeric("get");
+                terminalNo = $("#terminal_no").autoNumeric("get");
                 var dataString = "code=" + code + "&name=" + name + "&description=" + description + "&brandName=" + brandName + "&division=" + division + "&mapCode=" + mapCode + "&shape=" + shape +
-                                 "&topLeft=" + topLeft + "&bottomRight=" + bottomRight + "&radius=" + radius + "&center=" + center + "&coordinate=" + coordinate + "&wide=" + wide;
+                                 "&topLeft=" + topLeft + "&bottomRight=" + bottomRight + "&radius=" + radius + "&center=" + center + "&coordinate=" + coordinate + "&wide=" + wide + "&terminalNo=" + terminalNo;
                 $.ajax({
                         type: "POST",
                         url: "../php/exe/coordinate_add.php",
@@ -300,6 +307,9 @@ function goUpdate() {
             var radius = $("#radius").val();
             var center = $("#center").val();
             var coordinate = $("#coordinate").val();
+            
+            var wide = $("#wide").val();
+            var terminalNo = $("#terminal_no").val();
              
             // validation here
             if (code == "") {
@@ -309,6 +319,10 @@ function goUpdate() {
             else if (name == "") {
                 $("#obj").val("name");
                 inputAlert("Please enter NAME.");
+            }
+            else if (terminalNo == "") {
+                $("#obj").val("terminal_no");
+                inputAlert("Please enter TERMINAL NUMBER.");
             }
             else if (brandName == "") {
                 $("#obj").val("brand_name");
@@ -356,8 +370,9 @@ function goUpdate() {
             }
             else {
                 wide = $("#wide").autoNumeric("get");
+                terminalNo = $("#terminal_no").autoNumeric("get");
                 var dataString = "id=" + id + "&code=" + code + "&name=" + name + "&description=" + description + "&brandName=" + brandName + "&division=" + division + "&mapCode=" + mapCode + "&shape=" + shape +
-                                 "&topLeft=" + topLeft + "&bottomRight=" + bottomRight + "&radius=" + radius + "&center=" + center + "&coordinate=" + coordinate + "&wide=" + wide;
+                                 "&topLeft=" + topLeft + "&bottomRight=" + bottomRight + "&radius=" + radius + "&center=" + center + "&coordinate=" + coordinate + "&wide=" + wide + "&terminalNo=" + terminalNo;
                 $.ajax({
                         type: "POST",
                         url: "../../php/exe/coordinate_update.php",

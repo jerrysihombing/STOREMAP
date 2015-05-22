@@ -41,7 +41,7 @@
 				echo "Error: cannot use database.";
 				exit;
 			}
-			echo "got.\n";
+			echo "selected.\n";
 			# eo make connection
 
 			$result = mysql_query("START TRANSACTION");

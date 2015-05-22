@@ -1,26 +1,261 @@
--- added @05May-15 --
+
+-- added @22May-15 --
 
 delimiter $$
--- belum diedit, heuu
-CREATE FUNCTION `is_article_obral`(p_brand_name varchar(100), p_division varchar(50), p_start_date date, p_end_date date, p_store_code varchar(3), p_article_type integer) RETURNS decimal(18, 2)
+
+CREATE FUNCTION `sales_find_amount_per_brand_v2`(p_brand_name varchar(100), p_division varchar(50), p_start_date date, p_end_date date, p_store_code varchar(3), p_article_type integer, p_pos integer) RETURNS decimal(18, 2)
 BEGIN
         declare v_data decimal(18, 2) default 0;
         declare continue handler for not found set v_data = 0;
 
         -- p_article_type still useless
         
-        if p_end_date = "0000-00-00" then
-            select ifnull(sum(amount), 0) into v_data
-            from trn_sales_by_brand
-            where trans_date = p_start_date and store_init = p_store_code and brand_name = p_brand_name and division = p_division;
+        if p_article_type = -1 then
+            
+            if p_end_date = "0000-00-00" then
+                if p_pos = 0 then
+                    select ifnull(sum(x.gross_sale-x.disc), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date = p_start_date and x.store_init = p_store_code 
+                    and y.brand_name = p_brand_name and z.name = p_division;
+                else
+                    select ifnull(sum(x.gross_sale-x.disc), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date = p_start_date and x.store_init = p_store_code and x.pos_no = p_pos
+                    and y.brand_name = p_brand_name and z.name = p_division;
+                end if;
+            else
+                if p_pos = 0 then
+                    select ifnull(sum(x.gross_sale-x.disc), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date between p_start_date and p_end_date and x.store_init = p_store_code 
+                    and y.brand_name = p_brand_name and z.name = p_division;
+                else
+                    select ifnull(sum(x.gross_sale-x.disc), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date between p_start_date and p_end_date and x.store_init = p_store_code and x.pos_no = p_pos
+                    and y.brand_name = p_brand_name and z.name = p_division;
+                end if;
+            end if;
+            
         else
-            select ifnull(sum(amount), 0) into v_data
-            from trn_sales_by_brand
-            where trans_date between p_start_date and p_end_date
-            and store_init = p_store_code and brand_name = p_brand_name and division = p_division;
+            
+            if p_end_date = "0000-00-00" then
+                if p_pos = 0 then
+                    select ifnull(sum(x.gross_sale-x.disc), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date = p_start_date and x.store_init = p_store_code 
+                    and y.brand_name = p_brand_name and z.name = p_division
+                    and is_article_obral(y.article_code, 40) = p_article_type;
+                else
+                    select ifnull(sum(x.gross_sale-x.disc), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date = p_start_date and x.store_init = p_store_code and x.pos_no = p_pos
+                    and y.brand_name = p_brand_name and z.name = p_division
+                    and is_article_obral(y.article_code, 40) = p_article_type;
+                end if;
+            else
+                if p_pos = 0 then
+                    select ifnull(sum(x.gross_sale-x.disc), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date between p_start_date and p_end_date and x.store_init = p_store_code 
+                    and y.brand_name = p_brand_name and z.name = p_division
+                    and is_article_obral(y.article_code, 40) = p_article_type;
+                else
+                    select ifnull(sum(x.gross_sale-x.disc), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date between p_start_date and p_end_date and x.store_init = p_store_code and x.pos_no = p_pos
+                    and y.brand_name = p_brand_name and z.name = p_division
+                    and is_article_obral(y.article_code, 40) = p_article_type;
+                end if;
+            end if;
+            
+        end if;
+        
+        
+        
+        return v_data;
+END $$
+
+delimiter $$
+
+CREATE FUNCTION `sales_find_quantity_per_brand_v2`(p_brand_name varchar(100), p_division varchar(50), p_start_date date, p_end_date date, p_store_code varchar(3), p_article_type integer, p_pos integer) RETURNS decimal(18, 2)
+BEGIN
+        declare v_data decimal(18, 2) default 0;
+        declare continue handler for not found set v_data = 0;
+        
+        -- p_article_type still useless
+        
+        if p_article_type = -1 then
+        
+            if p_end_date = "0000-00-00" then
+                if p_pos = 0 then
+                    select ifnull(sum(x.qty), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date = p_start_date and x.store_init = p_store_code
+                    and y.brand_name = p_brand_name and z.name = p_division;
+                else
+                    select ifnull(sum(x.qty), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date = p_start_date and x.store_init = p_store_code and x.pos_no = p_pos
+                    and y.brand_name = p_brand_name and z.name = p_division;
+                end if;
+            else
+                if p_pos = 0 then
+                    select ifnull(sum(x.qty), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date between p_start_date and p_end_date and x.store_init = p_store_code
+                    and y.brand_name = p_brand_name and z.name = p_division;
+                else
+                    select ifnull(sum(x.qty), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date between p_start_date and p_end_date and x.store_init = p_store_code and x.pos_no = p_pos
+                    and y.brand_name = p_brand_name and z.name = p_division;
+                end if;
+            end if;
+            
+        else
+        
+            if p_end_date = "0000-00-00" then
+                if p_pos = 0 then
+                    select ifnull(sum(x.qty), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date = p_start_date and x.store_init = p_store_code
+                    and y.brand_name = p_brand_name and z.name = p_division
+                    and is_article_obral(y.article_code, 40) = p_article_type;
+                else
+                    select ifnull(sum(x.qty), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date = p_start_date and x.store_init = p_store_code and x.pos_no = p_pos
+                    and y.brand_name = p_brand_name and z.name = p_division
+                    and is_article_obral(y.article_code, 40) = p_article_type;
+                end if;
+            else
+                if p_pos = 0 then
+                    select ifnull(sum(x.qty), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date between p_start_date and p_end_date and x.store_init = p_store_code
+                    and y.brand_name = p_brand_name and z.name = p_division
+                    and is_article_obral(y.article_code, 40) = p_article_type;
+                else
+                    select ifnull(sum(x.qty), 0) into v_data
+                    from trn_sales_mkg x
+                    inner join mst_article_gold y on x.gold_plu = y.article_code and current_date between y.start_date and y.end_date
+                    inner join mst_division z on y.division = z.code
+                    where x.trans_date between p_start_date and p_end_date and x.store_init = p_store_code and x.pos_no = p_pos
+                    and y.brand_name = p_brand_name and z.name = p_division
+                    and is_article_obral(y.article_code, 40) = p_article_type;
+                end if;
+            end if;
+            
         end if;
         
         return v_data;
+END $$
+
+-- end added --
+
+-- added @05May-15 --
+
+delimiter $$
+
+create function number_only(p_str varchar(50)) returns varchar(50)
+no sql
+begin
+    declare v_verification varchar(50);
+    declare v_result varchar(50) default '';
+    declare v_character varchar(2);
+    declare i integer default 1;
+    
+    if char_length(p_str) > 0 then
+        while (i <= char_length(p_str)) do
+            set v_character = substring(p_str, i, 1);
+            set v_verification = find_in_set(v_character, '1,2,3,4,5,6,7,8,9,0');
+    
+            if v_verification > 0 then
+                set v_result = concat(v_result, v_character);
+            end if;
+    
+            set i = i + 1;
+        end while;
+    
+        return v_result;
+    else
+        return '';
+    end if;
+end $$
+
+delimiter $$
+
+CREATE FUNCTION `is_article_obral`(p_article_code varchar(13), p_val integer) RETURNS integer
+BEGIN
+        declare p_disc varchar(8) default 'DISCOUNT';
+        declare p_disc_2 varchar(4) default 'DISC';
+        declare p_disc_3 varchar(3) default 'DIS';
+        declare p_pc varchar(1) default '%';
+        declare v_pos, v_pos_disc, v_pos_disc_2, v_pos_disc_3, v_pos_pc, v_pos_offset, v_length, v_disc, v_ret integer default 0;
+        declare v_des varchar(200);
+        declare continue handler for not found set v_pos_disc = 0, v_pos_disc_2 = 0, v_pos_disc_3 = 0, v_pos_pc = 0, v_des = '';
+        
+        select instr(description, p_disc), instr(description, p_disc_2), instr(description, p_disc_3), instr(description, p_pc), description
+        into v_pos_disc, v_pos_disc_2, v_pos_disc_3, v_pos_pc, v_des
+        from mst_article_gold
+        where article_code = p_article_code and current_date between start_date and end_date limit 1;
+        
+        if v_pos_disc > 0 then
+            set v_pos = v_pos_disc;
+            set v_pos_offset = v_pos + length(p_disc);
+        elseif v_pos_disc_2 > 0 then
+            set v_pos = v_pos_disc_2;
+            set v_pos_offset = v_pos + length(p_disc_2);
+        elseif v_pos_disc_3 > 0 then
+            set v_pos = v_pos_disc_3;
+            set v_pos_offset = v_pos + length(p_disc_3);
+        end if;
+        
+        if v_pos > 0 and v_pos_pc > 0 then
+            
+            set v_length = v_pos_pc - v_pos_offset; -- without %
+            -- set v_disc = cast(trim(substr(v_des, v_pos_offset, v_length)) as unsigned);
+            set v_disc = cast(number_only(substr(v_des, v_pos_offset, v_length)) as unsigned);
+            
+            if (v_disc >= p_val) then
+                set v_ret = 1;
+            end if;
+            
+        end if;
+        
+        return v_ret;
 END $$
 
 -- added @20Apr-15 --
@@ -977,13 +1212,14 @@ CREATE PROCEDURE `storemap_add`(
         p_created_by varchar(20),
         p_created_date datetime,
         p_wide decimal(8, 2),
-        p_division varchar(50)
+        p_division varchar(50),
+        p_terminal integer
         )
 BEGIN
         insert into mst_storemap (
-                code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, wide, division
+                code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, wide, division, terminal_no
         ) values (
-                p_code, p_name, p_description, p_brand_name, p_shape, p_coordinate, p_init_color, p_map_code, p_top_left, p_bottom_right, p_center, p_radius, p_created_by, p_created_date, p_wide, p_division
+                p_code, p_name, p_description, p_brand_name, p_shape, p_coordinate, p_init_color, p_map_code, p_top_left, p_bottom_right, p_center, p_radius, p_created_by, p_created_date, p_wide, p_division, p_terminal
         );
 END$$
 
@@ -1006,7 +1242,8 @@ CREATE PROCEDURE `storemap_update`(
         p_last_user varchar(20),
         p_last_update datetime,
         p_wide decimal(8, 2),
-        p_division varchar(50)
+        p_division varchar(50),
+        p_terminal integer
         )
 BEGIN
         update mst_storemap set
@@ -1025,7 +1262,8 @@ BEGIN
                 last_user = p_last_user,
                 last_update = p_last_update,
                 wide = p_wide,
-                division = p_division
+                division = p_division,
+                terminal_no = p_terminal
         where id = p_id;
 END$$
 
@@ -1033,7 +1271,7 @@ delimiter $$
 
 CREATE PROCEDURE `storemap_load`(p_id integer)
 begin
-        select id, code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, last_user, last_update, wide, division
+        select id, code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, last_user, last_update, wide, division, terminal_no
         from mst_storemap
         where id = p_id;
 end$$
@@ -1042,7 +1280,7 @@ delimiter $$
 
 CREATE PROCEDURE `storemap_load_all`()
 begin
-        select id, code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, last_user, last_update, wide, division
+        select id, code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, last_user, last_update, wide, division, terminal_no
         from mst_storemap
         order by code;
 end$$
@@ -1051,7 +1289,7 @@ delimiter $$
 
 CREATE PROCEDURE `storemap_load_by_map_code`(p_map_code varchar(12))
 begin
-        select id, code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, last_user, last_update, wide, division
+        select id, code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, last_user, last_update, wide, division, terminal_no
         from mst_storemap
         where map_code = p_map_code
         order by code;
@@ -1066,7 +1304,7 @@ begin
         
         select code into v_map_code from mst_map where id = p_map_id;
         
-        select id, code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, last_user, last_update, wide, division
+        select id, code, name, description, brand_name, shape, coordinate, init_color, map_code, top_left, bottom_right, center, radius, created_by, created_date, last_user, last_update, wide, division, terminal_no
         from mst_storemap
         where map_code = v_map_code
         order by code;

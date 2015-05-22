@@ -94,6 +94,7 @@ class Reportv2Controller extends GlobalController {
 				
 				$MDL2 = new StoreMap();
 				$data = $MDL2->loadByMapId($id);
+				
 				$MDL3 = new Sales();
 				$MDL4 = new Status();
 				
@@ -112,7 +113,10 @@ class Reportv2Controller extends GlobalController {
 				$articleType = ($type == "obral" ? 1 : ($type == "normal" ? 0 : -1));
 				$brand = $this->getItem("brand");
 				$division = $this->getItem("division");
-				$wide = $this->getItem("wide");
+				$sWidePos = $this->getItem("sWidePos");
+				$aWidePos = explode("~", $sWidePos);
+				$wide = (isset($aWidePos[0]) ? $aWidePos[0] : 0);
+				$posNo = (isset($aWidePos[1]) ? $aWidePos[1] : 0);
 				$sDate = $this->getItem("sDate");
 				$aDate = explode("~", $sDate);
 				$startDateEn = (isset($aDate[0]) ? $aDate[0] : "0000-00-00");
@@ -148,7 +152,8 @@ class Reportv2Controller extends GlobalController {
 					$value = $MDL->findAmountByType($brand, $division, $startDateEn, $endDateEn, $storeCode, $articleType);
 				}
 				*/
-				$value = $MDL->findAmountPerBrand($brand, $division, $startDateEn, $endDateEn, $storeCode, $articleType);
+				$value = $MDL->findAmountPerBrandV2($brand, $division, $startDateEn, $endDateEn, $storeCode, $articleType, $posNo);
+				#echo $brand . " " . $division . " " . $startDateEn . " " . $endDateEn . " " . $storeCode . " " . $articleType . " " . $posNo;
 				if ($cmd == "sales-per-square") {
 					if ($wide != 0) {
 						if ($daysCount) {

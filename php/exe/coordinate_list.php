@@ -12,7 +12,7 @@
 	 */
 	
 	/* Array of database columns which should be read and sent back to DataTables */
-	$aColumns = array('code', 'name', 'description', 'brand_name', 'division', 'map_code', 'shape', 'wide', 'store_init');
+	$aColumns = array('code', 'name', 'description', 'brand_name', 'division', 'map_code', 'wide_f', 'terminal_no', 'store_init');
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "id";
@@ -59,8 +59,16 @@
 		{
 			if ( $_GET[ 'bSortable_'.intval($_GET['iSortCol_'.$i]) ] == "true" )
 			{
-				$sOrder .= $aColumns[ intval( $_GET['iSortCol_'.$i] ) ] . "
-				 	" . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", ";
+				# ori
+				#$sOrder .= $aColumns[ intval( $_GET['iSortCol_'.$i] ) ] . " " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", ";
+				
+				# check for number field				
+				if (intval($_GET['iSortCol_'.$i]) == 6) { 
+					$sOrder .= "wide " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", "; # format by original number field
+				}
+				else {
+					$sOrder .= $aColumns[ intval( $_GET['iSortCol_'.$i] ) ] . " " . mysql_real_escape_string( $_GET['sSortDir_'.$i] ) . ", ";
+				}
 			}
 		}
 		
@@ -151,11 +159,11 @@
 	
 	$wBranch = ($userId == "admin" ? " WHERE 1 = 1 " : " where store_init = '" . $branch_code . "' ");
 	
-	$table = 	"select x.id, x.code, x.name, x.description, x.brand_name, x.division, x.map_code, format(x.wide, 2) wide, y.store_init, " .
+	$table = 	"select x.id, x.code, x.name, x.description, x.brand_name, x.division, x.map_code, format(x.wide, 2) wide_f, x.wide, y.store_init, terminal_no, " .
 				"case x.shape when 'circle' then 'Circle' when 'rect' then 'Rectangular' when 'poly' then 'Polygon' else '' end shape " .
 			 	"from mst_storemap x inner join mst_map y on y.code = x.map_code";
 			 
-	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, code, name, description, brand_name, division, map_code, wide, store_init, shape " .
+	$sQuery =   "SELECT SQL_CALC_FOUND_ROWS id, code, name, description, brand_name, division, map_code, wide_f, wide, store_init, shape, terminal_no " .
 				"FROM (" . $table . ") t" . $wBranch . 
 				$sWhere . " " .
 				$sOrder . " " .

@@ -13,6 +13,9 @@
 	$jDb = $CR->get("#dbname");
 	$jHost = $CR->get("#host");
     
+	# particular category only
+	$aCategory = array("A", "B", "C", "D", "E");
+	
     echo "start job at " . date("Y-m-d H:i:s") . "\n"; 
     echo "checking store list..";
     
@@ -190,23 +193,28 @@
 								$grossSale = trim((isset($DATA[7]) ? $DATA[7] : 0));
 								$disc = trim((isset($DATA[9]) ? $DATA[9] : 0));
 								
-								# insert sales table
-								$sql =  "insert into trn_sales_mkg (" .
-											"id_import, store_init, trans_date, trans_no, pos_no, tpl_plu, sku, gold_plu, category, qty, gross_sale, disc" .
-										") values ('" .
-											$seq . "', '" . mysql_real_escape_string($storeInit) . "', str_to_date('" . $transDate . "', '%d/%m/%y'), '" . mysql_real_escape_string($transNo) . "', '" .
-											mysql_real_escape_string($poNo) . "', '" . mysql_real_escape_string($tplPlu) . "', '" . mysql_real_escape_string($sku) . "', '" .
-											mysql_real_escape_string($goldPlu) . "', '" . mysql_real_escape_string($category) . "', '" .
-											(is_numeric($qty) ? $qty : 0) . "', '" . (is_numeric($grossSale) ? $grossSale : 0) . "', '" . (is_numeric($disc) ? $disc : 0) . "'" .
-										")";
-								$result = mysql_query($sql);
-								if ($result) {
-									$totalInsertedRow++;
-								}
-								else {
-									$msgToSend .= "Failed to insert data from file " . $file . " at line " . $lineNumber . ".<br>";
-									echo "Failed to insert data at line " . $lineNumber . ".\n";
-									continue;
+								# particular category only
+								if (in_array(substr($category, 0, 1), $aCategory)) {
+							
+									# insert sales table
+									$sql =  "insert into trn_sales_mkg (" .
+												"id_import, store_init, trans_date, trans_no, pos_no, tpl_plu, sku, gold_plu, category, qty, gross_sale, disc" .
+											") values ('" .
+												$seq . "', '" . mysql_real_escape_string($storeInit) . "', str_to_date('" . $transDate . "', '%d/%m/%y'), '" . mysql_real_escape_string($transNo) . "', '" .
+												mysql_real_escape_string($poNo) . "', '" . mysql_real_escape_string($tplPlu) . "', '" . mysql_real_escape_string($sku) . "', '" .
+												mysql_real_escape_string($goldPlu) . "', '" . mysql_real_escape_string($category) . "', '" .
+												(is_numeric($qty) ? $qty : 0) . "', '" . (is_numeric($grossSale) ? $grossSale : 0) . "', '" . (is_numeric($disc) ? $disc : 0) . "'" .
+											")";
+									$result = mysql_query($sql);
+									if ($result) {
+										$totalInsertedRow++;
+									}
+									else {
+										$msgToSend .= "Failed to insert data from file " . $file . " at line " . $lineNumber . ".<br>";
+										echo "Failed to insert data at line " . $lineNumber . ".\n";
+										continue;
+									}
+								
 								}
 								
 							}
@@ -236,7 +244,7 @@
                             "from trn_sales_mkg x " .
                             "inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date) " . 
                             "inner join mst_division w on y.division = w.code " . 
-                            "where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code) " . 
+                            "where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code and (current_date between v.start_date and v.end_date)) " . 
                             "and x.store_init = '" . mysql_real_escape_string($store) . "' and date_format(x.trans_date, '%d/%m/%y') = '" . mysql_real_escape_string($dayToProcess) . "' " .
                             "group by x.trans_date, x.pos_no, y.brand_name, w.name, x.store_init";
                     $result = mysql_query($sql);

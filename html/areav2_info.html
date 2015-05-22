@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Tooltip Page</title>
+
+    <style>
+        .lblItem {
+            margin: 6px !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <?php if ($value > 0) { ?>
+    <div class="lblItem">
+        Article <?php echo ucfirst($type); ?>
+    </div>
+    <div class="lblItem">
+        <?php if ($cmd == "sales-per-square") echo "Sales per M2"; else echo ucfirst($cmd); ?> Rp <?php echo number_format($value, "0", ".", ","); ?>
+    </div>
+    <?php } ?>
+    
+</body>
+</html>

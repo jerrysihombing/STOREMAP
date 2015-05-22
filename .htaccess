@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2&cmd=$3&type=$4&brand=$5&division=$6&wide=$7&sDate=$8&id=$9 [L]
+RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2&cmd=$3&type=$4&brand=$5&division=$6&sWidePos=$7&sDate=$8&id=$9 [L]
 RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2&cmd=$3&type=$4&brand=$5&division=$6&wide=$7&id=$8 [L]
 RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2&cmd=$3&type=$4&brand=$5&division=$6&id=$7 [L]
 RewriteRule ^([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)/([^/]*)\.html$ /?op=$1&ac=$2&cmd=$3&type=$4&brand=$5&id=$6 [L]

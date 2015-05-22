@@ -38,6 +38,7 @@ class StoreMap {
 	private $_radius;
 	
 	private $_wide;
+	private $_terminalNo;
 	
 	private $_error;
 
@@ -156,6 +157,7 @@ class StoreMap {
 			$this->_lastUpdate = $row["last_update"];
 			$this->_wide = $row["wide"];
 			$this->_division = $row["division"];
+			$this->_terminalNo = $row["terminal_no"];
 		}
 		
 		$res->close();
@@ -195,7 +197,8 @@ class StoreMap {
 					$this->_lastUser . "', '" .
 					$this->_lastUpdate . "', '" .
 					$this->_wide . "', '" .
-					$this->_division . 
+					$this->_division . "', '" .
+					$this->_terminalNo .
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -225,7 +228,8 @@ class StoreMap {
 					$this->_createdBy . "', '" .
 					$this->_createdDate . "', '" .
 					$this->_wide . "', '" .
-					$this->_division . 
+					$this->_division . "', '" .
+					$this->_terminalNo .
 				"')";
 		
 		$ret = $this->_mysqli->query($sql);
@@ -320,6 +324,9 @@ class StoreMap {
 	public function getWide() {
 		return $this->_wide;	
 	}
+	public function getTerminalNo() {
+		return $this->_terminalNo;	
+	}
 	public function getCreatedDate() {
 		return $this->_createdDate;
 	}
@@ -380,6 +387,9 @@ class StoreMap {
 	}
 	public function setWide($v) {
 		$this->_wide = $v;	
+	}
+	public function setTerminalNo($v) {
+		$this->_terminalNo = $v;	
 	}
 	public function setCreatedDate($v) {
 		$this->_createdDate = $v;

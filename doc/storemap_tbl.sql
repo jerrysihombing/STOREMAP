@@ -51,6 +51,9 @@ alter table trn_sales_mkg add index (gold_plu);
 alter table trn_sales_mkg add index (category);
 alter table trn_sales_mkg add index (id_import);
 
+-- alter table trn_sales_mkg add column is_obral integer default 0;
+-- alter table trn_sales_mkg add index (is_obral);
+
 -- added 10-Apr-15 --
 
 create table trn_sales_by_brand (
@@ -296,6 +299,9 @@ alter table mst_storemap add column wide decimal(8, 2);
 
 alter table mst_storemap add column division varchar(50);
 alter table mst_storemap add index (division);
+
+alter table mst_storemap add column terminal_no integer default 0;
+alter table mst_storemap add index (terminal_no);
 
 create table mst_status (
     id integer not null auto_increment,

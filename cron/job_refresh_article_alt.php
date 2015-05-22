@@ -21,6 +21,7 @@
     $msgToSend = "";
     
 	$url = $webService . "/ws_gold_article_by_date.php?p_date=" . $pDate;
+	#$url = $webService . "/ws_gold_article.php";
 	
 	echo "read data from web service.. ";
     
@@ -57,6 +58,14 @@
             echo "start transaction.\n";
             $result = mysql_query("START TRANSACTION");
             
+			/*
+			echo "emptying table.. ";
+			# -- empty first
+			$sql = "truncate table mst_article_gold";
+			$result = mysql_query($sql);
+			echo "ok.\n";
+			*/
+			
             $totalInsertedRow = 0;
             
 			echo "loop through data.\n";

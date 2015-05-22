@@ -13,6 +13,9 @@
 	$jDb = $CR->get("#dbname");
 	$jHost = $CR->get("#host");
     
+    # particular category only
+	$aCategory = array("A", "B", "C", "D", "E");
+    
     $timeIdx = (isset($argv[1]) ? $argv[1] : 0);
     $testIdx = sizeof($TIME_EXEC)-1;
     if ($timeIdx > $testIdx) {
@@ -218,24 +221,29 @@
                         
                         $lineNumber++;
                         
-                        # insert sales table
-                        $sql =  "insert into trn_sales_tpl (" .
-                                    "id_import, store_init, trans_date, tpl_plu, sku, gold_plu, dept, unit_price, qty, gross_sale, disc" .
-                                ") values ('" .
-                                    $seq . "', '" . mysql_real_escape_string($store) . "', str_to_date('" . $transDate . "', '%d/%m/%y'), '" . mysql_real_escape_string($tplPlu) . "', '" .
-                                    mysql_real_escape_string($sku) . "', '" . mysql_real_escape_string($goldPlu) . "', '" . mysql_real_escape_string($dept) . "', '" .
-                                    (is_numeric($unitPrice) ? $unitPrice : 0) . "', '" . (is_numeric($qty) ? $qty : 0) . "', '" . (is_numeric($grossSale) ? $grossSale : 0) . "', '" .
-                                    (is_numeric($disc) ? $disc : 0) . "'" .
-                                ")";
-                        $result = mysql_query($sql);
-                        if ($result) {
-                            $totalInsertedRow++;
-                            $dayToProcess = $transDate;
-                        }
-                        else {
-                            $msgToSend .= "Failed to insert data from file " . $file . " at line " . $lineNumber . ".<br>";
-                            echo "Failed to insert data at line " . $lineNumber . ".\n";
-                            continue;
+                        # particular category only
+						if (in_array(substr($dept, 0, 1), $aCategory)) {
+                            
+                            # insert sales table
+                            $sql =  "insert into trn_sales_tpl (" .
+                                        "id_import, store_init, trans_date, tpl_plu, sku, gold_plu, dept, unit_price, qty, gross_sale, disc" .
+                                    ") values ('" .
+                                        $seq . "', '" . mysql_real_escape_string($store) . "', str_to_date('" . $transDate . "', '%d/%m/%y'), '" . mysql_real_escape_string($tplPlu) . "', '" .
+                                        mysql_real_escape_string($sku) . "', '" . mysql_real_escape_string($goldPlu) . "', '" . mysql_real_escape_string($dept) . "', '" .
+                                        (is_numeric($unitPrice) ? $unitPrice : 0) . "', '" . (is_numeric($qty) ? $qty : 0) . "', '" . (is_numeric($grossSale) ? $grossSale : 0) . "', '" .
+                                        (is_numeric($disc) ? $disc : 0) . "'" .
+                                    ")";
+                            $result = mysql_query($sql);
+                            if ($result) {
+                                $totalInsertedRow++;
+                                $dayToProcess = $transDate;
+                            }
+                            else {
+                                $msgToSend .= "Failed to insert data from file " . $file . " at line " . $lineNumber . ".<br>";
+                                echo "Failed to insert data at line " . $lineNumber . ".\n";
+                                continue;
+                            }
+                        
                         }
                     }
                     
@@ -274,7 +282,7 @@
                             "from trn_sales_tpl x " .
                             "inner join mst_article_gold y on x.gold_plu = y.article_code and (current_date between y.start_date and y.end_date) " . 
                             "inner join mst_division w on y.division = w.code " . 
-                            "where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code) " . 
+                            "where y.last_update = (select max(v.last_update) from mst_article_gold v where v.article_code = y.article_code and (current_date between v.start_date and v.end_date)) " . 
                             "and store_init = '" . mysql_real_escape_string($store) . "' and date_format(x.trans_date, '%d/%m/%y') = '" . mysql_real_escape_string($dayToProcess) . "' " .
                             "group by x.trans_date, y.brand_name, w.name, store_init";
                     $result = mysql_query($sql);
